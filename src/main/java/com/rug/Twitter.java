@@ -14,45 +14,41 @@ import org.openprovenance.prov.model.WasAttributedTo;
 import org.openprovenance.prov.model.WasDerivedFrom;
 
 
-public class First_prov 
+public class Twitter 
 {
     
-    public static final String PROVBOOK_NS = "http://www.provbook.org";
-    public static final String PROVBOOK_PREFIX = "provbook";
-    
-    public static final String JIM_PREFIX = "jim";
-    public static final String JIM_NS = "http://www.cs.rpi.edu/~hendler/";
+    public static final String TWITTER_NS = "https://twitter.com";
+    public static final String TWITTER_PREFIX = "twitter";
 
     private final ProvFactory pFactory;
     private final Namespace ns;
-    public First_prov(ProvFactory pFactory) {
+
+    public Twitter(ProvFactory pFactory) {
         this.pFactory = pFactory;
         ns=new Namespace();
         ns.addKnownNamespaces();
-        ns.register(PROVBOOK_PREFIX, PROVBOOK_NS);
-        ns.register(JIM_PREFIX, JIM_NS);
+        ns.register(TWITTER_PREFIX, TWITTER_NS);
     }
 
     public QualifiedName qn(String n) {
-        return ns.qualifiedName(PROVBOOK_PREFIX, n, pFactory);
+        return ns.qualifiedName(TWITTER_PREFIX, n, pFactory);
     }
 
     public Document makeDocument() {     
-        Entity quote = pFactory.newEntity(qn("a-little-provenance-goes-a-long-way"));
-        quote.setValue(pFactory.newValue("A little provenance goes a long way", pFactory.getName().XSD_STRING));
+        Entity edited_tweet = pFactory.newEntity(qn("edited-source-tweet"));
+        edited_tweet.setValue(pFactory.newValue("This is an edited source tweet.", pFactory.getName().XSD_STRING));
         
-        Entity original = pFactory.newEntity(ns.qualifiedName(JIM_PREFIX,"LittleSemanticsWeb.html",pFactory));
+        Entity original_tweet = pFactory.newEntity(ns.qualifiedName(TWITTER_PREFIX,"tweet-id",pFactory));
 
-        Agent paul = pFactory.newAgent(qn("Paul"), "Paul Groth");
-        Agent luc = pFactory.newAgent(qn("Luc"), "Luc Moreau");
+        Agent andrei = pFactory.newAgent(qn("Andrei"), "Andrei Stoica");
 
-        WasAttributedTo attr1 = pFactory.newWasAttributedTo(null,quote.getId(), paul.getId());
-        WasAttributedTo attr2 = pFactory.newWasAttributedTo(null,quote.getId(),luc.getId());
+        WasAttributedTo attr1 = pFactory.newWasAttributedTo(null,original_tweet.getId(), andrei.getId());
+        WasAttributedTo attr2 = pFactory.newWasAttributedTo(null,edited_tweet.getId(), andrei.getId());
 
-        WasDerivedFrom wdf = pFactory.newWasDerivedFrom(quote.getId(), original.getId());
+        WasDerivedFrom wdf = pFactory.newWasDerivedFrom(edited_tweet.getId(), original_tweet.getId());
 
         Document document = pFactory.newDocument();
-        document.getStatementOrBundle().addAll(Arrays.asList(quote, paul, luc, attr1, attr2, original, wdf));
+        document.getStatementOrBundle().addAll(Arrays.asList(original_tweet, edited_tweet, andrei, attr1, attr2, wdf));
         document.setNamespace(ns);
         return document;
     }
@@ -79,7 +75,7 @@ public class First_prov
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file=args[0];
         
-        First_prov little=new First_prov(InteropFramework.getDefaultFactory());
+        Twitter little=new Twitter(InteropFramework.getDefaultFactory());
         little.openingBanner();
         Document document = little.makeDocument();
         little.doConversions(document, file);

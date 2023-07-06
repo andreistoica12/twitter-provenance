@@ -14,11 +14,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-      <dependency>
-          <groupId>org.openprovenance.prov</groupId>
-          <artifactId>prov-interop-light</artifactId>
-          <version>0.9.29</version>
-      </dependency>
+    <dependency>
+        <groupId>org.openprovenance.prov</groupId>
+        <artifactId>prov-interop-light</artifactId>
+        <version>0.9.29</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -34,9 +34,9 @@
                         <goal>java</goal>
                     </goals>
                     <configuration>
-                        <mainClass>com.rug.First_prov</mainClass>
+                        <mainClass>com.rug.Twitter</mainClass>
                         <arguments>
-                            <argument>${project.build.directory}/first_prov.svg</argument>
+                            <argument>${project.build.directory}/simple_tweet.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>
