@@ -1,0 +1,11 @@
+document
+bundle uuid:6c361ffb-14d1-48d0-b3a0-487f5dd85065
+prefix pre_0 <http://>
+prefix var <http://openprovenance.org/var#>
+prefix uuid <urn:uuid:>
+
+entity(pre_0:google.com,[prov:value = "value/text of tweet" %% xsd:string])
+agent(var:author,[prov:type = 'prov:Person'])
+wasAttributedTo(pre_0:google.com, var:author)
+endBundle
+endDocument

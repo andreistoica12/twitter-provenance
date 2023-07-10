@@ -80,5 +80,8 @@ public class Twitter
         Document document = little.makeDocument();
         little.doConversions(document, file);
         little.closingBanner();    
+
+        System.out.println(document.getStatementOrBundle());
+
     }
 }

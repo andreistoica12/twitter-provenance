@@ -1,0 +1,11 @@
+document
+bundle vargen:id
+prefix foaf <http://xmlns.com/foaf/0.1/>
+prefix vargen <http://openprovenance.org/vargen#>
+prefix var <http://openprovenance.org/var#>
+
+entity(var:tweet,[prov:value = 'var:value'])
+agent(var:author,[prov:type = 'prov:Person', foaf:name='var:name'])
+wasAttributedTo(var:tweet, var:author)
+endBundle
+endDocument

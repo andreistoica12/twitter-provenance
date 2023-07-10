@@ -1,0 +1,14 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix vargen: <http://openprovenance.org/vargen#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+var:tweet   a prov:Entity;
+            tmpl:value_0 <http://google.com>.
+var:value   a prov:Entity;
+            tmpl:2dvalue_0_0 "value/text of tweet".
+var:author  a prov:Agent;
+            tmpl:2dvalue_0_0 "Andrei Stoica".
+
