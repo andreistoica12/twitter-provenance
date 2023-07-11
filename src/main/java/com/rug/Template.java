@@ -9,6 +9,8 @@ import org.openprovenance.prov.interop.Formats;
 import org.openprovenance.prov.interop.InteropFramework;
 import org.openprovenance.prov.interop.InteropMediaType;
 import org.openprovenance.prov.model.*;
+import org.openprovenance.prov.rdf.*;
+
 
 
 
@@ -17,8 +19,8 @@ public class Template {
     public static final String VAR_NS = "http://openprovenance.org/var#";
     public static final String VAR_PREFIX = "var";
 
-    public static final String BUNDLE_NS = "http://openprovenance.org/vargen#";
-    public static final String BUNDLE_PREFIX ="vargen";
+    public static final String VARGEN_NS = "http://openprovenance.org/vargen#";
+    public static final String VARGEN_PREFIX ="vargen";
 
     public static final String FOAF_NS = "http://xmlns.com/foaf/0.1/";
     public static final String FOAF_PREFIX ="foaf";
@@ -31,8 +33,12 @@ public class Template {
         ns=new Namespace();
         ns.addKnownNamespaces();
         ns.register(VAR_PREFIX, VAR_NS);
-        ns.register(BUNDLE_PREFIX, BUNDLE_NS);
+        ns.register(VARGEN_PREFIX, VARGEN_NS);
         ns.register(FOAF_PREFIX, FOAF_NS);
+    }
+
+    public QualifiedName qn_prov(String n) {
+        return ns.qualifiedName("prov", n, pFactory);
     }
 
     public QualifiedName qn_var(String n) {
@@ -40,7 +46,11 @@ public class Template {
     }
 
     public QualifiedName qn_vargen(String n) {
-        return ns.qualifiedName(BUNDLE_PREFIX, n, pFactory);
+        return ns.qualifiedName(VARGEN_PREFIX, n, pFactory);
+    }
+
+    public QualifiedName qn_foaf(String n) {
+        return ns.qualifiedName(FOAF_PREFIX, n, pFactory);
     }
 
 
@@ -52,7 +62,7 @@ public class Template {
 
     public void doConversions(Document document, String file) {
         InteropFramework intF=new InteropFramework();
-        intF.writeDocument(file, Formats.ProvFormat.SVG, document);
+        intF.writeDocument(file, Formats.ProvFormat.PROVN, document);
     }
 
     public void closingBanner() {
@@ -61,20 +71,23 @@ public class Template {
         
     public Document createTemplate() {
 
-        Entity tweet = pFactory.newEntity(qn_var("tweet"));
-        tweet.setValue(pFactory.newValue("var:value", pFactory.getName().XSD_STRING));
+        // Entity declaration with attributes
+        Collection<Attribute> tweetAttributes = new ArrayList<>();
+        Attribute tweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("text"), pFactory.getName().XSD_ANY_URI);
+        tweetAttributes.add(tweetValue);
+        Entity tweet = pFactory.newEntity(qn_var("tweet"), tweetAttributes);
 
 
-        Attribute type = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "prov:Person", ns.qualifiedName("prov", "Person", pFactory));
-        Attribute name = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "var:name", ns.qualifiedName("foaf", "name", pFactory));
-
+        // Agent declaration with attributes
         Collection<Attribute> agentAttributes = new ArrayList<>();
+        Attribute type = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
+        Attribute name = pFactory.newAttribute(qn_foaf("name"), qn_var("name"), pFactory.getName().XSD_STRING);
         agentAttributes.add(type);
         agentAttributes.add(name);
         Agent author = pFactory.newAgent(qn_var("author"), agentAttributes);
 
 
-
+        // Attribution declaration with attributes
         WasAttributedTo attr1 = pFactory.newWasAttributedTo(null, tweet.getId(), author.getId());
 
 
@@ -84,9 +97,7 @@ public class Template {
         statementCollection.add(tweet);
         statementCollection.add(author);
         statementCollection.add(attr1);
-
-        Bundle bundle = pFactory.newNamedBundle(qn_vargen("id"), ns, statementCollection);
-        bundle.setNamespace(ns);
+        Bundle bundle = pFactory.newNamedBundle(qn_vargen("bundleId"), ns, statementCollection);
 
 
         Document document = pFactory.newDocument();

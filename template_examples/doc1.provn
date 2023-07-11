@@ -1,5 +1,5 @@
 document
-bundle uuid:63c46b0e-7343-499e-9d26-cdb1a59499c5
+bundle uuid:2b7d8e26-5e09-4de9-b963-fc1cdf82ea3d
 prefix foaf <http://xmlns.com/foaf/0.1/>
 prefix pre_0 <http://orcid.org/>
 prefix ex <http://example.com/#>

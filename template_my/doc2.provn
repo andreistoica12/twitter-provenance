@@ -1,11 +1,12 @@
 document
-bundle uuid:6c361ffb-14d1-48d0-b3a0-487f5dd85065
-prefix pre_0 <http://>
+bundle uuid:d7fac339-9879-46ca-9d2c-77e517583c1f
+prefix foaf <http://xmlns.com/foaf/0.1/>
+prefix pre_0 <https://www.digisport.ro/>
 prefix var <http://openprovenance.org/var#>
 prefix uuid <urn:uuid:>
 
-entity(pre_0:google.com,[prov:value = "value/text of tweet" %% xsd:string])
-agent(var:author,[prov:type = 'prov:Person'])
-wasAttributedTo(pre_0:google.com, var:author)
+entity(pre_0:articol1,[prov:value = "text of tweet" %% xsd:string])
+agent(var:author,[prov:type = 'prov:Person', foaf:name = "Andrei Stoica" %% xsd:string])
+wasAttributedTo(pre_0:articol1, var:author)
 endBundle
 endDocument
