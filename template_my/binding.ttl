@@ -1,0 +1,18 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix vargen: <http://openprovenance.org/vargen#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+var:authorId    a prov:Agent;
+                tmpl:value_0 ex:andrei123.
+var:name        a prov:Entity;
+                tmpl:2dvalue_0_0 "Andrei Stoica".
+var:text        a prov:Entity;
+                tmpl:2dvalue_0_0 "text of tweet".
+var:tweet       a prov:Entity;
+                tmpl:value_0 <https://www.digisport.ro/articol1>.
+

@@ -66,10 +66,16 @@
                     <goals>
                         <goal>java</goal>
                     </goals>
+                    <!-- <configuration>
+                        <mainClass>com.rug.Twitter</mainClass>
+                        <arguments>
+                            <argument>${project.build.directory}/twitter_example.svg</argument>
+                        </arguments>
+                    </configuration> -->
                     <configuration>
                         <mainClass>com.rug.Template</mainClass>
                         <arguments>
-                            <argument>${project.build.directory}/dummy_tweet.provn</argument>
+                            <argument>${project.build.directory}/template.provn</argument>
                         </arguments>
                     </configuration>
                 </execution>

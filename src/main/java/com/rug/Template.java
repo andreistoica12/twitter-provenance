@@ -25,6 +25,9 @@ public class Template {
     public static final String FOAF_NS = "http://xmlns.com/foaf/0.1/";
     public static final String FOAF_PREFIX ="foaf";
 
+    public static final String TMPL_NS = "http://openprovenance.org/tmpl#";
+    public static final String TMPL_PREFIX ="tmpl";
+
     private final ProvFactory pFactory;
     private final Namespace ns;
 
@@ -35,6 +38,7 @@ public class Template {
         ns.register(VAR_PREFIX, VAR_NS);
         ns.register(VARGEN_PREFIX, VARGEN_NS);
         ns.register(FOAF_PREFIX, FOAF_NS);
+        ns.register(TMPL_PREFIX, TMPL_NS);
     }
 
     public QualifiedName qn_prov(String n) {
@@ -84,7 +88,7 @@ public class Template {
         Attribute name = pFactory.newAttribute(qn_foaf("name"), qn_var("name"), pFactory.getName().XSD_STRING);
         agentAttributes.add(type);
         agentAttributes.add(name);
-        Agent author = pFactory.newAgent(qn_var("author"), agentAttributes);
+        Agent author = pFactory.newAgent(qn_var("authorId"), agentAttributes);
 
 
         // Attribution declaration with attributes
