@@ -52,12 +52,20 @@
         <version>0.9.29</version>
     </dependency>
 
+  
+    <dependency>
+      <groupId>org.apache.karaf.specs</groupId>
+      <artifactId>org.apache.karaf.specs.java.xml</artifactId>
+      <version>4.3.9</version>
+    </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
+  
             <artifactId>exec-maven-plugin</artifactId>
             <version>1.2.1</version>
             <executions>

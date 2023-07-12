@@ -5,8 +5,10 @@ prefix vargen <http://openprovenance.org/vargen#>
 prefix tmpl <http://openprovenance.org/tmpl#>
 prefix var <http://openprovenance.org/var#>
 
-entity(var:tweet,[prov:value = 'var:text'])
-agent(var:authorId,[prov:type = 'prov:Person', foaf:name = 'var:name'])
-wasAttributedTo(var:tweet, var:authorId)
+entity(var:original_post_id,[prov:value = 'var:text'])
+activity(var:post_id,2023-07-12T18:57:14.749+02:00,2023-07-14T18:57:14.749+02:00,[prov:type = "publish" %% xsd:string])
+agent(var:original_author_id,[prov:type = 'prov:Person', foaf:name = 'var:name'])
+wasGeneratedBy(var:original_post_id,var:post_id,-)
+wasAssociatedWith(var:assoc1_id;var:post_id,var:original_author_id,-,[prov:role = "author" %% xsd:string])
 endBundle
 endDocument
