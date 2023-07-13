@@ -33,9 +33,6 @@ public class Template {
     public static final String VARGEN_NS = "http://openprovenance.org/vargen#";
     public static final String VARGEN_PREFIX ="vargen";
 
-    public static final String FOAF_NS = "http://xmlns.com/foaf/0.1/";
-    public static final String FOAF_PREFIX ="foaf";
-
     public static final String TMPL_NS = "http://openprovenance.org/tmpl#";
     public static final String TMPL_PREFIX ="tmpl";
 
@@ -51,7 +48,6 @@ public class Template {
         ns.addKnownNamespaces();
         ns.register(VAR_PREFIX, VAR_NS);
         ns.register(VARGEN_PREFIX, VARGEN_NS);
-        ns.register(FOAF_PREFIX, FOAF_NS);
         ns.register(TMPL_PREFIX, TMPL_NS);
         ns.register(TW_PREFIX, TW_NS);
     }
@@ -70,10 +66,6 @@ public class Template {
 
     public QualifiedName qn_vargen(String n) {
         return ns.qualifiedName(VARGEN_PREFIX, n, pFactory);
-    }
-
-    public QualifiedName qn_foaf(String n) {
-        return ns.qualifiedName(FOAF_PREFIX, n, pFactory);
     }
 
     public QualifiedName qn_tw(String n) {
@@ -173,7 +165,7 @@ public class Template {
         // 4. AGENT - agent_originalAuthor
         Collection<Attribute> originalAuthorAttributes = new ArrayList<>();
         Attribute originalAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
-        Attribute originalAuthorName = pFactory.newAttribute(qn_foaf("name"), qn_var("name"), pFactory.getName().XSD_STRING);
+        Attribute originalAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("name"), pFactory.getName().XSD_STRING);
         originalAuthorAttributes.add(originalAuthorType);
         originalAuthorAttributes.add(originalAuthorName);
         Agent agent_originalAuthor = pFactory.newAgent(qn_var("original_author_id"), originalAuthorAttributes);
@@ -192,6 +184,9 @@ public class Template {
 
         // 7 USAGE - used1
         Used used1 = pFactory.newUsed(qn_var("used1_id"), activity_post.getId(), entity_originalTweetProps.getId());
+
+        // TODO: continue with the rest of the model implementation in the Template class
+        // and then do the binding variables and attributes in the Binding class
 
         // Create a collection to store statements
         Collection<Statement> statementCollection = new ArrayList<>();

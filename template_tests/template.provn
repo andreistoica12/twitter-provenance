@@ -1,0 +1,16 @@
+document
+bundle vargen:bundle_id
+prefix vargen <http://openprovenance.org/vargen#>
+prefix tw <http://twitter.com/>
+prefix tmpl <http://openprovenance.org/tmpl#>
+prefix var <http://openprovenance.org/var#>
+
+entity(var:original_tweet_id,[prov:type = "original tweet" %% xsd:string, prov:value = 'var:text'])
+activity(var:post_id,-,-,[prov:type = "publish" %% xsd:string])
+agent(var:original_author_id,[prov:type = 'prov:Person', tw:name = 'var:name'])
+wasGeneratedBy(var:original_tweet_id,var:post_id,-)
+wasAssociatedWith(var:assoc1_id;var:post_id,var:original_author_id,-,[prov:role = "author" %% xsd:string])
+entity(var:original_post_props_id,[prov:type = "original tweet properties" %% xsd:string, tw:created_at = 'var:created_at', tw:location = 'var:location', tw:like_count = 'var:like_count', tw:quote_count = 'var:quote_count', tw:reply_count = 'var:reply_count', tw:retweet_count = 'var:retweet_count'])
+used(var:used1_id;var:post_id,var:original_post_props_id,-)
+endBundle
+endDocument

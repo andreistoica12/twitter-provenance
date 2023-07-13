@@ -77,23 +77,31 @@
             <version>1.2.1</version>
             <executions>
                 <execution>
+                    <id>test1</id>
                     <phase>test</phase>
                     <goals>
                         <goal>java</goal>
                     </goals>
                     <!-- <configuration>
-                        <mainClass>com.rug.Twitter</mainClass>
+                        <mainClass>com.rug.TwitterExample</mainClass>
                         <arguments>
                             <argument>${project.build.directory}/twitter_example.svg</argument>
                         </arguments>
                     </configuration> -->
-                    <!-- <configuration>
+                    <configuration>
                         <mainClass>com.rug.Template</mainClass>
                         <arguments>
                             <argument>${project.build.directory}/template.provn</argument>
                             <argument>${project.build.directory}/template.svg</argument>
                         </arguments>
-                    </configuration> -->
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>test2</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
                     <configuration>
                         <mainClass>com.rug.Binding</mainClass>
                         <arguments>

@@ -14,7 +14,7 @@ import org.openprovenance.prov.model.WasAttributedTo;
 import org.openprovenance.prov.model.WasDerivedFrom;
 
 
-public class Twitter 
+public class TwitterExample 
 {
     
     public static final String TWITTER_NS = "https://twitter.com";
@@ -23,7 +23,7 @@ public class Twitter
     private final ProvFactory pFactory;
     private final Namespace ns;
 
-    public Twitter(ProvFactory pFactory) {
+    public TwitterExample(ProvFactory pFactory) {
         this.pFactory = pFactory;
         ns=new Namespace();
         ns.addKnownNamespaces();
@@ -75,7 +75,7 @@ public class Twitter
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file=args[0];
         
-        Twitter little=new Twitter(InteropFramework.getDefaultFactory());
+        TwitterExample little=new TwitterExample(InteropFramework.getDefaultFactory());
         little.openingBanner();
         Document document = little.makeDocument();
         little.doConversions(document, file);
