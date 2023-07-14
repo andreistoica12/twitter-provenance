@@ -1,43 +1,115 @@
 {
   "var" : {
-    "original_post_props_id" : [ {
-      "@id" : "tw:originalPostPropsId"
+    "ra_username" : [ {
+      "@value" : "Some reaction author username"
     } ],
-    "like_count" : [ {
+    "original_author_props_id" : [ {
+      "@id" : "tw:OriginalAuthorPropsId"
+    } ],
+    "edited_text" : [ {
+      "@value" : "EDIT: This is the new text of the tweet."
+    } ],
+    "ra_followers_count" : [ {
+      "@value" : "40"
+    } ],
+    "ag_o_name" : [ {
+      "@value" : "Some original author name"
+    } ],
+    "oa_following_count" : [ {
       "@value" : "20"
     } ],
-    "created_at" : [ {
-      "@value" : "Some timestamp"
+    "reaction_tweet_id" : [ {
+      "@id" : "tw:ReactionTweetId"
     } ],
-    "assoc1_id" : [ {
-      "@id" : "tw:assoc1Id"
+    "original_text" : [ {
+      "@value" : "This is the text of the tweet."
     } ],
-    "original_author_id" : [ {
-      "@id" : "tw:originalAuthorId"
+    "edited_tweet_id" : [ {
+      "@id" : "tw:EditedTweetId"
     } ],
-    "reply_count" : [ {
-      "@value" : "20"
-    } ],
-    "quote_count" : [ {
-      "@value" : "20"
+    "oa_credible" : [ {
+      "@value" : "1"
     } ],
     "post_id" : [ {
       "@id" : "tw:postId"
     } ],
+    "oa_verified" : [ {
+      "@value" : "True"
+    } ],
+    "original_tweet_props_id" : [ {
+      "@id" : "tw:OriginalTweetPropsId"
+    } ],
+    "ot_location" : [ {
+      "@value" : "Some place"
+    } ],
+    "ot_like_count" : [ {
+      "@value" : "20"
+    } ],
+    "used2_id" : [ {
+      "@id" : "tw:used2Id"
+    } ],
+    "react_id" : [ {
+      "@id" : "tw:reactId"
+    } ],
+    "edit_id" : [ {
+      "@id" : "tw:editId"
+    } ],
+    "ot_created_at" : [ {
+      "@value" : "Some timestamp"
+    } ],
+    "reaction_text" : [ {
+      "@value" : "This is the text of the reaction."
+    } ],
+    "ot_reply_count" : [ {
+      "@value" : "20"
+    } ],
+    "ra_following_count" : [ {
+      "@value" : "60"
+    } ],
+    "reaction_author_props_id" : [ {
+      "@id" : "tw:ReactionAuthorPropsId"
+    } ],
+    "ot_quote_count" : [ {
+      "@value" : "20"
+    } ],
+    "ra_credible" : [ {
+      "@value" : "0"
+    } ],
+    "ra_name" : [ {
+      "@value" : "Some reaction author name"
+    } ],
+    "oa_name" : [ {
+      "@value" : "Some orignial author name"
+    } ],
+    "reaction_author_id" : [ {
+      "@id" : "tw:reactionAuthorId"
+    } ],
+    "ot_retweet_count" : [ {
+      "@value" : "20"
+    } ],
+    "ra_verified" : [ {
+      "@value" : "False"
+    } ],
     "original_tweet_id" : [ {
       "@id" : "tw:OriginalTweetId"
     } ],
-    "retweet_count" : [ {
+    "ag_r_name" : [ {
+      "@value" : "Some reaction author name"
+    } ],
+    "oa_username" : [ {
+      "@value" : "Some original author username"
+    } ],
+    "original_author_id" : [ {
+      "@id" : "tw:originalAuthorId"
+    } ],
+    "oa_followers_count" : [ {
       "@value" : "20"
+    } ],
+    "reply/retweet/quote" : [ {
+      "@value" : "reply"
     } ],
     "used1_id" : [ {
       "@id" : "tw:used1Id"
-    } ],
-    "location" : [ {
-      "@value" : "Some place"
-    } ],
-    "value" : [ {
-      "@value" : "This is the text of the tweet."
     } ]
   },
   "vargen" : { },

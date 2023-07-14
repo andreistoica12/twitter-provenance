@@ -5,12 +5,28 @@ prefix tw <http://twitter.com/>
 prefix tmpl <http://openprovenance.org/tmpl#>
 prefix var <http://openprovenance.org/var#>
 
-entity(var:original_tweet_id,[prov:type = "original tweet" %% xsd:string, prov:value = 'var:text'])
+entity(var:original_tweet_id,[prov:type = "original tweet" %% xsd:string, prov:value = 'var:original_text'])
 activity(var:post_id,-,-,[prov:type = "publish" %% xsd:string])
-agent(var:original_author_id,[prov:type = 'prov:Person', tw:name = 'var:name'])
+agent(var:original_author_id,[prov:type = 'prov:Person', tw:name = 'var:ag_o_name'])
 wasGeneratedBy(var:original_tweet_id,var:post_id,-)
-wasAssociatedWith(var:assoc1_id;var:post_id,var:original_author_id,-,[prov:role = "author" %% xsd:string])
-entity(var:original_post_props_id,[prov:type = "original tweet properties" %% xsd:string, tw:created_at = 'var:created_at', tw:location = 'var:location', tw:like_count = 'var:like_count', tw:quote_count = 'var:quote_count', tw:reply_count = 'var:reply_count', tw:retweet_count = 'var:retweet_count'])
-used(var:used1_id;var:post_id,var:original_post_props_id,-)
+wasAssociatedWith(var:post_id,var:original_author_id,-,[prov:role = "author" %% xsd:string])
+entity(var:original_tweet_props_id,[prov:type = "tweet properties" %% xsd:string, tw:created_at = 'var:ot_created_at', tw:location = 'var:ot_location', tw:like_count = 'var:ot_like_count', tw:quote_count = 'var:ot_quote_count', tw:reply_count = 'var:ot_reply_count', tw:retweet_count = 'var:ot_retweet_count'])
+used(var:used1_id;var:post_id,var:original_tweet_props_id,-)
+entity(var:edited_tweet_id,[prov:type = "edited tweet" %% xsd:string, prov:value = 'var:edited_text'])
+wasDerivedFrom(var:edited_tweet_id, var:original_tweet_id)
+activity(var:edit_id,-,-,[prov:type = "publish" %% xsd:string])
+wasGeneratedBy(var:edited_tweet_id,var:edit_id,-)
+wasAssociatedWith(var:edit_id,var:original_author_id,-,[prov:role = "editor" %% xsd:string])
+used(var:used2_id;var:edit_id,var:original_tweet_props_id,-)
+entity(var:original_author_props_id,[prov:type = "user properties" %% xsd:string, tw:credible = 'var:oa_credible', tw:name = 'var:oa_name', tw:username = 'var:oa_username', tw:verified = 'var:oa_verified', tw:followers_count = 'var:oa_followers_count', tw:following_count = 'var:oa_following_count'])
+wasAttributedTo(var:original_author_props_id, var:original_author_id)
+activity(var:react_id,-,-,[prov:type = "publish" %% xsd:string])
+wasInformedBy(var:react_id,var:post_id)
+agent(var:reaction_author_id,[prov:type = 'prov:Person', tw:name = 'var:ag_r_name'])
+wasAssociatedWith(var:react_id,var:reaction_author_id,-,[prov:role = "editor" %% xsd:string])
+entity(var:reaction_author_props_id,[prov:type = "user properties" %% xsd:string, tw:credible = 'var:ra_credible', tw:name = 'var:ra_name', tw:username = 'var:ra_username', tw:verified = 'var:ra_verified', tw:followers_count = 'var:ra_followers_count', tw:following_count = 'var:ra_following_count'])
+wasAttributedTo(var:reaction_author_props_id, var:reaction_author_id)
+entity(var:reaction_tweet_id,[prov:type = 'var:reply/retweet/quote', prov:value = 'var:reaction_text'])
+wasGeneratedBy(var:reaction_tweet_id,var:react_id,-)
 endBundle
 endDocument
