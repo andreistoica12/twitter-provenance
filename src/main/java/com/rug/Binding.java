@@ -34,6 +34,27 @@ public class Binding {
         this.template = template;
     }
 
+    public void addReactionTweet(Bindings bindings) {
+        bindings.addVariable(template.qn_var("react_id"), template.qn_tw("reactId2"));
+        bindings.addVariable(template.qn_var("reaction_author_id"), template.qn_tw("reactionAuthorId2"));
+        bindings.addAttribute("ag_r_name", "Some second reaction author name");
+        bindings.addVariable(template.qn_var("reaction_author_props_id2"), template.qn_tw("ReactionAuthorPropsId2"));
+        bindings.addAttribute("REPLY_credible", "1");
+        bindings.addAttribute("REPLY_name", "Some second reaction author name");
+        bindings.addAttribute("REPLY_username", "Some second reaction author username");
+        bindings.addAttribute("REPLY_verified", "True");
+        bindings.addAttribute("REPLY_followers_count", "100");
+        bindings.addAttribute("REPLY_following_count", "200");
+        bindings.addVariable(template.qn_var("reaction_tweet_id"), template.qn_tw("ReactionTweetId2"));
+        bindings.addAttribute("reply/retweet/quote", "quote");
+        bindings.addAttribute("reaction_text", "This is the text of the quote.");
+        bindings.addVariable(template.qn_var("reaction_tweet_props_id"), template.qn_tw("ReactionTweetPropsId2"));
+        bindings.addAttribute("REPLY_created_at", "Some other timestamp");
+        bindings.addAttribute("REPLY_location", "Some other place");
+        bindings.addAttribute("REPLY_reference_type", "quoted");
+        bindings.addAttribute("REPLY_reference_id", "985929573745");
+    }
+
     public void bind(String file_json) {
         ProvFactory pFactory = template.getpFactory();
 
@@ -78,6 +99,12 @@ public class Binding {
         bindings.addAttribute("REPLY_location", "Some place");
         bindings.addAttribute("REPLY_reference_type", "replied_to");
         bindings.addAttribute("REPLY_reference_id", "123456");
+
+        addReactionTweet(bindings);
+        
+
+
+
 
 
 

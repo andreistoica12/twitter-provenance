@@ -84,6 +84,10 @@ public class Template {
         return ns.qualifiedName(TW_PREFIX, n, pFactory);
     }
 
+    public QualifiedName qn_tmpl(String n) {
+        return ns.qualifiedName(TMPL_PREFIX, n, pFactory);
+    }
+
 
     public void openingBanner() {
         System.out.println("*************************");
@@ -205,8 +209,7 @@ public class Template {
         Collection<Attribute> originalAuthorAttributes = new ArrayList<>();
         Attribute originalAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
         Attribute originalAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("ag_o_name"), pFactory.getName().XSD_STRING);
-        originalAuthorAttributes.add(originalAuthorType);
-        originalAuthorAttributes.add(originalAuthorName);
+        originalAuthorAttributes.addAll(Arrays.asList(originalAuthorType, originalAuthorName));
         Agent agent_originalAuthor = pFactory.newAgent(qn_var("original_author_id"), originalAuthorAttributes);
 
 
@@ -260,7 +263,8 @@ public class Template {
         // 16. ACTIVITY - activity_react
         Collection<Attribute> reactActivityAttributes = new ArrayList<>();
         Attribute reactType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
-        reactActivityAttributes.add(reactType);
+        Attribute reactLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("reaction_tweet_id"), pFactory.getName().XSD_STRING);
+        reactActivityAttributes.addAll(Arrays.asList(reactType, reactLinked));
         Activity activity_react = pFactory.newActivity(qn_var("react_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, reactActivityAttributes);
 
         // 17. COMMUNICATION - wasInformedBy1
@@ -271,8 +275,8 @@ public class Template {
         Collection<Attribute> reactionAuthorAttributes = new ArrayList<>();
         Attribute reactionAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
         Attribute reactionAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("ag_r_name"), pFactory.getName().XSD_STRING);
-        reactionAuthorAttributes.addAll(Arrays.asList(reactionAuthorType,
-                                                      reactionAuthorName));
+        Attribute reactionLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
+        reactionAuthorAttributes.addAll(Arrays.asList(reactionAuthorType, reactionAuthorName, reactionLinked));
         Agent agent_reactionAuthor = pFactory.newAgent(qn_var("reaction_author_id"), reactionAuthorAttributes);
 
 
@@ -299,7 +303,11 @@ public class Template {
         WasGeneratedBy gen3 = pFactory.newWasGeneratedBy(null, entity_reactionTweet.getId(), activity_react.getId());
         
         // 24. ENTITY - entity_reactionTweetProps
-        Entity entity_reactionTweetProps = pFactory.newEntity(qn_var("reaction_tweet_props_id"), createTweetProps(pFactory, TweetType.REPLY));
+        Collection<Attribute> reactionTweetPropsAttributes = new ArrayList<>();
+        Attribute reactionTweetPropsLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
+        reactionTweetPropsAttributes.add(reactionTweetPropsLinked);
+        reactionTweetPropsAttributes.addAll(createTweetProps(pFactory, TweetType.REPLY));
+        Entity entity_reactionTweetProps = pFactory.newEntity(qn_var("reaction_tweet_props_id"), reactionTweetPropsAttributes);
 
         // 25. USAGE - used3
         Used used3 = pFactory.newUsed(null, activity_react.getId(), entity_reactionTweetProps.getId());
@@ -310,7 +318,8 @@ public class Template {
 
         // TODO: 
         // - check if the template manages multiple reactions well
-        // - see how to fit everything into the visuals of the SVG => increase the dimension of the ViewBox in the svg xml file
+        // - see how to fit everything into the visuals of the SVG 
+        //      => increase the dimension of the ViewBox in the svg xml file dynamically, not hardcoded as it is now
         // - see how to retrieve data from the dataset (Python) - probably some JSON file
         // - see how to plug the data into the Binding object (Java)
 
