@@ -1,6 +1,7 @@
 package com.rug;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,6 +13,12 @@ import java.util.Date;
 import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.openprovenance.prov.interop.Formats;
 import org.openprovenance.prov.interop.InteropFramework;
@@ -21,8 +28,6 @@ import org.openprovenance.prov.rdf.*;
 import org.openprovenance.prov.template.expander.Bindings;
 import org.openprovenance.prov.template.expander.BindingsBean;
 import org.openprovenance.prov.template.expander.BindingsJson;
-
-
 
 
 public class Template {
@@ -41,6 +46,13 @@ public class Template {
 
     private final ProvFactory pFactory;
     private final Namespace ns;
+
+    public enum TweetType {
+        ORIGINAL,
+        REPLY,
+        QUOTE,
+        RETWEET
+    }
 
     public Template(ProvFactory pFactory) {
         this.pFactory = pFactory;
@@ -89,36 +101,42 @@ public class Template {
         System.out.println("*************************");
     }
 
-    public Collection<Attribute> createOriginalTweetProps(ProvFactory pFactory) {
-        Collection<Attribute> originalTweetPropsAttributes = new ArrayList<>();
-        Attribute originalTweetPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "tweet properties", pFactory.getName().XSD_STRING);
-        Attribute originalTweetPropsCreatedAt = pFactory.newAttribute(qn_tw("created_at"), qn_var("ot_created_at"), pFactory.getName().XSD_DATETIMESTAMP);
-        Attribute originalTweetPropsLocation = pFactory.newAttribute(qn_tw("location"), qn_var("ot_location"), pFactory.getName().PROV_LOCATION);
-        Attribute originalTweetPropsLikeCount = pFactory.newAttribute(qn_tw("like_count"), qn_var("ot_like_count"), pFactory.getName().XSD_INT);
-        Attribute originalTweetPropsQuoteCount = pFactory.newAttribute(qn_tw("quote_count"), qn_var("ot_quote_count"), pFactory.getName().XSD_INT);
-        Attribute originalTweetPropsReplyCount = pFactory.newAttribute(qn_tw("reply_count"), qn_var("ot_reply_count"), pFactory.getName().XSD_INT);
-        Attribute originalTweetPropsRetweetCount = pFactory.newAttribute(qn_tw("retweet_count"), qn_var("ot_retweet_count"), pFactory.getName().XSD_INT);
 
-        originalTweetPropsAttributes.addAll(Arrays.asList(originalTweetPropsType,
-                                                          originalTweetPropsCreatedAt,
-                                                          originalTweetPropsLocation,
-                                                          originalTweetPropsLikeCount,
-                                                          originalTweetPropsQuoteCount,
-                                                          originalTweetPropsReplyCount,
-                                                          originalTweetPropsRetweetCount));
+    public Collection<Attribute> createTweetProps(ProvFactory pFactory, TweetType type) {
+        Collection<Attribute> tweetPropsAttributes = new ArrayList<>();
+        Attribute tweetPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "tweet properties", pFactory.getName().XSD_STRING);
+        Attribute tweetPropsCreatedAt = pFactory.newAttribute(qn_tw("created_at"), qn_var(type.toString()+"_created_at"), pFactory.getName().XSD_DATETIMESTAMP);
+        Attribute tweetPropsLocation = pFactory.newAttribute(qn_tw("location"), qn_var(type.toString()+"_location"), pFactory.getName().PROV_LOCATION);
         
-        return originalTweetPropsAttributes;
+        tweetPropsAttributes.addAll(Arrays.asList(tweetPropsType,
+                                                  tweetPropsCreatedAt,
+                                                  tweetPropsLocation));
+        
+        if(type != TweetType.ORIGINAL) {
+            Attribute tweetPropsReferenceType = pFactory.newAttribute(qn_tw("reference_type"), qn_var(type.toString()+"_reference_type"), pFactory.getName().XSD_STRING);
+            Attribute tweetPropsReferenceId = pFactory.newAttribute(qn_tw("reference_id"), qn_var(type.toString()+"_reference_id"), pFactory.getName().XSD_INT);
+            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsReferenceType, tweetPropsReferenceId));
+        } else {
+            Attribute tweetPropsLikeCount = pFactory.newAttribute(qn_tw("like_count"), qn_var(type.toString()+"_like_count"), pFactory.getName().XSD_INT);
+            Attribute tweetPropsQuoteCount = pFactory.newAttribute(qn_tw("quote_count"), qn_var(type.toString()+"_quote_count"), pFactory.getName().XSD_INT);
+            Attribute tweetPropsReplyCount = pFactory.newAttribute(qn_tw("reply_count"), qn_var(type.toString()+"_reply_count"), pFactory.getName().XSD_INT);
+            Attribute tweetPropsRetweetCount = pFactory.newAttribute(qn_tw("retweet_count"), qn_var(type.toString()+"_retweet_count"), pFactory.getName().XSD_INT);
+            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsLikeCount, tweetPropsQuoteCount, tweetPropsReplyCount, tweetPropsRetweetCount));
+
+        }
+        return tweetPropsAttributes;
     }
 
-    public Collection<Attribute> createAuthorProps(ProvFactory pFactory, String typeOfAuthor) {
+
+    public Collection<Attribute> createAuthorProps(ProvFactory pFactory, TweetType type) {
         Collection<Attribute> authorProps = new ArrayList<>();
         Attribute authorPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "user properties", pFactory.getName().XSD_STRING);
-        Attribute authorPropsCredible = pFactory.newAttribute(qn_tw("credible"), qn_var(typeOfAuthor+"_credible"), pFactory.getName().XSD_INT);
-        Attribute authorPropsName = pFactory.newAttribute(qn_tw("name"), qn_var(typeOfAuthor+"_name"), pFactory.getName().XSD_STRING);
-        Attribute authorPropsUsername = pFactory.newAttribute(qn_tw("username"), qn_var(typeOfAuthor+"_username"), pFactory.getName().XSD_STRING);
-        Attribute authorPropsVerified = pFactory.newAttribute(qn_tw("verified"), qn_var(typeOfAuthor+"_verified"), pFactory.getName().XSD_BOOLEAN);
-        Attribute authorPropsFollowersCount = pFactory.newAttribute(qn_tw("followers_count"), qn_var(typeOfAuthor+"_followers_count"), pFactory.getName().XSD_INT);
-        Attribute authorPropsFollowingCount = pFactory.newAttribute(qn_tw("following_count"), qn_var(typeOfAuthor+"_following_count"), pFactory.getName().XSD_INT);
+        Attribute authorPropsCredible = pFactory.newAttribute(qn_tw("credible"), qn_var(type+"_credible"), pFactory.getName().XSD_INT);
+        Attribute authorPropsName = pFactory.newAttribute(qn_tw("name"), qn_var(type+"_name"), pFactory.getName().XSD_STRING);
+        Attribute authorPropsUsername = pFactory.newAttribute(qn_tw("username"), qn_var(type+"_username"), pFactory.getName().XSD_STRING);
+        Attribute authorPropsVerified = pFactory.newAttribute(qn_tw("verified"), qn_var(type+"_verified"), pFactory.getName().XSD_BOOLEAN);
+        Attribute authorPropsFollowersCount = pFactory.newAttribute(qn_tw("followers_count"), qn_var(type+"_followers_count"), pFactory.getName().XSD_INT);
+        Attribute authorPropsFollowingCount = pFactory.newAttribute(qn_tw("following_count"), qn_var(type+"_following_count"), pFactory.getName().XSD_INT);
 
         authorProps.addAll(Arrays.asList(authorPropsType,
                                          authorPropsCredible,
@@ -199,11 +217,11 @@ public class Template {
         WasAssociatedWith assoc1 = pFactory.newWasAssociatedWith(null, activity_post.getId(), agent_originalAuthor.getId(), (QualifiedName)null, assoc1Attributes);
 
         // 6. ENTITY - entity_originalTweetProps
-        Entity entity_originalTweetProps = pFactory.newEntity(qn_var("original_tweet_props_id"), createOriginalTweetProps(pFactory));
+        Entity entity_originalTweetProps = pFactory.newEntity(qn_var("original_tweet_props_id"), createTweetProps(pFactory, TweetType.ORIGINAL));
 
 
         // 7 USAGE - used1
-        Used used1 = pFactory.newUsed(qn_var("used1_id"), activity_post.getId(), entity_originalTweetProps.getId());
+        Used used1 = pFactory.newUsed(null, activity_post.getId(), entity_originalTweetProps.getId());
 
         // 8. ENTITY - entity_editedTweet
         Collection<Attribute> editedTweetAttributes = new ArrayList<>();
@@ -231,10 +249,10 @@ public class Template {
         WasAssociatedWith assoc2 = pFactory.newWasAssociatedWith(null, activity_edit.getId(), agent_originalAuthor.getId(), (QualifiedName)null, assoc2Attributes);
 
         // 13. USAGE - used2
-        Used used2 = pFactory.newUsed(qn_var("used2_id"), activity_edit.getId(), entity_originalTweetProps.getId());
+        Used used2 = pFactory.newUsed(null, activity_edit.getId(), entity_originalTweetProps.getId());
 
         // 14. ENTITY - entity_originalAuthorProps
-        Entity entity_originalAuthorProps = pFactory.newEntity(qn_var("original_author_props_id"), createAuthorProps(pFactory, "oa"));
+        Entity entity_originalAuthorProps = pFactory.newEntity(qn_var("original_author_props_id"), createAuthorProps(pFactory, TweetType.ORIGINAL));
 
         // 15. ATTRIBUTION - attr1
         WasAttributedTo attrib1 = pFactory.newWasAttributedTo(null, entity_originalAuthorProps.getId(), agent_originalAuthor.getId());
@@ -265,7 +283,7 @@ public class Template {
         WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthor.getId(), (QualifiedName)null, assoc2Attributes);
 
         // 20. ENTITY - entity_reactionAuthorProps
-        Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, "ra"));
+        Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, TweetType.REPLY));
 
         // 21. ATTRIBUTION - attr2
         WasAttributedTo attrib2 = pFactory.newWasAttributedTo(null, entity_reactionAuthorProps.getId(), agent_reactionAuthor.getId());
@@ -279,20 +297,22 @@ public class Template {
 
         // 23. GENERATION - gen3
         WasGeneratedBy gen3 = pFactory.newWasGeneratedBy(null, entity_reactionTweet.getId(), activity_react.getId());
+        
+        // 24. ENTITY - entity_reactionTweetProps
+        Entity entity_reactionTweetProps = pFactory.newEntity(qn_var("reaction_tweet_props_id"), createTweetProps(pFactory, TweetType.REPLY));
 
+        // 25. USAGE - used3
+        Used used3 = pFactory.newUsed(null, activity_react.getId(), entity_reactionTweetProps.getId());
 
+        // 9. DERIVATION - deriv2
+        WasDerivedFrom deriv2 = pFactory.newWasDerivedFrom(entity_reactionTweet.getId(), entity_reactionTweet.getId());
 
 
         // TODO: 
-        // - continue with the template: reaction-01-props, self-loop (Mirela), 
         // - check if the template manages multiple reactions well
-        // - see how to fit everything into the visuals of the SVG
+        // - see how to fit everything into the visuals of the SVG => increase the dimension of the ViewBox in the svg xml file
         // - see how to retrieve data from the dataset (Python) - probably some JSON file
         // - see how to plug the data into the Binding object (Java)
-
-
-
-        
 
 
         // Create a collection to store statements
@@ -319,7 +339,12 @@ public class Template {
                                                  entity_reactionAuthorProps,
                                                  attrib2,
                                                  entity_reactionTweet,
-                                                 gen3));
+                                                 gen3,
+                                                 entity_reactionTweetProps,
+                                                 used3,
+                                                 deriv2));
+
+
 
         Bundle bundle = pFactory.newNamedBundle(qn_vargen("bundle_id"), ns, statementCollection);
 
@@ -343,7 +368,6 @@ public class Template {
         Document document = template.createTemplate();
         template.doConversions(document, file_provn, file_svg);
         template.closingBanner();
-
     }
 
 }

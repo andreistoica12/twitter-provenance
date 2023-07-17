@@ -66,6 +66,12 @@
       <version>0.9.29</version>
     </dependency>
   
+    <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>batik-transcoder</artifactId>
+        <version>1.14</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -109,6 +115,52 @@
                         </arguments>
                     </configuration>
                 </execution>
+                <execution>
+                <id>execute-command</id>
+                <phase>test</phase>
+                <goals>
+                    <goal>exec</goal>
+                </goals>
+                <configuration>
+                    <executable>provconvert</executable>
+                    <arguments>
+                        <argument>-infile</argument>
+                        <argument>${project.build.directory}/template.provn</argument>
+                        <argument>-bindings</argument>
+                        <argument>${project.build.directory}/binding.json</argument>
+                        <argument>-bindver</argument>
+                        <argument>3</argument>
+                        <argument>-outfile</argument>
+                        <argument>${project.build.directory}/doc.svg</argument>
+                    </arguments>
+                </configuration>
+                </execution>
+                <execution>
+                    <id>test3</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.AdjustSVGSize</mainClass>
+                        <arguments>
+                            <argument>${project.build.directory}/doc.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+                <!-- <execution>
+                    <id>test4</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.SvgResizer</mainClass>
+                        <arguments>
+                            <argument>${project.build.directory}/template.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution> -->
             </executions>
         </plugin>
 

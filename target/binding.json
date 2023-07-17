@@ -1,25 +1,37 @@
 {
   "var" : {
-    "ra_username" : [ {
-      "@value" : "Some reaction author username"
+    "ORIGINAL_username" : [ {
+      "@value" : "Some original author username"
     } ],
     "original_author_props_id" : [ {
       "@id" : "tw:OriginalAuthorPropsId"
     } ],
+    "ORIGINAL_name" : [ {
+      "@value" : "Some orignial author name"
+    } ],
+    "REPLY_name" : [ {
+      "@value" : "Some reaction author name"
+    } ],
+    "REPLY_username" : [ {
+      "@value" : "Some reaction author username"
+    } ],
     "edited_text" : [ {
       "@value" : "EDIT: This is the new text of the tweet."
-    } ],
-    "ra_followers_count" : [ {
-      "@value" : "40"
     } ],
     "ag_o_name" : [ {
       "@value" : "Some original author name"
     } ],
-    "oa_following_count" : [ {
+    "REPLY_following_count" : [ {
+      "@value" : "60"
+    } ],
+    "ORIGINAL_reply_count" : [ {
       "@value" : "20"
     } ],
     "reaction_tweet_id" : [ {
       "@id" : "tw:ReactionTweetId"
+    } ],
+    "ORIGINAL_quote_count" : [ {
+      "@value" : "20"
     } ],
     "original_text" : [ {
       "@value" : "This is the text of the tweet."
@@ -27,26 +39,14 @@
     "edited_tweet_id" : [ {
       "@id" : "tw:EditedTweetId"
     } ],
-    "oa_credible" : [ {
-      "@value" : "1"
-    } ],
     "post_id" : [ {
       "@id" : "tw:postId"
-    } ],
-    "oa_verified" : [ {
-      "@value" : "True"
     } ],
     "original_tweet_props_id" : [ {
       "@id" : "tw:OriginalTweetPropsId"
     } ],
-    "ot_location" : [ {
-      "@value" : "Some place"
-    } ],
-    "ot_like_count" : [ {
+    "ORIGINAL_like_count" : [ {
       "@value" : "20"
-    } ],
-    "used2_id" : [ {
-      "@id" : "tw:used2Id"
     } ],
     "react_id" : [ {
       "@id" : "tw:reactId"
@@ -54,62 +54,71 @@
     "edit_id" : [ {
       "@id" : "tw:editId"
     } ],
-    "ot_created_at" : [ {
+    "ORIGINAL_created_at" : [ {
       "@value" : "Some timestamp"
     } ],
     "reaction_text" : [ {
       "@value" : "This is the text of the reaction."
     } ],
-    "ot_reply_count" : [ {
+    "ORIGINAL_retweet_count" : [ {
       "@value" : "20"
-    } ],
-    "ra_following_count" : [ {
-      "@value" : "60"
     } ],
     "reaction_author_props_id" : [ {
       "@id" : "tw:ReactionAuthorPropsId"
     } ],
-    "ot_quote_count" : [ {
+    "ORIGINAL_followers_count" : [ {
       "@value" : "20"
     } ],
-    "ra_credible" : [ {
-      "@value" : "0"
+    "ORIGINAL_credible" : [ {
+      "@value" : "1"
     } ],
-    "ra_name" : [ {
-      "@value" : "Some reaction author name"
-    } ],
-    "oa_name" : [ {
-      "@value" : "Some orignial author name"
+    "ORIGINAL_verified" : [ {
+      "@value" : "True"
     } ],
     "reaction_author_id" : [ {
       "@id" : "tw:reactionAuthorId"
     } ],
-    "ot_retweet_count" : [ {
-      "@value" : "20"
-    } ],
-    "ra_verified" : [ {
-      "@value" : "False"
+    "REPLY_credible" : [ {
+      "@value" : "0"
     } ],
     "original_tweet_id" : [ {
       "@id" : "tw:OriginalTweetId"
     } ],
+    "REPLY_verified" : [ {
+      "@value" : "False"
+    } ],
+    "ORIGINAL_location" : [ {
+      "@value" : "Some place"
+    } ],
+    "reaction_tweet_props_id" : [ {
+      "@id" : "tw:ReactionTweetPropsId"
+    } ],
+    "REPLY_created_at" : [ {
+      "@value" : "Some timestamp"
+    } ],
     "ag_r_name" : [ {
       "@value" : "Some reaction author name"
-    } ],
-    "oa_username" : [ {
-      "@value" : "Some original author username"
     } ],
     "original_author_id" : [ {
       "@id" : "tw:originalAuthorId"
     } ],
-    "oa_followers_count" : [ {
-      "@value" : "20"
+    "REPLY_location" : [ {
+      "@value" : "Some place"
+    } ],
+    "REPLY_followers_count" : [ {
+      "@value" : "40"
     } ],
     "reply/retweet/quote" : [ {
       "@value" : "reply"
     } ],
-    "used1_id" : [ {
-      "@id" : "tw:used1Id"
+    "REPLY_reference_id" : [ {
+      "@value" : "123456"
+    } ],
+    "ORIGINAL_following_count" : [ {
+      "@value" : "20"
+    } ],
+    "REPLY_reference_type" : [ {
+      "@value" : "replied_to"
     } ]
   },
   "vargen" : { },
