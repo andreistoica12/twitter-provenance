@@ -1,6 +1,8 @@
-com/rug/SvgResizer.class
+com/rug/Binding$TweetType.class
 com/rug/TwitterExample.class
 com/rug/AdjustSVGSize.class
+com/rug/SvgResizer.class
 com/rug/Template$TweetType.class
+com/rug/PythonRunner.class
 com/rug/Template.class
 com/rug/Binding.class

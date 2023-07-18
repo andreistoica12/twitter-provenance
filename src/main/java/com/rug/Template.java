@@ -49,9 +49,7 @@ public class Template {
 
     public enum TweetType {
         ORIGINAL,
-        REPLY,
-        QUOTE,
-        RETWEET
+        REACTION
     }
 
     public Template(ProvFactory pFactory) {
@@ -89,21 +87,12 @@ public class Template {
     }
 
 
-    public void openingBanner() {
-        System.out.println("*************************");
-        System.out.println("* Converting document  ");
-        System.out.println("*************************");
-    }
-
-    public void doConversions(Document document, String file_provn, String file_svg) {
+    public void saveDocument(Document document, String file_provn, String file_svg) {
         InteropFramework intF=new InteropFramework();
         intF.writeDocument(file_provn, Formats.ProvFormat.PROVN, document);
         intF.writeDocument(file_svg, Formats.ProvFormat.SVG, document);
     }
 
-    public void closingBanner() {
-        System.out.println("*************************");
-    }
 
 
     public Collection<Attribute> createTweetProps(ProvFactory pFactory, TweetType type) {
@@ -276,7 +265,8 @@ public class Template {
         Attribute reactionAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
         Attribute reactionAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("ag_r_name"), pFactory.getName().XSD_STRING);
         Attribute reactionLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
-        reactionAuthorAttributes.addAll(Arrays.asList(reactionAuthorType, reactionAuthorName, reactionLinked));
+        Attribute reactionLinked2 = pFactory.newAttribute(qn_tmpl("linked"), qn_var("reaction_author_props_id"), pFactory.getName().XSD_STRING);
+        reactionAuthorAttributes.addAll(Arrays.asList(reactionAuthorType, reactionAuthorName, reactionLinked, reactionLinked2));
         Agent agent_reactionAuthor = pFactory.newAgent(qn_var("reaction_author_id"), reactionAuthorAttributes);
 
 
@@ -287,7 +277,7 @@ public class Template {
         WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthor.getId(), (QualifiedName)null, assoc2Attributes);
 
         // 20. ENTITY - entity_reactionAuthorProps
-        Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, TweetType.REPLY));
+        Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, TweetType.REACTION));
 
         // 21. ATTRIBUTION - attr2
         WasAttributedTo attrib2 = pFactory.newWasAttributedTo(null, entity_reactionAuthorProps.getId(), agent_reactionAuthor.getId());
@@ -295,7 +285,7 @@ public class Template {
         // 22. ENTITY - entity_reactionTweet
         Collection<Attribute> reactionTweetAttributes = new ArrayList<>();
         Attribute reactionTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("reaction_text"), pFactory.getName().XSD_ANY_URI);
-        Attribute reactionTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_var("reply/retweet/quote"), pFactory.getName().XSD_STRING);
+        Attribute reactionTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_var("reply_retweet_quote"), pFactory.getName().XSD_STRING);
         reactionTweetAttributes.addAll(Arrays.asList(reactionTweetValue, reactionTweetType));
         Entity entity_reactionTweet = pFactory.newEntity(qn_var("reaction_tweet_id"), reactionTweetAttributes);
 
@@ -306,7 +296,7 @@ public class Template {
         Collection<Attribute> reactionTweetPropsAttributes = new ArrayList<>();
         Attribute reactionTweetPropsLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
         reactionTweetPropsAttributes.add(reactionTweetPropsLinked);
-        reactionTweetPropsAttributes.addAll(createTweetProps(pFactory, TweetType.REPLY));
+        reactionTweetPropsAttributes.addAll(createTweetProps(pFactory, TweetType.REACTION));
         Entity entity_reactionTweetProps = pFactory.newEntity(qn_var("reaction_tweet_props_id"), reactionTweetPropsAttributes);
 
         // 25. USAGE - used3
@@ -317,7 +307,6 @@ public class Template {
 
 
         // TODO: 
-        // - check if the template manages multiple reactions well
         // - see how to fit everything into the visuals of the SVG 
         //      => increase the dimension of the ViewBox in the svg xml file dynamically, not hardcoded as it is now
         // - see how to retrieve data from the dataset (Python) - probably some JSON file
@@ -373,10 +362,8 @@ public class Template {
         
         Template template=new Template(InteropFramework.getDefaultFactory());
 
-        template.openingBanner();
         Document document = template.createTemplate();
-        template.doConversions(document, file_provn, file_svg);
-        template.closingBanner();
+        template.saveDocument(document, file_provn, file_svg);
     }
 
 }

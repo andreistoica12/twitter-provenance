@@ -34,7 +34,7 @@ public class AdjustSVGSize {
             Element svgElement = initial_svg_document.getDocumentElement();
             
             // Modify the viewBox attribute values
-            svgElement.setAttribute("viewBox", "0 0 5000 3000"); 
+            svgElement.setAttribute("viewBox", "0 0 4000 2000"); 
 
             // Save the modified SVG file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

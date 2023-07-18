@@ -6,40 +6,41 @@
     "original_author_props_id" : [ {
       "@id" : "tw:OriginalAuthorPropsId"
     } ],
+    "REACTION_followers_count" : [ {
+      "@value" : "100"
+    } ],
     "ORIGINAL_name" : [ {
-      "@value" : "Some orignial author name"
-    } ],
-    "REPLY_name" : [ {
-      "@value" : "Some reaction author name"
-    }, {
-      "@value" : "Some second reaction author name"
-    } ],
-    "REPLY_username" : [ {
-      "@value" : "Some reaction author username"
-    }, {
-      "@value" : "Some second reaction author username"
+      "@value" : "Some original author name"
     } ],
     "edited_text" : [ {
       "@value" : "EDIT: This is the new text of the tweet."
     } ],
+    "REACTION_credible" : [ {
+      "@value" : "1"
+    } ],
+    "REACTION_name" : [ {
+      "@value" : "Some second reaction author name"
+    } ],
     "ag_o_name" : [ {
       "@value" : "Some original author name"
     } ],
-    "REPLY_following_count" : [ {
-      "@value" : "60"
-    }, {
-      "@value" : "200"
+    "REACTION_reference_id" : [ {
+      "@value" : "985929573745"
+    } ],
+    "REACTION_verified" : [ {
+      "@value" : "True"
     } ],
     "ORIGINAL_reply_count" : [ {
       "@value" : "20"
     } ],
     "reaction_tweet_id" : [ {
-      "@id" : "tw:ReactionTweetId"
-    }, {
       "@id" : "tw:ReactionTweetId2"
     } ],
     "ORIGINAL_quote_count" : [ {
       "@value" : "20"
+    } ],
+    "REACTION_location" : [ {
+      "@value" : "Some other place"
     } ],
     "original_text" : [ {
       "@value" : "This is the text of the tweet."
@@ -47,39 +48,38 @@
     "edited_tweet_id" : [ {
       "@id" : "tw:EditedTweetId"
     } ],
+    "REACTION_created_at" : [ {
+      "@value" : "Some other timestamp"
+    } ],
     "post_id" : [ {
       "@id" : "tw:postId"
     } ],
     "original_tweet_props_id" : [ {
       "@id" : "tw:OriginalTweetPropsId"
     } ],
+    "REACTION_following_count" : [ {
+      "@value" : "200"
+    } ],
     "ORIGINAL_like_count" : [ {
       "@value" : "20"
     } ],
     "react_id" : [ {
-      "@id" : "tw:reactId"
-    }, {
       "@id" : "tw:reactId2"
     } ],
     "edit_id" : [ {
       "@id" : "tw:editId"
     } ],
-    "reaction_author_props_id2" : [ {
-      "@id" : "tw:ReactionAuthorPropsId2"
-    } ],
     "ORIGINAL_created_at" : [ {
       "@value" : "Some timestamp"
     } ],
     "reaction_text" : [ {
-      "@value" : "This is the text of the reaction."
-    }, {
       "@value" : "This is the text of the quote."
     } ],
     "ORIGINAL_retweet_count" : [ {
       "@value" : "20"
     } ],
     "reaction_author_props_id" : [ {
-      "@id" : "tw:ReactionAuthorPropsId"
+      "@id" : "tw:ReactionAuthorPropsId2"
     } ],
     "ORIGINAL_followers_count" : [ {
       "@value" : "20"
@@ -87,75 +87,38 @@
     "ORIGINAL_credible" : [ {
       "@value" : "1"
     } ],
+    "REACTION_username" : [ {
+      "@value" : "Some second reaction author username"
+    } ],
     "ORIGINAL_verified" : [ {
       "@value" : "True"
     } ],
     "reaction_author_id" : [ {
-      "@id" : "tw:reactionAuthorId"
-    }, {
       "@id" : "tw:reactionAuthorId2"
     } ],
-    "REPLY_credible" : [ {
-      "@value" : "0"
-    }, {
-      "@value" : "1"
+    "reply_retweet_quote" : [ {
+      "@value" : "quote"
     } ],
     "original_tweet_id" : [ {
       "@id" : "tw:OriginalTweetId"
-    } ],
-    "REPLY_verified" : [ {
-      "@value" : "False"
-    }, {
-      "@value" : "True"
     } ],
     "ORIGINAL_location" : [ {
       "@value" : "Some place"
     } ],
     "reaction_tweet_props_id" : [ {
-      "@id" : "tw:ReactionTweetPropsId"
-    }, {
       "@id" : "tw:ReactionTweetPropsId2"
     } ],
-    "REPLY_created_at" : [ {
-      "@value" : "Some timestamp"
-    }, {
-      "@value" : "Some other timestamp"
-    } ],
     "ag_r_name" : [ {
-      "@value" : "Some reaction author name"
-    }, {
       "@value" : "Some second reaction author name"
     } ],
     "original_author_id" : [ {
       "@id" : "tw:originalAuthorId"
     } ],
-    "REPLY_location" : [ {
-      "@value" : "Some place"
-    }, {
-      "@value" : "Some other place"
-    } ],
-    "REPLY_followers_count" : [ {
-      "@value" : "40"
-    }, {
-      "@value" : "100"
-    } ],
-    "reply/retweet/quote" : [ {
-      "@value" : "reply"
-    }, {
-      "@value" : "quote"
-    } ],
-    "REPLY_reference_id" : [ {
-      "@value" : "123456"
-    }, {
-      "@value" : "985929573745"
+    "REACTION_reference_type" : [ {
+      "@value" : "quoted"
     } ],
     "ORIGINAL_following_count" : [ {
       "@value" : "20"
-    } ],
-    "REPLY_reference_type" : [ {
-      "@value" : "replied_to"
-    }, {
-      "@value" : "quoted"
     } ]
   },
   "vargen" : { },
