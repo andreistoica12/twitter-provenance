@@ -35,14 +35,14 @@
             "reaction_tweet_id": "ReactionTweetId2",
             "reply_retweet_quote": "quote",
             "reaction_text": "This is the text of the quote.",
-            "reaction_tweet_props_id": "ReactionTweetId2",
+            "reaction_tweet_props_id": "ReactionTweetPropsId2",
             "REACTION_created_at": "Some other timestamp",
             "REACTION_location": "Some other place",
             "REACTION_reference_type": "quoted",
             "REACTION_reference_id": "985929573745"
         },
         {
-            "react_id": "reactId2",
+            "react_id": "reactId3",
             "reaction_author_id": "reactionAuthorId3",
             "ag_r_name": "Some third reaction author name",
             "author_props_id": "ReactionAuthorPropsId3",
@@ -55,12 +55,32 @@
             "reaction_tweet_id": "ReactionTweetId3",
             "reply_retweet_quote": "retweet",
             "reaction_text": "No text for retweets",
-            "reaction_tweet_props_id": "ReactionTweetId3",
+            "reaction_tweet_props_id": "ReactionTweetPropsId3",
             "REACTION_created_at": "Some other timestamp 3",
             "REACTION_location": "Some other place 3",
             "REACTION_reference_type": "retweeted",
             "REACTION_reference_id": "5253252532"
-            }
+        },
+        {
+            "react_id": "reactId4",
+            "reaction_author_id": "reactionAuthorId4",
+            "ag_r_name": "Some fourth reaction author name",
+            "author_props_id": "ReactionAuthorPropsId4",
+            "credible": "0",
+            "name": "Some fourth reaction author name",
+            "username": "Some fourth reaction author username",
+            "verified": "False",
+            "followers_count": "1545346",
+            "following_count": "204376765658530",
+            "reaction_tweet_id": "ReactionTweetId4",
+            "reply_retweet_quote": "retweet",
+            "reaction_text": "No text for retweets",
+            "reaction_tweet_props_id": "ReactionTweetPropsId4",
+            "REACTION_created_at": "Some other timestamp 4",
+            "REACTION_location": "Some other place 4",
+            "REACTION_reference_type": "retweeted",
+            "REACTION_reference_id": "525325257568672"
+        }
     ]
 
 }

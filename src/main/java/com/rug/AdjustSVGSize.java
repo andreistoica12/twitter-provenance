@@ -22,8 +22,8 @@ public class AdjustSVGSize {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file_svg=args[0];
 
-        int height = 2000;
-        int width = 1000;
+        int height = 6000;
+        int width = 3000;
 
         try {
 

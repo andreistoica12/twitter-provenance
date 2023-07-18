@@ -6,52 +6,26 @@ import org.openprovenance.prov.interop.InteropFramework;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.GregorianCalendar;
-import java.util.Hashtable;
-import java.util.Date;
 import java.util.List;
 
-
-
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.openprovenance.prov.interop.Formats;
-import org.openprovenance.prov.interop.InteropMediaType;
-import org.openprovenance.prov.model.*;
-import org.openprovenance.prov.rdf.*;
-import org.openprovenance.prov.template.expander.Bindings;
-import org.openprovenance.prov.template.expander.BindingsBean;
-import org.openprovenance.prov.template.expander.BindingsJson;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
+import com.rug.DataClass.Reaction;
 import java.net.URISyntaxException;
-import java.security.CodeSource;
-import java.security.ProtectionDomain;
-import java.net.URL;
-
 
 
 public class Binding {
 
     private final Template template;
-
-    
-    public Binding(Template template) {
-        this.template = template;
-    }
+    private final DataClass data;
 
     public enum TweetType {
         ORIGINAL,
         REACTION
+    }
+    
+    public Binding(Template template, DataClass data) {
+        this.template = template;
+        this.data = data;
     }
 
     public void addAuthorProps(TweetType type, String author_props_id, String credible,
@@ -136,60 +110,39 @@ public class Binding {
     }
 
 
-    // public void addOriginal(Bindings bindings) {
-    //     addPostActivity("postId", bindings);      
-    //     addOriginalAuthor("originalAuthorId", "Some original author name", bindings);
-    //     addAuthorProps(TweetType.ORIGINAL, "OriginalAuthorPropsId", "1", 
-    //                    "Some original author name", "Some original author username", 
-    //                    "True", "20", "20", 
-    //                    bindings);
-    //     addOriginalTweet("OriginalTweetId", "This is the text of the tweet.", bindings);
-    //     addOriginalTweetProps("OriginalTweetPropsId", "Some timestamp", 
-    //                           "Some place", "20", "20", 
-    //                           "20", "20", 
-    //                           bindings);
-    // }
-
     public void addOriginal(Bindings bindings) {
-        addPostActivity("postId", bindings);      
-        addOriginalAuthor("originalAuthorId", "Some original author name", bindings);
-        addAuthorProps(TweetType.ORIGINAL, "OriginalAuthorPropsId", "1", 
-                       "Some original author name", "Some original author username", 
-                       "True", "20", "20", 
+        addPostActivity(data.getOriginal().getPostId(), bindings);      
+        addOriginalAuthor(data.getOriginal().getOriginalAuthorId(), data.getOriginal().getAgOName(), bindings);
+        addAuthorProps(TweetType.ORIGINAL, data.getOriginal().getAuthorPropsId(), data.getOriginal().getCredible(), 
+                       data.getOriginal().getName(), data.getOriginal().getUsername(), 
+                       data.getOriginal().getVerified(), data.getOriginal().getFollowersCount(), data.getOriginal().getFollowingCount(), 
                        bindings);
-        addOriginalTweet("OriginalTweetId", "This is the text of the tweet.", bindings);
-        addOriginalTweetProps("OriginalTweetPropsId", "Some timestamp", 
-                              "Some place", "20", "20", 
-                              "20", "20", 
+        addOriginalTweet(data.getOriginal().getOriginalTweetId(), data.getOriginal().getOriginalText(), bindings);
+        addOriginalTweetProps(data.getOriginal().getOriginalTweetPropsId(), data.getOriginal().getOriginalCreatedAt(), 
+                              data.getOriginal().getOriginalLocation(), data.getOriginal().getOriginalLikeCount(), data.getOriginal().getOriginalQuoteCount(), 
+                              data.getOriginal().getOriginalReplyCount(), data.getOriginal().getOriginalRetweetCount(), 
                               bindings);
     }
 
 
-
-    // public void addReaction(Bindings bindings) {
-    //     addReactActivity("reactId2", bindings);
-    //     addReactionAuthor("reactionAuthorId2", "Some second reaction author name", bindings);
-    //     addAuthorProps(TweetType.REACTION, "ReactionAuthorPropsId2", "1",
-    //                   "Some second reaction author name", "Some second reaction author username", "True", 
-    //                   "100", "200", 
-    //                   bindings);
-    //     addReactionTweet("ReactionTweetId2", "quote", "This is the text of the quote.", bindings);
-    //     addReactionTweetProps("ReactionTweetPropsId2", "Some other timestamp", 
-    //                           "Some other place", "quoted", "985929573745", 
-    //                           bindings);
-    // }
-
-    public void addReaction(Bindings bindings) {
-        addReactActivity("reactId2", bindings);
-        addReactionAuthor("reactionAuthorId2", "Some second reaction author name", bindings);
-        addAuthorProps(TweetType.REACTION, "ReactionAuthorPropsId2", "1",
-                      "Some second reaction author name", "Some second reaction author username", "True", 
-                      "100", "200", 
+    public void addReaction(Reaction reaction, Bindings bindings) {
+        addReactActivity(reaction.getReactId(), bindings);
+        addReactionAuthor(reaction.getReactionAuthorId(), reaction.getAgRName(), bindings);
+        addAuthorProps(TweetType.REACTION, reaction.getAuthorPropsId(), reaction.getCredible(),
+                      reaction.getName(), reaction.getUsername(), reaction.getVerified(), 
+                      reaction.getFollowersCount(), reaction.getFollowingCount(), 
                       bindings);
-        addReactionTweet("ReactionTweetId2", "quote", "This is the text of the quote.", bindings);
-        addReactionTweetProps("ReactionTweetPropsId2", "Some other timestamp", 
-                              "Some other place", "quoted", "985929573745", 
+        addReactionTweet(reaction.getReactionTweetId(), reaction.getReplyRetweetQuote(), reaction.getReactionText(), bindings);
+        addReactionTweetProps(reaction.getReactionTweetPropsId(), reaction.getReactionCreatedAt(), 
+                              reaction.getReactionLocation(), reaction.getReactionReferenceType(), reaction.getReactionReferenceId(), 
                               bindings);
+    }
+
+    public void addReactionList(Bindings bindings) {
+        List<Reaction> reactionList = data.getReactionList();
+        for (Reaction reaction : reactionList) {
+            addReaction(reaction, bindings);
+        }
     }
 
 
@@ -205,7 +158,7 @@ public class Binding {
             addEdited(bindings);
         }
 
-        addReaction(bindings);
+        addReactionList(bindings);
 
 
         bindings.addVariableBindingsAsAttributeBindings();
@@ -218,17 +171,24 @@ public class Binding {
         String file_json=args[0];
         
         Template template = new Template(InteropFramework.getDefaultFactory());
-        Binding binding = new Binding(template);
-        binding.bind(file_json);
+
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String filePath = currentWorkingDirectory + "/src/main/java/com/rug/Binding.java";
-        System.out.println("Path to the current working file: " + filePath);
+        String dataPath = currentWorkingDirectory + "/src/main/java/com/rug/data.json";
 
-        // TODO: 
-        // - find the path to the values.json file
-        // - parse the JSON file into a DataClass object
-        // - create a member variable for the Binding class: a DataClass object
-        // - assign each parameter in the function to values in the DataClass objeect
+        // Create an ObjectMapper instance
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            // Read the JSON file and map it to the DataClass
+            DataClass data = objectMapper.readValue(new File(dataPath), DataClass.class);
+
+            Binding binding = new Binding(template, data);
+            binding.bind(file_json);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

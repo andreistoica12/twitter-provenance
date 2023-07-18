@@ -8,42 +8,74 @@
     } ],
     "REACTION_followers_count" : [ {
       "@value" : "100"
+    }, {
+      "@value" : "14324"
+    }, {
+      "@value" : "1545346"
     } ],
     "ORIGINAL_name" : [ {
       "@value" : "Some original author name"
     } ],
     "REACTION_credible" : [ {
       "@value" : "1"
+    }, {
+      "@value" : "0"
+    }, {
+      "@value" : "0"
     } ],
     "REACTION_name" : [ {
       "@value" : "Some second reaction author name"
+    }, {
+      "@value" : "Some third reaction author name"
+    }, {
+      "@value" : "Some fourth reaction author name"
     } ],
     "ag_o_name" : [ {
       "@value" : "Some original author name"
     } ],
     "REACTION_reference_id" : [ {
       "@value" : "985929573745"
+    }, {
+      "@value" : "5253252532"
+    }, {
+      "@value" : "525325257568672"
     } ],
     "REACTION_verified" : [ {
       "@value" : "True"
+    }, {
+      "@value" : "False"
+    }, {
+      "@value" : "False"
     } ],
     "ORIGINAL_reply_count" : [ {
       "@value" : "20"
     } ],
     "reaction_tweet_id" : [ {
       "@id" : "tw:ReactionTweetId2"
+    }, {
+      "@id" : "tw:ReactionTweetId3"
+    }, {
+      "@id" : "tw:ReactionTweetId4"
     } ],
     "ORIGINAL_quote_count" : [ {
       "@value" : "20"
     } ],
     "REACTION_location" : [ {
       "@value" : "Some other place"
+    }, {
+      "@value" : "Some other place 3"
+    }, {
+      "@value" : "Some other place 4"
     } ],
     "original_text" : [ {
       "@value" : "This is the text of the tweet."
     } ],
     "REACTION_created_at" : [ {
       "@value" : "Some other timestamp"
+    }, {
+      "@value" : "Some other timestamp 3"
+    }, {
+      "@value" : "Some other timestamp 4"
     } ],
     "post_id" : [ {
       "@id" : "tw:postId"
@@ -53,24 +85,40 @@
     } ],
     "REACTION_following_count" : [ {
       "@value" : "200"
+    }, {
+      "@value" : "204325230"
+    }, {
+      "@value" : "204376765658530"
     } ],
     "ORIGINAL_like_count" : [ {
       "@value" : "20"
     } ],
     "react_id" : [ {
       "@id" : "tw:reactId2"
+    }, {
+      "@id" : "tw:reactId3"
+    }, {
+      "@id" : "tw:reactId4"
     } ],
     "ORIGINAL_created_at" : [ {
       "@value" : "Some timestamp"
     } ],
     "reaction_text" : [ {
       "@value" : "This is the text of the quote."
+    }, {
+      "@value" : "No text for retweets"
+    }, {
+      "@value" : "No text for retweets"
     } ],
     "ORIGINAL_retweet_count" : [ {
       "@value" : "20"
     } ],
     "reaction_author_props_id" : [ {
       "@id" : "tw:ReactionAuthorPropsId2"
+    }, {
+      "@id" : "tw:ReactionAuthorPropsId3"
+    }, {
+      "@id" : "tw:ReactionAuthorPropsId4"
     } ],
     "ORIGINAL_followers_count" : [ {
       "@value" : "20"
@@ -80,15 +128,27 @@
     } ],
     "REACTION_username" : [ {
       "@value" : "Some second reaction author username"
+    }, {
+      "@value" : "Some third reaction author username"
+    }, {
+      "@value" : "Some fourth reaction author username"
     } ],
     "ORIGINAL_verified" : [ {
       "@value" : "True"
     } ],
     "reaction_author_id" : [ {
       "@id" : "tw:reactionAuthorId2"
+    }, {
+      "@id" : "tw:reactionAuthorId3"
+    }, {
+      "@id" : "tw:reactionAuthorId4"
     } ],
     "reply_retweet_quote" : [ {
       "@value" : "quote"
+    }, {
+      "@value" : "retweet"
+    }, {
+      "@value" : "retweet"
     } ],
     "original_tweet_id" : [ {
       "@id" : "tw:OriginalTweetId"
@@ -98,15 +158,27 @@
     } ],
     "reaction_tweet_props_id" : [ {
       "@id" : "tw:ReactionTweetPropsId2"
+    }, {
+      "@id" : "tw:ReactionTweetPropsId3"
+    }, {
+      "@id" : "tw:ReactionTweetPropsId4"
     } ],
     "ag_r_name" : [ {
       "@value" : "Some second reaction author name"
+    }, {
+      "@value" : "Some third reaction author name"
+    }, {
+      "@value" : "Some fourth reaction author name"
     } ],
     "original_author_id" : [ {
       "@id" : "tw:originalAuthorId"
     } ],
     "REACTION_reference_type" : [ {
       "@value" : "quoted"
+    }, {
+      "@value" : "retweeted"
+    }, {
+      "@value" : "retweeted"
     } ],
     "ORIGINAL_following_count" : [ {
       "@value" : "20"

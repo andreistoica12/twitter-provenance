@@ -1,33 +1,14 @@
 package com.rug;
 
+import org.openprovenance.prov.model.*;
+import org.openprovenance.prov.interop.InteropFramework;
+import org.openprovenance.prov.interop.Formats;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.GregorianCalendar;
-import java.util.Hashtable;
-import java.util.Date;
-
-
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
-import org.openprovenance.prov.interop.Formats;
-import org.openprovenance.prov.interop.InteropFramework;
-import org.openprovenance.prov.interop.InteropMediaType;
-import org.openprovenance.prov.model.*;
-import org.openprovenance.prov.rdf.*;
-import org.openprovenance.prov.template.expander.Bindings;
-import org.openprovenance.prov.template.expander.BindingsBean;
-import org.openprovenance.prov.template.expander.BindingsJson;
 
 
 public class Template {
@@ -308,7 +289,6 @@ public class Template {
         // - see how to fit everything into the visuals of the SVG 
         //      => increase the dimension of the ViewBox in the svg xml file dynamically, not hardcoded as it is now
         // - see how to retrieve data from the dataset (Python) - probably some JSON file
-        // - see how to plug the data into the Binding object (Java)
 
 
         // Create a collection to store statements
