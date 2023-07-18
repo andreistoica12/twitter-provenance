@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="424pt" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 4000 2000" width="1152pt" zoomAndPan="magnify">
-<g class="graph" id="graph0" transform="scale(1.37 1.37) rotate(0) translate(4 578)">
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="460pt" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 2000 1000" width="1152pt" zoomAndPan="magnify">
+<g class="graph" id="graph0" transform="scale(1.26 1.26) rotate(0) translate(4 578)">
 <title>PROV</title>
-<polygon fill="white" points="-4,4 -4,-578 1576,-578 1576,4 -4,4" stroke="transparent"/>
+<polygon fill="white" points="-4,4 -4,-578 1452,-578 1452,4 -4,4" stroke="transparent"/>
 <g class="cluster" id="clust1">
-<title>clusterurn:uuid:88ce689e-7ca9-4251-a4b1-dcc9daedad1f</title>
+<title>clusterurn:uuid:fd27b8a8-79de-4cf4-8411-649cf9d8b4d6</title>
 <g id="a_clust1">
-<a xlink:actuate="onRequest" xlink:href="urn:uuid:88ce689e-7ca9-4251-a4b1-dcc9daedad1f" xlink:show="replace" xlink:title="88ce689e-7ca9-4251-a4b1-dcc9daedad1f" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="none" points="8,-8 8,-566 1564,-566 1564,-8 8,-8" stroke="black"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="786" y="-15.8">88ce689e-7ca9-4251-a4b1-dcc9daedad1f</text>
+<a xlink:actuate="onRequest" xlink:href="urn:uuid:fd27b8a8-79de-4cf4-8411-649cf9d8b4d6" xlink:show="replace" xlink:title="fd27b8a8-79de-4cf4-8411-649cf9d8b4d6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
+<polygon fill="none" points="8,-8 8,-566 1440,-566 1440,-8 8,-8" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="724" y="-15.8">fd27b8a8-79de-4cf4-8411-649cf9d8b4d6</text>
 </a>
 </g>
 </g>
@@ -16,440 +16,355 @@
 <title>http://twitter.com/postId</title>
 <g id="a_node1">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/postId" xlink:show="replace" xlink:title="postId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="#9fb1fc" points="1276,-453.5 1214,-453.5 1214,-417.5 1276,-417.5 1276,-453.5" stroke="#0000ff"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1245" y="-431.8">postId</text>
+<polygon fill="#9fb1fc" points="1230,-453.5 1168,-453.5 1168,-417.5 1230,-417.5 1230,-453.5" stroke="#0000ff"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1199" y="-431.8">postId</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/OriginalTweetPropsId -->
-<g class="node" id="node9">
+<g class="node" id="node7">
 <title>http://twitter.com/OriginalTweetPropsId</title>
-<g id="a_node9">
+<g id="a_node7">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/OriginalTweetPropsId" xlink:show="replace" xlink:title="OriginalTweetPropsId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="1337" cy="-540" fill="#fffc87" rx="112.38" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1337" y="-536.3">OriginalTweetPropsId</text>
+<ellipse cx="1296" cy="-540" fill="#fffc87" rx="112.38" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1296" y="-536.3">OriginalTweetPropsId</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/postId&#45;&gt;http://twitter.com/OriginalTweetPropsId -->
-<g class="edge" id="edge15">
+<g class="edge" id="edge13">
 <title>http://twitter.com/postId-&gt;http://twitter.com/OriginalTweetPropsId</title>
-<path d="M1258.74,-453.72C1266.56,-463.36 1276.63,-475.51 1286,-486 1294.55,-495.58 1304.25,-505.81 1312.88,-514.7" fill="none" stroke="black"/>
-<polygon fill="black" points="1310.64,-517.41 1320.13,-522.12 1315.65,-512.52 1310.64,-517.41" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1273.55" y="-449.44">use</text>
+<path d="M1212.12,-453.95C1219.67,-463.67 1229.5,-475.82 1239,-486 1248.38,-496.06 1259.32,-506.5 1269.08,-515.42" fill="none" stroke="black"/>
+<polygon fill="black" points="1266.85,-518.12 1276.61,-522.22 1271.54,-512.92 1266.85,-518.12" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1226.98" y="-449.97">use</text>
 </g>
 <!-- http://twitter.com/originalAuthorId -->
-<g class="node" id="node21">
+<g class="node" id="node17">
 <title>http://twitter.com/originalAuthorId</title>
-<g id="a_node21">
+<g id="a_node17">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/originalAuthorId" xlink:show="replace" xlink:title="originalAuthorId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="#fdb266" points="1206.8,-545.56 1099,-558 991.2,-545.56 991.3,-525.44 1206.7,-525.44 1206.8,-545.56" stroke="black"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1099" y="-536.3">originalAuthorId</text>
+<polygon fill="#fdb266" points="1141.8,-545.56 1034,-558 926.2,-545.56 926.3,-525.44 1141.7,-525.44 1141.8,-545.56" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1034" y="-536.3">originalAuthorId</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/postId&#45;&gt;http://twitter.com/originalAuthorId -->
-<g class="edge" id="edge14">
+<g class="edge" id="edge12">
 <title>http://twitter.com/postId-&gt;http://twitter.com/originalAuthorId</title>
-<path d="M1233.94,-453.66C1226.64,-463.98 1216.36,-476.86 1205,-486 1187.09,-500.41 1164.62,-512.33 1144.99,-521.2" fill="none" stroke="black"/>
-<polygon fill="black" points="1143.37,-518.09 1135.61,-525.3 1146.18,-524.5 1143.37,-518.09" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1240.11" y="-465.43">assoc</text>
+<path d="M1188.13,-453.91C1180.92,-464.33 1170.64,-477.22 1159,-486 1138.5,-501.46 1112.81,-513.36 1090.06,-521.93" fill="none" stroke="black"/>
+<polygon fill="black" points="1088.72,-518.69 1080.51,-525.4 1091.11,-525.27 1088.72,-518.69" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1194.42" y="-465.63">assoc</text>
 </g>
 <!-- &#45;attrs0 -->
 <g class="node" id="node2">
 <title>-attrs0</title>
-<polygon fill="none" points="1235.5,-316.5 1154.5,-316.5 1154.5,-280.5 1241.5,-280.5 1241.5,-310.5 1235.5,-316.5" stroke="gray"/>
-<polyline fill="none" points="1235.5,-316.5 1235.5,-310.5 " stroke="gray"/>
-<polyline fill="none" points="1241.5,-310.5 1235.5,-310.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1165" y="-295.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1193" y="-295.5">publish</text>
+<polygon fill="none" points="1425.5,-316.5 1344.5,-316.5 1344.5,-280.5 1431.5,-280.5 1431.5,-310.5 1425.5,-316.5" stroke="gray"/>
+<polyline fill="none" points="1425.5,-316.5 1425.5,-310.5 " stroke="gray"/>
+<polyline fill="none" points="1431.5,-310.5 1425.5,-310.5 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1355" y="-295.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1383" y="-295.5">publish</text>
 </g>
 <!-- &#45;attrs0&#45;&gt;http://twitter.com/postId -->
 <g class="edge" id="edge1">
 <title>-attrs0-&gt;http://twitter.com/postId</title>
-<path d="M1203.95,-316.6C1212.94,-342.42 1229.9,-391.12 1238.95,-417.11" fill="none" stroke="gray" stroke-dasharray="5,2"/>
-</g>
-<!-- http://twitter.com/editId -->
-<g class="node" id="node3">
-<title>http://twitter.com/editId</title>
-<g id="a_node3">
-<a xlink:actuate="onRequest" xlink:href="http://twitter.com/editId" xlink:show="replace" xlink:title="editId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="#9fb1fc" points="1353.5,-453.5 1294.5,-453.5 1294.5,-417.5 1353.5,-417.5 1353.5,-453.5" stroke="#0000ff"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1324" y="-431.8">editId</text>
-</a>
-</g>
-</g>
-<!-- http://twitter.com/editId&#45;&gt;http://twitter.com/OriginalTweetPropsId -->
-<g class="edge" id="edge19">
-<title>http://twitter.com/editId-&gt;http://twitter.com/OriginalTweetPropsId</title>
-<path d="M1326.21,-453.89C1328.22,-469.74 1331.22,-493.41 1333.55,-511.77" fill="none" stroke="black"/>
-<polygon fill="black" points="1330.1,-512.39 1334.83,-521.87 1337.04,-511.51 1330.1,-512.39" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1340.04" y="-457.79">use</text>
-</g>
-<!-- http://twitter.com/editId&#45;&gt;http://twitter.com/originalAuthorId -->
-<g class="edge" id="edge18">
-<title>http://twitter.com/editId-&gt;http://twitter.com/originalAuthorId</title>
-<path d="M1314.17,-453.95C1307.29,-464.66 1297.18,-477.84 1285,-486 1259.32,-503.22 1228.04,-514.91 1198.52,-522.82" fill="none" stroke="black"/>
-<polygon fill="black" points="1197.41,-519.49 1188.59,-525.36 1199.14,-526.27 1197.41,-519.49" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1320.89" y="-465.46">assoc</text>
-</g>
-<!-- &#45;attrs1 -->
-<g class="node" id="node4">
-<title>-attrs1</title>
-<polygon fill="none" points="1529.5,-316.5 1448.5,-316.5 1448.5,-280.5 1535.5,-280.5 1535.5,-310.5 1529.5,-316.5" stroke="gray"/>
-<polyline fill="none" points="1529.5,-316.5 1529.5,-310.5 " stroke="gray"/>
-<polyline fill="none" points="1535.5,-310.5 1529.5,-310.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1459" y="-295.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1487" y="-295.5">publish</text>
-</g>
-<!-- &#45;attrs1&#45;&gt;http://twitter.com/editId -->
-<g class="edge" id="edge2">
-<title>-attrs1-&gt;http://twitter.com/editId</title>
-<path d="M1476.78,-316.56C1466.99,-326.85 1453.59,-339.72 1440,-349 1408.8,-370.3 1392.6,-361.53 1363,-385 1351.68,-393.97 1341.67,-406.85 1334.62,-417.23" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<path d="M1373.04,-316.96C1363.35,-327.4 1349.96,-340.29 1336,-349 1296.99,-373.35 1276.34,-358.16 1239,-385 1226.98,-393.64 1216.58,-406.8 1209.4,-417.38" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- http://twitter.com/reactId2 -->
-<g class="node" id="node5">
+<g class="node" id="node3">
 <title>http://twitter.com/reactId2</title>
-<g id="a_node5">
+<g id="a_node3">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/reactId2" xlink:show="replace" xlink:title="reactId2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="#9fb1fc" points="1136.5,-316.5 1059.5,-316.5 1059.5,-280.5 1136.5,-280.5 1136.5,-316.5" stroke="#0000ff"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1098" y="-294.8">reactId2</text>
+<polygon fill="#9fb1fc" points="850.5,-316.5 773.5,-316.5 773.5,-280.5 850.5,-280.5 850.5,-316.5" stroke="#0000ff"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="812" y="-294.8">reactId2</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/reactId2&#45;&gt;http://twitter.com/postId -->
-<g class="edge" id="edge21">
+<g class="edge" id="edge15">
 <title>http://twitter.com/reactId2-&gt;http://twitter.com/postId</title>
-<path d="M1112.6,-316.61C1121.66,-326.67 1133.84,-339.28 1146,-349 1169.99,-368.18 1181.9,-364.76 1205,-385 1213.02,-392.03 1220.67,-400.79 1227.1,-408.98" fill="none" stroke="black"/>
-<polygon fill="black" points="1224.5,-411.34 1233.32,-417.21 1230.09,-407.12 1224.5,-411.34" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1127.26" y="-311.53">inf</text>
+<path d="M823.76,-316.68C832.41,-327.85 845.2,-341.66 860,-349 979.92,-408.46 1041.89,-320.19 1159,-385 1169.11,-390.6 1177.63,-399.88 1184.18,-408.91" fill="none" stroke="black"/>
+<polygon fill="black" points="1181.37,-410.99 1189.84,-417.35 1187.18,-407.09 1181.37,-410.99" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="838.6" y="-312.57">inf</text>
 </g>
 <!-- http://twitter.com/ReactionTweetPropsId2 -->
-<g class="node" id="node19">
+<g class="node" id="node15">
 <title>http://twitter.com/ReactionTweetPropsId2</title>
-<g id="a_node19">
+<g id="a_node15">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/ReactionTweetPropsId2" xlink:show="replace" xlink:title="ReactionTweetPropsId2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="863" cy="-435.5" fill="#fffc87" rx="121.58" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="863" y="-431.8">ReactionTweetPropsId2</text>
+<ellipse cx="778" cy="-435.5" fill="#fffc87" rx="121.58" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="778" y="-431.8">ReactionTweetPropsId2</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/reactId2&#45;&gt;http://twitter.com/ReactionTweetPropsId2 -->
-<g class="edge" id="edge25">
+<g class="edge" id="edge19">
 <title>http://twitter.com/reactId2-&gt;http://twitter.com/ReactionTweetPropsId2</title>
-<path d="M1084.21,-316.68C1075.27,-327.01 1062.91,-339.89 1050,-349 1009.41,-377.66 957.67,-400.43 918.91,-415.25" fill="none" stroke="black"/>
-<polygon fill="black" points="917.48,-412.05 909.35,-418.84 919.94,-418.6 917.48,-412.05" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1089.03" y="-328.98">use</text>
+<path d="M807.69,-316.6C801.95,-339.4 791.72,-380.02 784.9,-407.11" fill="none" stroke="black"/>
+<polygon fill="black" points="781.43,-406.56 782.38,-417.11 788.21,-408.27 781.43,-406.56" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="818.46" y="-325.14">use</text>
 </g>
 <!-- http://twitter.com/reactionAuthorId2 -->
-<g class="node" id="node23">
+<g class="node" id="node19">
 <title>http://twitter.com/reactionAuthorId2</title>
-<g id="a_node23">
+<g id="a_node19">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/reactionAuthorId2" xlink:show="replace" xlink:title="reactionAuthorId2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<polygon fill="#fdb266" points="473.19,-441.06 355,-453.5 236.81,-441.06 236.92,-420.94 473.08,-420.94 473.19,-441.06" stroke="black"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="355" y="-431.8">reactionAuthorId2</text>
+<polygon fill="#fdb266" points="427.19,-441.06 309,-453.5 190.81,-441.06 190.92,-420.94 427.08,-420.94 427.19,-441.06" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="309" y="-431.8">reactionAuthorId2</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/reactId2&#45;&gt;http://twitter.com/reactionAuthorId2 -->
-<g class="edge" id="edge22">
+<g class="edge" id="edge16">
 <title>http://twitter.com/reactId2-&gt;http://twitter.com/reactionAuthorId2</title>
-<path d="M1086.37,-316.95C1077.78,-328.24 1065,-342.08 1050,-349 935.15,-401.96 605.5,-357.71 482,-385 450.59,-391.94 416.72,-405.47 391.87,-416.63" fill="none" stroke="black"/>
-<polygon fill="black" points="390.11,-413.59 382.47,-420.93 393.02,-419.95 390.11,-413.59" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1091.98" y="-328.96">assoc</text>
+<path d="M800.26,-316.73C791.63,-327.92 778.84,-341.74 764,-349 632.68,-413.28 579.04,-350.34 437,-385 405.94,-392.58 372.27,-405.81 347.27,-416.69" fill="none" stroke="black"/>
+<polygon fill="black" points="345.52,-413.64 337.79,-420.88 348.35,-420.04 345.52,-413.64" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="805.79" y="-328.77">assoc</text>
 </g>
-<!-- &#45;attrs2 -->
-<g class="node" id="node6">
-<title>-attrs2</title>
-<polygon fill="none" points="935.5,-179.5 854.5,-179.5 854.5,-143.5 941.5,-143.5 941.5,-173.5 935.5,-179.5" stroke="gray"/>
-<polyline fill="none" points="935.5,-179.5 935.5,-173.5 " stroke="gray"/>
-<polyline fill="none" points="941.5,-173.5 935.5,-173.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="865" y="-158.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="893" y="-158.5">publish</text>
+<!-- &#45;attrs1 -->
+<g class="node" id="node4">
+<title>-attrs1</title>
+<polygon fill="none" points="930.5,-179.5 849.5,-179.5 849.5,-143.5 936.5,-143.5 936.5,-173.5 930.5,-179.5" stroke="gray"/>
+<polyline fill="none" points="930.5,-179.5 930.5,-173.5 " stroke="gray"/>
+<polyline fill="none" points="936.5,-173.5 930.5,-173.5 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="860" y="-158.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="888" y="-158.5">publish</text>
 </g>
-<!-- &#45;attrs2&#45;&gt;http://twitter.com/reactId2 -->
-<g class="edge" id="edge3">
-<title>-attrs2-&gt;http://twitter.com/reactId2</title>
-<path d="M912.49,-179.53C922.21,-190.07 935.79,-203.23 950,-212 990.19,-236.82 1010.31,-222.38 1050,-248 1063.48,-256.7 1076,-269.85 1084.87,-280.42" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<!-- &#45;attrs1&#45;&gt;http://twitter.com/reactId2 -->
+<g class="edge" id="edge2">
+<title>-attrs1-&gt;http://twitter.com/reactId2</title>
+<path d="M882.74,-179.6C867.25,-205.42 838.03,-254.12 822.43,-280.11" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- http://twitter.com/OriginalTweetId -->
-<g class="node" id="node7">
+<g class="node" id="node5">
 <title>http://twitter.com/OriginalTweetId</title>
-<g id="a_node7">
+<g id="a_node5">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/OriginalTweetId" xlink:show="replace" xlink:title="OriginalTweetId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="1345" cy="-298.5" fill="#fffc87" rx="85.59" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1345" y="-294.8">OriginalTweetId</text>
+<ellipse cx="1241" cy="-298.5" fill="#fffc87" rx="85.59" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1241" y="-294.8">OriginalTweetId</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/OriginalTweetId&#45;&gt;http://twitter.com/postId -->
-<g class="edge" id="edge13">
+<g class="edge" id="edge11">
 <title>http://twitter.com/OriginalTweetId-&gt;http://twitter.com/postId</title>
-<path d="M1332.54,-316.32C1315.25,-339.67 1283.84,-382.07 1263.72,-409.22" fill="none" stroke="black"/>
-<polygon fill="black" points="1260.76,-407.34 1257.62,-417.46 1266.38,-411.51 1260.76,-407.34" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1338.51" y="-328.18">gen</text>
+<path d="M1235.68,-316.6C1228.56,-339.5 1215.84,-380.38 1207.41,-407.47" fill="none" stroke="black"/>
+<polygon fill="black" points="1204.04,-406.53 1204.41,-417.11 1210.72,-408.61 1204.04,-406.53" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1245.86" y="-325.72">gen</text>
+</g>
+<!-- &#45;attrs2 -->
+<g class="node" id="node6">
+<title>-attrs2</title>
+<polygon fill="none" points="1332.5,-179.5 1143.5,-179.5 1143.5,-143.5 1338.5,-143.5 1338.5,-173.5 1332.5,-179.5" stroke="gray"/>
+<polyline fill="none" points="1332.5,-179.5 1332.5,-173.5 " stroke="gray"/>
+<polyline fill="none" points="1338.5,-173.5 1332.5,-173.5 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1154" y="-165.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1187" y="-165.5">original tweet</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1154" y="-152.5">value:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1187" y="-152.5">This is the text of the tweet.</text>
+</g>
+<!-- &#45;attrs2&#45;&gt;http://twitter.com/OriginalTweetId -->
+<g class="edge" id="edge3">
+<title>-attrs2-&gt;http://twitter.com/OriginalTweetId</title>
+<path d="M1241,-179.6C1241,-205.42 1241,-254.12 1241,-280.11" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- &#45;attrs3 -->
 <g class="node" id="node8">
 <title>-attrs3</title>
-<polygon fill="none" points="1373.5,-179.5 1184.5,-179.5 1184.5,-143.5 1379.5,-143.5 1379.5,-173.5 1373.5,-179.5" stroke="gray"/>
-<polyline fill="none" points="1373.5,-179.5 1373.5,-173.5 " stroke="gray"/>
-<polyline fill="none" points="1379.5,-173.5 1373.5,-173.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1195" y="-165.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1228" y="-165.5">original tweet</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1195" y="-152.5">value:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1228" y="-152.5">This is the text of the tweet.</text>
+<polygon fill="none" points="1426,-486 1248,-486 1248,-385 1432,-385 1432,-480 1426,-486" stroke="gray"/>
+<polyline fill="none" points="1426,-486 1426,-480 " stroke="gray"/>
+<polyline fill="none" points="1432,-480 1426,-480 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-471.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-471.5">tweet properties</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-458.5">created_at:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-458.5">Some timestamp</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-445.5">location:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-445.5">Some place</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-432.5">like_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-432.5">20</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-419.5">quote_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-419.5">20</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-406.5">reply_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-406.5">20</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1258" y="-393.5">retweet_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1336" y="-393.5">20</text>
 </g>
-<!-- &#45;attrs3&#45;&gt;http://twitter.com/OriginalTweetId -->
+<!-- &#45;attrs3&#45;&gt;http://twitter.com/OriginalTweetPropsId -->
 <g class="edge" id="edge4">
-<title>-attrs3-&gt;http://twitter.com/OriginalTweetId</title>
-<path d="M1289.98,-179.6C1302.1,-205.57 1325.01,-254.66 1337.09,-280.54" fill="none" stroke="gray" stroke-dasharray="5,2"/>
-</g>
-<!-- &#45;attrs4 -->
-<g class="node" id="node10">
-<title>-attrs4</title>
-<polygon fill="none" points="1550,-486 1372,-486 1372,-385 1556,-385 1556,-480 1550,-486" stroke="gray"/>
-<polyline fill="none" points="1550,-486 1550,-480 " stroke="gray"/>
-<polyline fill="none" points="1556,-480 1550,-480 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-471.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-471.5">tweet properties</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-458.5">created_at:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-458.5">Some timestamp</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-445.5">location:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-445.5">Some place</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-432.5">like_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-432.5">20</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-419.5">quote_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-419.5">20</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-406.5">reply_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-406.5">20</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1382" y="-393.5">retweet_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1460" y="-393.5">20</text>
-</g>
-<!-- &#45;attrs4&#45;&gt;http://twitter.com/OriginalTweetPropsId -->
-<g class="edge" id="edge5">
-<title>-attrs4-&gt;http://twitter.com/OriginalTweetPropsId</title>
-<path d="M1402.36,-486.25C1386.31,-499.2 1370.1,-512.29 1357.83,-522.18" fill="none" stroke="gray" stroke-dasharray="5,2"/>
-</g>
-<!-- http://twitter.com/EditedTweetId -->
-<g class="node" id="node11">
-<title>http://twitter.com/EditedTweetId</title>
-<g id="a_node11">
-<a xlink:actuate="onRequest" xlink:href="http://twitter.com/EditedTweetId" xlink:show="replace" xlink:title="EditedTweetId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="1477" cy="-161.5" fill="#fffc87" rx="79.09" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1477" y="-157.8">EditedTweetId</text>
-</a>
-</g>
-</g>
-<!-- http://twitter.com/EditedTweetId&#45;&gt;http://twitter.com/editId -->
-<g class="edge" id="edge17">
-<title>http://twitter.com/EditedTweetId-&gt;http://twitter.com/editId</title>
-<path d="M1496.2,-179.27C1512.72,-195.09 1535.37,-220.43 1545,-248 1559.8,-290.38 1573.5,-314.32 1545,-349 1492.66,-412.71 1433.32,-341.94 1363,-385 1353.48,-390.83 1345.36,-399.87 1339.03,-408.64" fill="none" stroke="black"/>
-<polygon fill="black" points="1335.96,-406.93 1333.31,-417.19 1341.78,-410.82 1335.96,-406.93" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1510.65" y="-173.35">gen</text>
-</g>
-<!-- http://twitter.com/EditedTweetId&#45;&gt;http://twitter.com/OriginalTweetId -->
-<g class="edge" id="edge16">
-<title>http://twitter.com/EditedTweetId-&gt;http://twitter.com/OriginalTweetId</title>
-<path d="M1460.55,-179.32C1437.43,-202.97 1395.19,-246.17 1368.69,-273.27" fill="none" stroke="black"/>
-<polygon fill="black" points="1366.15,-270.87 1361.66,-280.46 1371.15,-275.76 1366.15,-270.87" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1464.59" y="-191.87">der</text>
-</g>
-<!-- &#45;attrs5 -->
-<g class="node" id="node12">
-<title>-attrs5</title>
-<polygon fill="none" points="1550,-75 1306,-75 1306,-39 1556,-39 1556,-69 1550,-75" stroke="gray"/>
-<polyline fill="none" points="1550,-75 1550,-69 " stroke="gray"/>
-<polyline fill="none" points="1556,-69 1550,-69 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1316" y="-61">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1349" y="-61">edited tweet</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1316" y="-48">value:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1349" y="-48">EDIT: This is the new text of the tweet.</text>
-</g>
-<!-- &#45;attrs5&#45;&gt;http://twitter.com/EditedTweetId -->
-<g class="edge" id="edge6">
-<title>-attrs5-&gt;http://twitter.com/EditedTweetId</title>
-<path d="M1438.8,-75.39C1447.31,-94.35 1460.85,-124.51 1469.31,-143.37" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<title>-attrs3-&gt;http://twitter.com/OriginalTweetPropsId</title>
+<path d="M1318.64,-486.25C1313.13,-499.1 1307.55,-512.08 1303.32,-521.95" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- http://twitter.com/OriginalAuthorPropsId -->
-<g class="node" id="node13">
+<g class="node" id="node9">
 <title>http://twitter.com/OriginalAuthorPropsId</title>
-<g id="a_node13">
+<g id="a_node9">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/OriginalAuthorPropsId" xlink:show="replace" xlink:title="OriginalAuthorPropsId" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="607" cy="-435.5" fill="#fffc87" rx="116.18" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="607" y="-431.8">OriginalAuthorPropsId</text>
+<ellipse cx="1034" cy="-435.5" fill="#fffc87" rx="116.18" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1034" y="-431.8">OriginalAuthorPropsId</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/OriginalAuthorPropsId&#45;&gt;http://twitter.com/originalAuthorId -->
-<g class="edge" id="edge20">
+<g class="edge" id="edge14">
 <title>http://twitter.com/OriginalAuthorPropsId-&gt;http://twitter.com/originalAuthorId</title>
-<path d="M641.55,-452.72C666.25,-463.68 700.54,-477.62 732,-486 813.84,-507.79 908.49,-521.18 981.17,-529.05" fill="none" stroke="black"/>
-<polygon fill="black" points="980.96,-532.55 991.28,-530.13 981.7,-525.59 980.96,-532.55" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="653.64" y="-441.93">att</text>
+<path d="M1034,-453.89C1034,-470.69 1034,-496.29 1034,-515.03" fill="none" stroke="black"/>
+<polygon fill="black" points="1030.5,-515.15 1034,-525.15 1037.5,-515.15 1030.5,-515.15" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1046.99" y="-459.49">att</text>
 </g>
-<!-- &#45;attrs6 -->
-<g class="node" id="node14">
-<title>-attrs6</title>
-<polygon fill="none" points="799,-349 537,-349 537,-248 805,-248 805,-343 799,-349" stroke="gray"/>
-<polyline fill="none" points="799,-349 799,-343 " stroke="gray"/>
-<polyline fill="none" points="805,-343 799,-343 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-334.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-334.5">user properties</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-321.5">credible:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-321.5">1</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-308.5">name:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-308.5">Some original author name</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-295.5">username:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-295.5">Some original author username</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-282.5">verified:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-282.5">True</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-269.5">followers_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-269.5">20</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-256.5">following_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="633" y="-256.5">20</text>
+<!-- &#45;attrs4 -->
+<g class="node" id="node10">
+<title>-attrs4</title>
+<polygon fill="none" points="1131,-349 869,-349 869,-248 1137,-248 1137,-343 1131,-349" stroke="gray"/>
+<polyline fill="none" points="1131,-349 1131,-343 " stroke="gray"/>
+<polyline fill="none" points="1137,-343 1131,-343 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-334.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-334.5">user properties</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-321.5">credible:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-321.5">1</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-308.5">name:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-308.5">Some original author name</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-295.5">username:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-295.5">Some original author username</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-282.5">verified:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-282.5">True</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-269.5">followers_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-269.5">20</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="879" y="-256.5">following_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="965" y="-256.5">20</text>
 </g>
-<!-- &#45;attrs6&#45;&gt;http://twitter.com/OriginalAuthorPropsId -->
-<g class="edge" id="edge7">
-<title>-attrs6-&gt;http://twitter.com/OriginalAuthorPropsId</title>
-<path d="M647.53,-349C636.19,-372.93 623.3,-400.12 615.16,-417.28" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<!-- &#45;attrs4&#45;&gt;http://twitter.com/OriginalAuthorPropsId -->
+<g class="edge" id="edge5">
+<title>-attrs4-&gt;http://twitter.com/OriginalAuthorPropsId</title>
+<path d="M1014.37,-349C1019.86,-372.93 1026.1,-400.12 1030.05,-417.28" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- http://twitter.com/ReactionAuthorPropsId2 -->
-<g class="node" id="node15">
+<g class="node" id="node11">
 <title>http://twitter.com/ReactionAuthorPropsId2</title>
-<g id="a_node15">
+<g id="a_node11">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/ReactionAuthorPropsId2" xlink:show="replace" xlink:title="ReactionAuthorPropsId2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="141" cy="-298.5" fill="#fffc87" rx="124.58" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="141" y="-294.8">ReactionAuthorPropsId2</text>
+<ellipse cx="394" cy="-298.5" fill="#fffc87" rx="124.58" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="394" y="-294.8">ReactionAuthorPropsId2</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/ReactionAuthorPropsId2&#45;&gt;http://twitter.com/reactionAuthorId2 -->
-<g class="edge" id="edge23">
+<g class="edge" id="edge17">
 <title>http://twitter.com/ReactionAuthorPropsId2-&gt;http://twitter.com/reactionAuthorId2</title>
-<path d="M167.67,-316.32C207.65,-341.55 282.89,-389.01 324.82,-415.46" fill="none" stroke="black"/>
-<polygon fill="black" points="323.16,-418.55 333.49,-420.93 326.9,-412.63 323.16,-418.55" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="180.94" y="-307.44">att</text>
+<path d="M383.23,-316.6C367.97,-340.84 340.01,-385.24 323.11,-412.09" fill="none" stroke="black"/>
+<polygon fill="black" points="319.99,-410.47 317.63,-420.8 325.92,-414.2 319.99,-410.47" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="390.23" y="-327.97">att</text>
 </g>
-<!-- &#45;attrs7 -->
-<g class="node" id="node16">
-<title>-attrs7</title>
-<polygon fill="none" points="318.5,-212 15.5,-212 15.5,-111 324.5,-111 324.5,-206 318.5,-212" stroke="gray"/>
-<polyline fill="none" points="318.5,-212 318.5,-206 " stroke="gray"/>
-<polyline fill="none" points="324.5,-206 318.5,-206 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-197.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-197.5">user properties</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-184.5">credible:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-184.5">1</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-171.5">name:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-171.5">Some second reaction author name</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-158.5">username:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-158.5">Some second reaction author username</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-145.5">verified:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-145.5">True</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-132.5">followers_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-132.5">100</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="26" y="-119.5">following_count:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="112" y="-119.5">200</text>
+<!-- &#45;attrs5 -->
+<g class="node" id="node12">
+<title>-attrs5</title>
+<polygon fill="none" points="542.5,-212 239.5,-212 239.5,-111 548.5,-111 548.5,-206 542.5,-212" stroke="gray"/>
+<polyline fill="none" points="542.5,-212 542.5,-206 " stroke="gray"/>
+<polyline fill="none" points="548.5,-206 542.5,-206 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-197.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-197.5">user properties</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-184.5">credible:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-184.5">1</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-171.5">name:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-171.5">Some second reaction author name</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-158.5">username:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-158.5">Some second reaction author username</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-145.5">verified:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-145.5">True</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-132.5">followers_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-132.5">100</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="250" y="-119.5">following_count:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="336" y="-119.5">200</text>
 </g>
-<!-- &#45;attrs7&#45;&gt;http://twitter.com/ReactionAuthorPropsId2 -->
-<g class="edge" id="edge8">
-<title>-attrs7-&gt;http://twitter.com/ReactionAuthorPropsId2</title>
-<path d="M159.37,-212C154.23,-235.93 148.39,-263.12 144.7,-280.28" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<!-- &#45;attrs5&#45;&gt;http://twitter.com/ReactionAuthorPropsId2 -->
+<g class="edge" id="edge6">
+<title>-attrs5-&gt;http://twitter.com/ReactionAuthorPropsId2</title>
+<path d="M394,-212C394,-235.93 394,-263.12 394,-280.28" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- http://twitter.com/ReactionTweetId2 -->
-<g class="node" id="node17">
+<g class="node" id="node13">
 <title>http://twitter.com/ReactionTweetId2</title>
-<g id="a_node17">
+<g id="a_node13">
 <a xlink:actuate="onRequest" xlink:href="http://twitter.com/ReactionTweetId2" xlink:show="replace" xlink:title="ReactionTweetId2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
-<ellipse cx="1054" cy="-161.5" fill="#fffc87" rx="94.78" ry="18" stroke="#808080"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="1054" y="-157.8">ReactionTweetId2</text>
+<ellipse cx="737" cy="-161.5" fill="#fffc87" rx="94.78" ry="18" stroke="#808080"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="737" y="-157.8">ReactionTweetId2</text>
 </a>
 </g>
 </g>
 <!-- http://twitter.com/ReactionTweetId2&#45;&gt;http://twitter.com/reactId2 -->
-<g class="edge" id="edge24">
+<g class="edge" id="edge18">
 <title>http://twitter.com/ReactionTweetId2-&gt;http://twitter.com/reactId2</title>
-<path d="M1059.57,-179.6C1067.04,-202.5 1080.36,-243.38 1089.19,-270.47" fill="none" stroke="black"/>
-<polygon fill="black" points="1085.91,-271.69 1092.33,-280.11 1092.56,-269.52 1085.91,-271.69" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1074.25" y="-180.8">gen</text>
+<path d="M746.5,-179.6C759.33,-202.7 782.33,-244.1 797.38,-271.19" fill="none" stroke="black"/>
+<polygon fill="black" points="794.43,-273.07 802.34,-280.11 800.54,-269.67 794.43,-273.07" stroke="black"/>
+<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="761.5" y="-177.95">gen</text>
 </g>
-<!-- http://twitter.com/ReactionTweetId2&#45;&gt;http://twitter.com/ReactionTweetId2 -->
-<g class="edge" id="edge26">
-<title>http://twitter.com/ReactionTweetId2-&gt;http://twitter.com/ReactionTweetId2</title>
-<path d="M1094.51,-145.22C1129.68,-137.79 1166.89,-143.22 1166.89,-161.5 1166.89,-178.07 1136.33,-184.08 1104.42,-179.53" fill="none" stroke="black"/>
-<polygon fill="black" points="1104.97,-176.07 1094.51,-177.78 1103.75,-182.97 1104.97,-176.07" stroke="black"/>
-<text font-family="Times,serif" font-size="8.00" text-anchor="middle" x="1099.67" y="-129.23">der</text>
+<!-- &#45;attrs6 -->
+<g class="node" id="node14">
+<title>-attrs6</title>
+<polygon fill="none" points="829,-75 639,-75 639,-39 835,-39 835,-69 829,-75" stroke="gray"/>
+<polyline fill="none" points="829,-75 829,-69 " stroke="gray"/>
+<polyline fill="none" points="835,-69 829,-69 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="649" y="-61">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="682" y="-61">quote</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="649" y="-48">value:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="682" y="-48">This is the text of the quote.</text>
+</g>
+<!-- &#45;attrs6&#45;&gt;http://twitter.com/ReactionTweetId2 -->
+<g class="edge" id="edge7">
+<title>-attrs6-&gt;http://twitter.com/ReactionTweetId2</title>
+<path d="M737,-75.39C737,-94.35 737,-124.51 737,-143.37" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+</g>
+<!-- &#45;attrs7 -->
+<g class="node" id="node16">
+<title>-attrs7</title>
+<polygon fill="none" points="749,-336 537,-336 537,-261 755,-261 755,-330 749,-336" stroke="gray"/>
+<polyline fill="none" points="749,-336 749,-330 " stroke="gray"/>
+<polyline fill="none" points="755,-330 749,-330 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-321.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="629" y="-321.5">tweet properties</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-308.5">created_at:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="629" y="-308.5">Some other timestamp</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-295.5">location:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="629" y="-295.5">Some other place</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-282.5">reference_type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="629" y="-282.5">quoted</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="547" y="-269.5">reference_id:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="629" y="-269.5">985929573745</text>
+</g>
+<!-- &#45;attrs7&#45;&gt;http://twitter.com/ReactionTweetPropsId2 -->
+<g class="edge" id="edge8">
+<title>-attrs7-&gt;http://twitter.com/ReactionTweetPropsId2</title>
+<path d="M681.72,-336.03C707.68,-362.58 741.62,-397.29 761.49,-417.62" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- &#45;attrs8 -->
 <g class="node" id="node18">
 <title>-attrs8</title>
-<polygon fill="none" points="1146,-75 956,-75 956,-39 1152,-39 1152,-69 1146,-75" stroke="gray"/>
-<polyline fill="none" points="1146,-75 1146,-69 " stroke="gray"/>
-<polyline fill="none" points="1152,-69 1146,-69 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="966" y="-61">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="999" y="-61">quote</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="966" y="-48">value:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="999" y="-48">This is the text of the quote.</text>
+<polygon fill="none" points="632.5,-453.5 445.5,-453.5 445.5,-417.5 638.5,-417.5 638.5,-447.5 632.5,-453.5" stroke="gray"/>
+<polyline fill="none" points="632.5,-453.5 632.5,-447.5 " stroke="gray"/>
+<polyline fill="none" points="638.5,-447.5 632.5,-447.5 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="456" y="-439.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="490" y="-439.5">prov:Person</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="456" y="-426.5">name:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="490" y="-426.5">Some original author name</text>
 </g>
-<!-- &#45;attrs8&#45;&gt;http://twitter.com/ReactionTweetId2 -->
+<!-- &#45;attrs8&#45;&gt;http://twitter.com/originalAuthorId -->
 <g class="edge" id="edge9">
-<title>-attrs8-&gt;http://twitter.com/ReactionTweetId2</title>
-<path d="M1054,-75.39C1054,-94.35 1054,-124.51 1054,-143.37" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<title>-attrs8-&gt;http://twitter.com/originalAuthorId</title>
+<path d="M571.81,-453.55C592.32,-464.52 620.53,-478.15 647,-486 739,-513.28 847.53,-526.6 926.21,-533.05" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 <!-- &#45;attrs9 -->
 <g class="node" id="node20">
 <title>-attrs9</title>
-<polygon fill="none" points="1035,-336 823,-336 823,-261 1041,-261 1041,-330 1035,-336" stroke="gray"/>
-<polyline fill="none" points="1035,-336 1035,-330 " stroke="gray"/>
-<polyline fill="none" points="1041,-330 1035,-330 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="833" y="-321.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="915" y="-321.5">tweet properties</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="833" y="-308.5">created_at:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="915" y="-308.5">Some other timestamp</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="833" y="-295.5">location:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="915" y="-295.5">Some other place</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="833" y="-282.5">reference_type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="915" y="-282.5">quoted</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="833" y="-269.5">reference_id:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="915" y="-269.5">985929573745</text>
+<polygon fill="none" points="245.5,-316.5 16.5,-316.5 16.5,-280.5 251.5,-280.5 251.5,-310.5 245.5,-316.5" stroke="gray"/>
+<polyline fill="none" points="245.5,-316.5 245.5,-310.5 " stroke="gray"/>
+<polyline fill="none" points="251.5,-310.5 245.5,-310.5 " stroke="gray"/>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="27" y="-302.5">type:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="61" y="-302.5">prov:Person</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="27" y="-289.5">name:</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="61" y="-289.5">Some second reaction author name</text>
 </g>
-<!-- &#45;attrs9&#45;&gt;http://twitter.com/ReactionTweetPropsId2 -->
+<!-- &#45;attrs9&#45;&gt;http://twitter.com/reactionAuthorId2 -->
 <g class="edge" id="edge10">
-<title>-attrs9-&gt;http://twitter.com/ReactionTweetPropsId2</title>
-<path d="M913.33,-336.03C899.84,-362.43 882.23,-396.88 871.81,-417.26" fill="none" stroke="gray" stroke-dasharray="5,2"/>
-</g>
-<!-- &#45;attrs10 -->
-<g class="node" id="node22">
-<title>-attrs10</title>
-<polygon fill="none" points="1189.5,-453.5 1002.5,-453.5 1002.5,-417.5 1195.5,-417.5 1195.5,-447.5 1189.5,-453.5" stroke="gray"/>
-<polyline fill="none" points="1189.5,-453.5 1189.5,-447.5 " stroke="gray"/>
-<polyline fill="none" points="1195.5,-447.5 1189.5,-447.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1013" y="-439.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1047" y="-439.5">prov:Person</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1013" y="-426.5">name:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="1047" y="-426.5">Some original author name</text>
-</g>
-<!-- &#45;attrs10&#45;&gt;http://twitter.com/originalAuthorId -->
-<g class="edge" id="edge11">
-<title>-attrs10-&gt;http://twitter.com/originalAuthorId</title>
-<path d="M1099,-453.89C1099,-473.99 1099,-506.68 1099,-525.15" fill="none" stroke="gray" stroke-dasharray="5,2"/>
-</g>
-<!-- &#45;attrs11 -->
-<g class="node" id="node24">
-<title>-attrs11</title>
-<polygon fill="none" points="512.5,-316.5 283.5,-316.5 283.5,-280.5 518.5,-280.5 518.5,-310.5 512.5,-316.5" stroke="gray"/>
-<polyline fill="none" points="512.5,-316.5 512.5,-310.5 " stroke="gray"/>
-<polyline fill="none" points="518.5,-310.5 512.5,-310.5 " stroke="gray"/>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="294" y="-302.5">type:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="328" y="-302.5">prov:Person</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="294" y="-289.5">name:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="328" y="-289.5">Some second reaction author name</text>
-</g>
-<!-- &#45;attrs11&#45;&gt;http://twitter.com/reactionAuthorId2 -->
-<g class="edge" id="edge12">
-<title>-attrs11-&gt;http://twitter.com/reactionAuthorId2</title>
-<path d="M395.17,-316.6C385.94,-343.7 368.12,-395.99 359.67,-420.8" fill="none" stroke="gray" stroke-dasharray="5,2"/>
+<title>-attrs9-&gt;http://twitter.com/reactionAuthorId2</title>
+<path d="M156.16,-316.6C191.3,-343.7 259.08,-395.99 291.24,-420.8" fill="none" stroke="gray" stroke-dasharray="5,2"/>
 </g>
 </g>
 </svg>

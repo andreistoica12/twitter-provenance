@@ -12,9 +12,6 @@
     "ORIGINAL_name" : [ {
       "@value" : "Some original author name"
     } ],
-    "edited_text" : [ {
-      "@value" : "EDIT: This is the new text of the tweet."
-    } ],
     "REACTION_credible" : [ {
       "@value" : "1"
     } ],
@@ -45,9 +42,6 @@
     "original_text" : [ {
       "@value" : "This is the text of the tweet."
     } ],
-    "edited_tweet_id" : [ {
-      "@id" : "tw:EditedTweetId"
-    } ],
     "REACTION_created_at" : [ {
       "@value" : "Some other timestamp"
     } ],
@@ -65,9 +59,6 @@
     } ],
     "react_id" : [ {
       "@id" : "tw:reactId2"
-    } ],
-    "edit_id" : [ {
-      "@id" : "tw:editId"
     } ],
     "ORIGINAL_created_at" : [ {
       "@value" : "Some timestamp"

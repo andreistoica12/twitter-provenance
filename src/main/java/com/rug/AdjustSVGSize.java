@@ -22,6 +22,9 @@ public class AdjustSVGSize {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file_svg=args[0];
 
+        int height = 2000;
+        int width = 1000;
+
         try {
 
             // Load the SVG file
@@ -34,7 +37,7 @@ public class AdjustSVGSize {
             Element svgElement = initial_svg_document.getDocumentElement();
             
             // Modify the viewBox attribute values
-            svgElement.setAttribute("viewBox", "0 0 4000 2000"); 
+            svgElement.setAttribute("viewBox", String.format("0 0 %s %s", height, width)); 
 
             // Save the modified SVG file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

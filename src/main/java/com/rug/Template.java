@@ -47,6 +47,23 @@ public class Template {
     private final ProvFactory pFactory;
     private final Namespace ns;
 
+    // Normally, we shouldn't have the information of "Is a reaction edited or not?" before actually parsing the dataset.
+    // On top of that, we don't even know if there will be any reaction at all.
+    // One option would be to create 2 different entities: edited and unedited reaction, respectively.
+    // However, the framework requires that the binding contains at least one initialization of the entities
+    // declared in the template. In other words, if my dataset doesn't provide me with at least one edited reaction
+    // AND one unedited reaction, the binding process will fail.
+    // Therefore, due to the need to synchronize the template shape with the bindings
+    // and the particularity that, in my dataset, there is no field indicating whether a tweet is edited or not,
+    // I decided to accept the hypothesis that reactions are not edited.
+    private final boolean reactionsAreEdited = false;
+    // Following the same considerations as for the reactions,
+    // I accept the hypothesis that the original tweet is not edited either.
+    private final boolean originalIsEdited = false;
+
+    // NOTE: For proof of concept purposes, you can set both the above values to true.
+    // In this case, you will be able to see the hypothetical case when all tweets are edited (original and reactions).
+
     public enum TweetType {
         ORIGINAL,
         REACTION
@@ -62,8 +79,17 @@ public class Template {
         ns.register(TW_PREFIX, TW_NS);
     }
 
+
     public ProvFactory getpFactory() {
         return pFactory;
+    }
+
+    public boolean getoriginalIsEdited() {
+        return originalIsEdited;
+    }
+
+    public boolean getReactionsAreEdited() {
+        return reactionsAreEdited;
     }
 
     public QualifiedName qn_prov(String n) {
@@ -117,6 +143,7 @@ public class Template {
             tweetPropsAttributes.addAll(Arrays.asList(tweetPropsLikeCount, tweetPropsQuoteCount, tweetPropsReplyCount, tweetPropsRetweetCount));
 
         }
+
         return tweetPropsAttributes;
     }
 
@@ -142,7 +169,7 @@ public class Template {
         return authorProps;
     }
         
-    public Document createTemplate() {
+    public Document createTemplateDocument() {
 
         // 1. ENTITY - entity_originalTweet
         Collection<Attribute> originalTweetAttributes = new ArrayList<>();
@@ -189,7 +216,6 @@ public class Template {
         // Activity activity_post = pFactory.newActivity(qn_var("post_id"), xmlStartDate, xmlEndDate, postActivityAttributes);
 
 
-
         // 3. GENERATION - gen1
         WasGeneratedBy gen1 = pFactory.newWasGeneratedBy(null, entity_originalTweet.getId(), activity_post.getId());
 
@@ -215,33 +241,6 @@ public class Template {
         // 7 USAGE - used1
         Used used1 = pFactory.newUsed(null, activity_post.getId(), entity_originalTweetProps.getId());
 
-        // 8. ENTITY - entity_editedTweet
-        Collection<Attribute> editedTweetAttributes = new ArrayList<>();
-        Attribute editedTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("edited_text"), pFactory.getName().XSD_ANY_URI);
-        Attribute editedTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "edited tweet", pFactory.getName().XSD_STRING);
-        editedTweetAttributes.addAll(Arrays.asList(editedTweetValue, editedTweetType));
-        Entity entity_editedTweet = pFactory.newEntity(qn_var("edited_tweet_id"), editedTweetAttributes);
-
-        // 9. DERIVATION - deriv1
-        WasDerivedFrom deriv1 = pFactory.newWasDerivedFrom(entity_editedTweet.getId(), entity_originalTweet.getId());
-
-        // 10. ACTIVITY - activity_edit
-        Collection<Attribute> editActivityAttributes = new ArrayList<>();
-        Attribute editType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
-        editActivityAttributes.add(editType);
-        Activity activity_edit = pFactory.newActivity(qn_var("edit_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, editActivityAttributes);
-
-        // 11. GENERATION - gen2
-        WasGeneratedBy gen2 = pFactory.newWasGeneratedBy(null, entity_editedTweet.getId(), activity_edit.getId());
-
-        // 12. ASSOCIATION - assoc2
-        Collection<Attribute> assoc2Attributes = new ArrayList<>();
-        Attribute assoc2Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "editor", pFactory.getName().XSD_STRING);
-        assoc2Attributes.add(assoc2Role);
-        WasAssociatedWith assoc2 = pFactory.newWasAssociatedWith(null, activity_edit.getId(), agent_originalAuthor.getId(), (QualifiedName)null, assoc2Attributes);
-
-        // 13. USAGE - used2
-        Used used2 = pFactory.newUsed(null, activity_edit.getId(), entity_originalTweetProps.getId());
 
         // 14. ENTITY - entity_originalAuthorProps
         Entity entity_originalAuthorProps = pFactory.newEntity(qn_var("original_author_props_id"), createAuthorProps(pFactory, TweetType.ORIGINAL));
@@ -274,7 +273,7 @@ public class Template {
         Collection<Attribute> assoc3Attributes = new ArrayList<>();
         Attribute assoc3Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "author", pFactory.getName().XSD_STRING);
         assoc3Attributes.add(assoc3Role);
-        WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthor.getId(), (QualifiedName)null, assoc2Attributes);
+        WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthor.getId(), (QualifiedName)null, assoc3Attributes);
 
         // 20. ENTITY - entity_reactionAuthorProps
         Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, TweetType.REACTION));
@@ -302,8 +301,7 @@ public class Template {
         // 25. USAGE - used3
         Used used3 = pFactory.newUsed(null, activity_react.getId(), entity_reactionTweetProps.getId());
 
-        // 9. DERIVATION - deriv2
-        WasDerivedFrom deriv2 = pFactory.newWasDerivedFrom(entity_reactionTweet.getId(), entity_reactionTweet.getId());
+
 
 
         // TODO: 
@@ -322,12 +320,6 @@ public class Template {
                                                  assoc1,
                                                  entity_originalTweetProps,
                                                  used1,
-                                                 entity_editedTweet,
-                                                 deriv1,
-                                                 activity_edit,
-                                                 gen2,
-                                                 assoc2,
-                                                 used2,
                                                  entity_originalAuthorProps,
                                                  attrib1,
                                                  activity_react,
@@ -339,8 +331,53 @@ public class Template {
                                                  entity_reactionTweet,
                                                  gen3,
                                                  entity_reactionTweetProps,
-                                                 used3,
-                                                 deriv2));
+                                                 used3));
+
+
+
+        if(this.originalIsEdited) {
+            // 8. ENTITY - entity_editedTweet
+            Collection<Attribute> editedTweetAttributes = new ArrayList<>();
+            Attribute editedTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("edited_text"), pFactory.getName().XSD_ANY_URI);
+            Attribute editedTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "edited tweet", pFactory.getName().XSD_STRING);
+            editedTweetAttributes.addAll(Arrays.asList(editedTweetValue, editedTweetType));
+            Entity entity_editedTweet = pFactory.newEntity(qn_var("edited_tweet_id"), editedTweetAttributes);
+
+            // 9. DERIVATION - deriv1
+            WasDerivedFrom deriv1 = pFactory.newWasDerivedFrom(entity_editedTweet.getId(), entity_originalTweet.getId());
+
+            // 10. ACTIVITY - activity_edit
+            Collection<Attribute> editActivityAttributes = new ArrayList<>();
+            Attribute editType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
+            editActivityAttributes.add(editType);
+            Activity activity_edit = pFactory.newActivity(qn_var("edit_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, editActivityAttributes);
+
+            // 11. GENERATION - gen2
+            WasGeneratedBy gen2 = pFactory.newWasGeneratedBy(null, entity_editedTweet.getId(), activity_edit.getId());
+
+            // 12. ASSOCIATION - assoc2
+            Collection<Attribute> assoc2Attributes = new ArrayList<>();
+            Attribute assoc2Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "editor", pFactory.getName().XSD_STRING);
+            assoc2Attributes.add(assoc2Role);
+            WasAssociatedWith assoc2 = pFactory.newWasAssociatedWith(null, activity_edit.getId(), agent_originalAuthor.getId(), (QualifiedName)null, assoc2Attributes);
+
+            // 13. USAGE - used2
+            Used used2 = pFactory.newUsed(null, activity_edit.getId(), entity_originalTweetProps.getId());
+
+            statementCollection.addAll(Arrays.asList(entity_editedTweet,
+                                                     deriv1,
+                                                     activity_edit,
+                                                     gen2,
+                                                     assoc2,
+                                                     used2));
+        }
+
+
+        if(reactionsAreEdited) {
+            // 9. DERIVATION - deriv2
+            WasDerivedFrom deriv2 = pFactory.newWasDerivedFrom(entity_reactionTweet.getId(), entity_reactionTweet.getId());
+            statementCollection.add(deriv2);
+        }
 
 
 
@@ -360,9 +397,9 @@ public class Template {
         String file_provn=args[0];
         String file_svg=args[1];
         
-        Template template=new Template(InteropFramework.getDefaultFactory());
+        Template template = new Template(InteropFramework.getDefaultFactory());
 
-        Document document = template.createTemplate();
+        Document document = template.createTemplateDocument();
         template.saveDocument(document, file_provn, file_svg);
     }
 

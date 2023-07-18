@@ -1,8 +1,11 @@
 com/rug/Binding$TweetType.class
 com/rug/TwitterExample.class
 com/rug/AdjustSVGSize.class
+com/rug/DataClass.class
 com/rug/SvgResizer.class
+com/rug/DataClass$Reaction.class
 com/rug/Template$TweetType.class
 com/rug/PythonRunner.class
 com/rug/Template.class
+com/rug/DataClass$Original.class
 com/rug/Binding.class
