@@ -1,6 +1,6 @@
 .vscode/
+provenance-graphs/*
 src/main/python/input-data/*
 src/main/python/venv/
 src/main/python/output/*
 target/
-provenance-graphs/*
