@@ -1,1 +1,7 @@
 .vscode/
+src/main/python/input-data/covaxxy_merged_25_days.csv
+src/main/python/input-data/covaxxy_merged_test.csv
+src/main/python/venv/
+src/main/python/output/data.json
+target/
+provenance-graphs/doc.svg

@@ -155,13 +155,13 @@
 <!-- &#45;attrs2 -->
 <g id="node6" class="node">
 <title>&#45;attrs2</title>
-<polygon fill="none" stroke="gray" points="1316.5,-173 1185.5,-173 1185.5,-137 1322.5,-137 1322.5,-167 1316.5,-173"/>
-<polyline fill="none" stroke="gray" points="1316.5,-173 1316.5,-167 "/>
-<polyline fill="none" stroke="gray" points="1322.5,-167 1316.5,-167 "/>
-<text text-anchor="start" x="1196" y="-159" font-family="Times,serif" font-size="10.00">type:</text>
-<text text-anchor="start" x="1229" y="-159" font-family="Times,serif" font-size="10.00">original tweet</text>
-<text text-anchor="start" x="1196" y="-146" font-family="Times,serif" font-size="10.00">value:</text>
-<text text-anchor="start" x="1229" y="-146" font-family="Times,serif" font-size="10.00">var:original_text</text>
+<polygon fill="none" stroke="gray" points="1323,-173 1179,-173 1179,-137 1329,-137 1329,-167 1323,-173"/>
+<polyline fill="none" stroke="gray" points="1323,-173 1323,-167 "/>
+<polyline fill="none" stroke="gray" points="1329,-167 1323,-167 "/>
+<text text-anchor="start" x="1189" y="-159" font-family="Times,serif" font-size="10.00">type:</text>
+<text text-anchor="start" x="1222" y="-159" font-family="Times,serif" font-size="10.00">ORIGINAL TWEET</text>
+<text text-anchor="start" x="1189" y="-146" font-family="Times,serif" font-size="10.00">value:</text>
+<text text-anchor="start" x="1222" y="-146" font-family="Times,serif" font-size="10.00">var:original_text</text>
 </g>
 <!-- &#45;attrs2&#45;&gt;http://openprovenance.org/var#original_tweet_id -->
 <g id="edge3" class="edge">
@@ -175,7 +175,7 @@
 <polyline fill="none" stroke="gray" points="1444,-473 1444,-467 "/>
 <polyline fill="none" stroke="gray" points="1450,-467 1444,-467 "/>
 <text text-anchor="start" x="1210" y="-458.5" font-family="Times,serif" font-size="10.00">type:</text>
-<text text-anchor="start" x="1288" y="-458.5" font-family="Times,serif" font-size="10.00">tweet properties</text>
+<text text-anchor="start" x="1288" y="-458.5" font-family="Times,serif" font-size="10.00">var:ORIGINAL_properties</text>
 <text text-anchor="start" x="1210" y="-445.5" font-family="Times,serif" font-size="10.00">created_at:</text>
 <text text-anchor="start" x="1288" y="-445.5" font-family="Times,serif" font-size="10.00">var:ORIGINAL_created_at</text>
 <text text-anchor="start" x="1210" y="-432.5" font-family="Times,serif" font-size="10.00">location:</text>
@@ -313,7 +313,7 @@
 <polyline fill="none" stroke="gray" points="763.5,-336 763.5,-330 "/>
 <polyline fill="none" stroke="gray" points="769.5,-330 763.5,-330 "/>
 <text text-anchor="start" x="527" y="-321.5" font-family="Times,serif" font-size="10.00">type:</text>
-<text text-anchor="start" x="605" y="-321.5" font-family="Times,serif" font-size="10.00">tweet properties</text>
+<text text-anchor="start" x="605" y="-321.5" font-family="Times,serif" font-size="10.00">var:REACTION_properties</text>
 <text text-anchor="start" x="527" y="-308.5" font-family="Times,serif" font-size="10.00">linked:</text>
 <text text-anchor="start" x="605" y="-308.5" font-family="Times,serif" font-size="10.00">var:react_id</text>
 <text text-anchor="start" x="527" y="-295.5" font-family="Times,serif" font-size="10.00">created_at:</text>

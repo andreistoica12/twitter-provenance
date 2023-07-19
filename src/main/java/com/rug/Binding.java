@@ -55,11 +55,12 @@ public class Binding {
         bindings.addAttribute("original_text", original_text);
     }
 
-    public void addOriginalTweetProps(String original_tweet_props_id, String ORIGINAL_created_at,
+    public void addOriginalTweetProps(String original_tweet_props_id, String ORIGINAL_properties, String ORIGINAL_created_at,
                                       String ORIGINAL_location, String ORIGINAL_like_count, String ORIGINAL_quote_count,
                                       String ORIGINAL_reply_count, String ORIGINAL_retweet_count,
                                       Bindings bindings) {
         bindings.addVariable(template.qn_var("original_tweet_props_id"), template.qn_tw(original_tweet_props_id));
+        bindings.addAttribute("ORIGINAL_properties", ORIGINAL_properties);
         bindings.addAttribute("ORIGINAL_created_at", ORIGINAL_created_at);
         bindings.addAttribute("ORIGINAL_location", ORIGINAL_location);
         bindings.addAttribute("ORIGINAL_like_count", ORIGINAL_like_count);
@@ -92,11 +93,12 @@ public class Binding {
         bindings.addAttribute("reaction_text", reaction_text);
     }
 
-    public void addReactionTweetProps(String reaction_tweet_props_id, String REACTION_created_at,
+    public void addReactionTweetProps(String reaction_tweet_props_id, String REACTION_properties, String REACTION_created_at,
                                       String REACTION_location, String REACTION_like_count, String REACTION_retweet_count,
                                       String REACTION_reference_id,
                                       Bindings bindings) {
         bindings.addVariable(template.qn_var("reaction_tweet_props_id"), template.qn_tw(reaction_tweet_props_id));
+        bindings.addAttribute("REACTION_properties", REACTION_properties);
         bindings.addAttribute("REACTION_created_at", REACTION_created_at);
         bindings.addAttribute("REACTION_location", REACTION_location);
         bindings.addAttribute("REACTION_like_count", REACTION_like_count);
@@ -119,7 +121,7 @@ public class Binding {
                        data.getOriginal().getFollowersCount(), data.getOriginal().getFollowingCount(), 
                        bindings);
         addOriginalTweet(data.getOriginal().getOriginalTweetId(), data.getOriginal().getOriginalText(), bindings);
-        addOriginalTweetProps(data.getOriginal().getOriginalTweetPropsId(), data.getOriginal().getOriginalCreatedAt(), 
+        addOriginalTweetProps(data.getOriginal().getOriginalTweetPropsId(), data.getOriginal().getOriginalProperties(), data.getOriginal().getOriginalCreatedAt(), 
                               data.getOriginal().getOriginalLocation(), data.getOriginal().getOriginalLikeCount(), data.getOriginal().getOriginalQuoteCount(), 
                               data.getOriginal().getOriginalReplyCount(), data.getOriginal().getOriginalRetweetCount(), 
                               bindings);
@@ -134,7 +136,7 @@ public class Binding {
                       reaction.getFollowersCount(), reaction.getFollowingCount(), 
                       bindings);
         addReactionTweet(reaction.getReactionTweetId(), reaction.getReplyRetweetQuote(), reaction.getReactionText(), bindings);
-        addReactionTweetProps(reaction.getReactionTweetPropsId(), reaction.getReactionCreatedAt(), 
+        addReactionTweetProps(reaction.getReactionTweetPropsId(), reaction.getReactionProperties(), reaction.getReactionCreatedAt(), 
                               reaction.getReactionLocation(), reaction.getReactionLikeCount(), 
                               reaction.getReactionRetweetCount(), reaction.getReactionReferenceId(), 
                               bindings);
@@ -176,7 +178,7 @@ public class Binding {
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String dataPath = currentWorkingDirectory + "/src/main/java/com/rug/data.json";
+        String dataPath = currentWorkingDirectory + "/src/main/python/output/data.json";
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();

@@ -97,6 +97,54 @@
             <executions>
 
                 <execution>
+                    <id>create-virtualenv</id>
+                    <phase>test</phase>
+                    <goals>
+                    <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                    <executable>bash</executable>
+                    <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
+                    <arguments>
+                        <argument>-c</argument>
+                        <argument>python3 -m venv venv</argument>
+                    </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>install-python-packages</id>
+                    <phase>test</phase>
+                    <goals>
+                    <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                    <executable>bash</executable>
+                    <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
+                    <arguments>
+                        <argument>-c</argument>
+                        <argument>source venv/bin/activate; pip install -r requirements.txt</argument>
+                    </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-python-script</id>
+                    <phase>test</phase>
+                    <goals>
+                    <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                    <executable>bash</executable>
+                    <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
+                    <arguments>
+                        <argument>-c</argument>
+                        <argument>source venv/bin/activate; python generate_data.py</argument>
+                    </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
                     <id>test1</id>
                     <phase>test</phase>
                     <goals>
@@ -141,7 +189,7 @@
                         <argument>-bindver</argument>
                         <argument>3</argument>
                         <argument>-outfile</argument>
-                        <argument>${project.build.directory}/doc.svg</argument>
+                        <argument>${project.basedir}/provenance-graphs/doc.svg</argument>
                     </arguments>
                 </configuration>
                 </execution>
@@ -155,7 +203,7 @@
                     <configuration>
                         <mainClass>com.rug.AdjustSVGSize</mainClass>
                         <arguments>
-                            <argument>${project.build.directory}/doc.svg</argument>
+                            <argument>${project.basedir}/provenance-graphs/doc.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>

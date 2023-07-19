@@ -66,6 +66,9 @@ public class DataClass {
     
         @JsonProperty("original_tweet_props_id")
         private String originalTweetPropsId;
+
+        @JsonProperty("ORIGINAL_properties")
+        private String originalProperties;
     
         @JsonProperty("ORIGINAL_created_at")
         private String originalCreatedAt;
@@ -191,6 +194,14 @@ public class DataClass {
         public void setOriginalCreatedAt(String originalCreatedAt) {
             this.originalCreatedAt = originalCreatedAt;
         }
+
+        public String getOriginalProperties() {
+            return originalProperties;
+        }
+    
+        public void setOriginalProperties(String originalProperties) {
+            this.originalProperties = originalProperties;
+        }
     
         public String getOriginalLocation() {
             return originalLocation;
@@ -272,6 +283,9 @@ public class DataClass {
     
         @JsonProperty("reaction_tweet_props_id")
         private String reactionTweetPropsId;
+
+        @JsonProperty("REACTION_properties")
+        private String reactionProperties;
     
         @JsonProperty("REACTION_created_at")
         private String reactionCreatedAt;
@@ -400,6 +414,14 @@ public class DataClass {
     
         public void setReactionCreatedAt(String reactionCreatedAt) {
             this.reactionCreatedAt = reactionCreatedAt;
+        }
+
+        public String getReactionProperties() {
+            return reactionProperties;
+        }
+    
+        public void setReactionProperties(String reactionProperties) {
+            this.reactionProperties = reactionProperties;
         }
     
         public String getReactionLocation() {

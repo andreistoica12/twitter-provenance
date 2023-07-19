@@ -104,7 +104,7 @@ public class Template {
 
     public Collection<Attribute> createTweetProps(ProvFactory pFactory, TweetType type) {
         Collection<Attribute> tweetPropsAttributes = new ArrayList<>();
-        Attribute tweetPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "tweet properties", pFactory.getName().XSD_STRING);
+        Attribute tweetPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_var(type.toString()+"_properties"), pFactory.getName().XSD_STRING);
         Attribute tweetPropsCreatedAt = pFactory.newAttribute(qn_tw("created_at"), qn_var(type.toString()+"_created_at"), pFactory.getName().XSD_DATETIMESTAMP);
         Attribute tweetPropsLocation = pFactory.newAttribute(qn_tw("location"), qn_var(type.toString()+"_location"), pFactory.getName().PROV_LOCATION);
         Attribute tweetPropsLikeCount = pFactory.newAttribute(qn_tw("like_count"), qn_var(type.toString()+"_like_count"), pFactory.getName().XSD_INT);
@@ -154,7 +154,7 @@ public class Template {
         // 1. ENTITY - entity_originalTweet
         Collection<Attribute> originalTweetAttributes = new ArrayList<>();
         Attribute originalTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("original_text"), pFactory.getName().XSD_ANY_URI);
-        Attribute originalTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "original tweet", pFactory.getName().XSD_STRING);
+        Attribute originalTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ORIGINAL TWEET", pFactory.getName().XSD_STRING);
         originalTweetAttributes.addAll(Arrays.asList(originalTweetValue, originalTweetType));
         Entity entity_originalTweet = pFactory.newEntity(qn_var("original_tweet_id"), originalTweetAttributes);
 
