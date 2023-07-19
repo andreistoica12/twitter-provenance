@@ -29,12 +29,11 @@ public class Binding {
     }
 
     public void addAuthorProps(TweetType type, String author_props_id, String credible,
-                                String name, String username, String verified,
+                                String username, String verified,
                                 String followers_count, String following_count,
                                 Bindings bindings) {
         bindings.addVariable(template.qn_var(type.toString().toLowerCase() + "_author_props_id"), template.qn_tw(author_props_id));
         bindings.addAttribute(type.toString() + "_credible", credible);
-        bindings.addAttribute(type.toString() + "_name", name);
         bindings.addAttribute(type.toString() + "_username", username);
         bindings.addAttribute(type.toString() + "_verified", verified);
         bindings.addAttribute(type.toString() + "_followers_count", followers_count);
@@ -94,12 +93,14 @@ public class Binding {
     }
 
     public void addReactionTweetProps(String reaction_tweet_props_id, String REACTION_created_at,
-                                      String REACTION_location, String REACTION_reference_type, String REACTION_reference_id,
+                                      String REACTION_location, String REACTION_like_count, String REACTION_retweet_count,
+                                      String REACTION_reference_id,
                                       Bindings bindings) {
         bindings.addVariable(template.qn_var("reaction_tweet_props_id"), template.qn_tw(reaction_tweet_props_id));
         bindings.addAttribute("REACTION_created_at", REACTION_created_at);
         bindings.addAttribute("REACTION_location", REACTION_location);
-        bindings.addAttribute("REACTION_reference_type", REACTION_reference_type);
+        bindings.addAttribute("REACTION_like_count", REACTION_like_count);
+        bindings.addAttribute("REACTION_retweet_count", REACTION_retweet_count);
         bindings.addAttribute("REACTION_reference_id", REACTION_reference_id);
     }
 
@@ -114,8 +115,8 @@ public class Binding {
         addPostActivity(data.getOriginal().getPostId(), bindings);      
         addOriginalAuthor(data.getOriginal().getOriginalAuthorId(), data.getOriginal().getAgOName(), bindings);
         addAuthorProps(TweetType.ORIGINAL, data.getOriginal().getAuthorPropsId(), data.getOriginal().getCredible(), 
-                       data.getOriginal().getName(), data.getOriginal().getUsername(), 
-                       data.getOriginal().getVerified(), data.getOriginal().getFollowersCount(), data.getOriginal().getFollowingCount(), 
+                       data.getOriginal().getUsername(), data.getOriginal().getVerified(), 
+                       data.getOriginal().getFollowersCount(), data.getOriginal().getFollowingCount(), 
                        bindings);
         addOriginalTweet(data.getOriginal().getOriginalTweetId(), data.getOriginal().getOriginalText(), bindings);
         addOriginalTweetProps(data.getOriginal().getOriginalTweetPropsId(), data.getOriginal().getOriginalCreatedAt(), 
@@ -129,12 +130,13 @@ public class Binding {
         addReactActivity(reaction.getReactId(), bindings);
         addReactionAuthor(reaction.getReactionAuthorId(), reaction.getAgRName(), bindings);
         addAuthorProps(TweetType.REACTION, reaction.getAuthorPropsId(), reaction.getCredible(),
-                      reaction.getName(), reaction.getUsername(), reaction.getVerified(), 
+                      reaction.getUsername(), reaction.getVerified(), 
                       reaction.getFollowersCount(), reaction.getFollowingCount(), 
                       bindings);
         addReactionTweet(reaction.getReactionTweetId(), reaction.getReplyRetweetQuote(), reaction.getReactionText(), bindings);
         addReactionTweetProps(reaction.getReactionTweetPropsId(), reaction.getReactionCreatedAt(), 
-                              reaction.getReactionLocation(), reaction.getReactionReferenceType(), reaction.getReactionReferenceId(), 
+                              reaction.getReactionLocation(), reaction.getReactionLikeCount(), 
+                              reaction.getReactionRetweetCount(), reaction.getReactionReferenceId(), 
                               bindings);
     }
 

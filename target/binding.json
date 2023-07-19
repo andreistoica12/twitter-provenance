@@ -1,187 +1,184 @@
 {
   "var" : {
     "ORIGINAL_username" : [ {
-      "@value" : "Some original author username"
+      "@value" : "narendramodi"
     } ],
     "original_author_props_id" : [ {
-      "@id" : "tw:OriginalAuthorPropsId"
+      "@id" : "tw:author_props_18839785"
     } ],
     "REACTION_followers_count" : [ {
-      "@value" : "100"
+      "@value" : "2332"
     }, {
-      "@value" : "14324"
+      "@value" : "68045"
     }, {
-      "@value" : "1545346"
-    } ],
-    "ORIGINAL_name" : [ {
-      "@value" : "Some original author name"
+      "@value" : "38489"
     } ],
     "REACTION_credible" : [ {
       "@value" : "1"
     }, {
-      "@value" : "0"
+      "@value" : "1"
     }, {
-      "@value" : "0"
-    } ],
-    "REACTION_name" : [ {
-      "@value" : "Some second reaction author name"
-    }, {
-      "@value" : "Some third reaction author name"
-    }, {
-      "@value" : "Some fourth reaction author name"
+      "@value" : "1"
     } ],
     "ag_o_name" : [ {
-      "@value" : "Some original author name"
+      "@value" : "Narendra Modi"
     } ],
     "REACTION_reference_id" : [ {
-      "@value" : "985929573745"
+      "@value" : "1366200664402006016"
     }, {
-      "@value" : "5253252532"
+      "@value" : "1366200664402006016"
     }, {
-      "@value" : "525325257568672"
+      "@value" : "1366200664402006016"
     } ],
     "REACTION_verified" : [ {
+      "@value" : "False"
+    }, {
       "@value" : "True"
     }, {
-      "@value" : "False"
-    }, {
-      "@value" : "False"
+      "@value" : "True"
     } ],
     "ORIGINAL_reply_count" : [ {
-      "@value" : "20"
+      "@value" : "11595"
     } ],
     "reaction_tweet_id" : [ {
-      "@id" : "tw:ReactionTweetId2"
+      "@id" : "tw:1366200721087991811"
     }, {
-      "@id" : "tw:ReactionTweetId3"
+      "@id" : "tw:1366935973263736835"
     }, {
-      "@id" : "tw:ReactionTweetId4"
+      "@id" : "tw:1366237793727381504"
+    } ],
+    "REACTION_like_count" : [ {
+      "@value" : "0"
+    }, {
+      "@value" : "22143"
+    }, {
+      "@value" : "615"
     } ],
     "ORIGINAL_quote_count" : [ {
-      "@value" : "20"
+      "@value" : "4339"
     } ],
     "REACTION_location" : [ {
-      "@value" : "Some other place"
+      "@value" : "தமிழ்நாடு"
     }, {
-      "@value" : "Some other place 3"
+      "@value" : "Barbados"
     }, {
-      "@value" : "Some other place 4"
+      "@value" : "#"
     } ],
     "original_text" : [ {
-      "@value" : "This is the text of the tweet."
+      "@value" : "Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick time to strengthen the global fight against COVID-19. I appeal to all those who are eligible to take the vaccine. Together, let us make India COVID-19 free! https://t.co/5z5cvAoMrv"
     } ],
     "REACTION_created_at" : [ {
-      "@value" : "Some other timestamp"
+      "@value" : "2021-03-01 01:36:49+00:00"
     }, {
-      "@value" : "Some other timestamp 3"
+      "@value" : "2021-03-03 02:18:27+00:00"
     }, {
-      "@value" : "Some other timestamp 4"
+      "@value" : "2021-03-01 04:04:08+00:00"
     } ],
     "post_id" : [ {
-      "@id" : "tw:postId"
+      "@id" : "tw:post_1366200664402006016"
     } ],
     "original_tweet_props_id" : [ {
-      "@id" : "tw:OriginalTweetPropsId"
+      "@id" : "tw:tweet_props_1366200664402006016"
     } ],
     "REACTION_following_count" : [ {
-      "@value" : "200"
+      "@value" : "358"
     }, {
-      "@value" : "204325230"
+      "@value" : "1172"
     }, {
-      "@value" : "204376765658530"
+      "@value" : "362"
     } ],
     "ORIGINAL_like_count" : [ {
-      "@value" : "20"
+      "@value" : "220543"
     } ],
     "react_id" : [ {
-      "@id" : "tw:reactId2"
+      "@id" : "tw:react_1366200721087991811"
     }, {
-      "@id" : "tw:reactId3"
+      "@id" : "tw:react_1366935973263736835"
     }, {
-      "@id" : "tw:reactId4"
+      "@id" : "tw:react_1366237793727381504"
     } ],
     "ORIGINAL_created_at" : [ {
-      "@value" : "Some timestamp"
+      "@value" : "2021-03-01 01:36:35+00:00"
     } ],
     "reaction_text" : [ {
-      "@value" : "This is the text of the quote."
+      "@value" : "RT @narendramodi: Took my first dose of the COVID-19 vaccine at AIIMS. \n\nRemarkable how our doctors and scientists have worked in quick tim…"
     }, {
-      "@value" : "No text for retweets"
+      "@value" : "PM Modi @narendramodi made it possible for more than 40K persons in Barbados and tens of thousands elsewhere, to receive their 1st dose of COVISHIELD via #VaccineMaitri before receiving his. A genuine demonstration of generosity. Thank you and we wish you continued good health. https://t.co/1z1QGo6xQf"
     }, {
-      "@value" : "No text for retweets"
+      "@value" : "@narendramodi It is because of you, that a cleaner got the first vaccine dose in our country otherwise the famous family members and their followers will be the priorities for our Nation...\nYou really changed the vision of the Human Mankind in the Nation and perhaps the entire world."
     } ],
     "ORIGINAL_retweet_count" : [ {
-      "@value" : "20"
+      "@value" : "43621"
     } ],
     "reaction_author_props_id" : [ {
-      "@id" : "tw:ReactionAuthorPropsId2"
+      "@id" : "tw:author_props_1088016983126290432"
     }, {
-      "@id" : "tw:ReactionAuthorPropsId3"
+      "@id" : "tw:author_props_74618166"
     }, {
-      "@id" : "tw:ReactionAuthorPropsId4"
+      "@id" : "tw:author_props_755672251832217602"
     } ],
     "ORIGINAL_followers_count" : [ {
-      "@value" : "20"
+      "@value" : "82431058"
     } ],
     "ORIGINAL_credible" : [ {
       "@value" : "1"
     } ],
     "REACTION_username" : [ {
-      "@value" : "Some second reaction author username"
+      "@value" : "Saravanansivans"
     }, {
-      "@value" : "Some third reaction author username"
+      "@value" : "miaamormottley"
     }, {
-      "@value" : "Some fourth reaction author username"
+      "@value" : "theprayagtiwari"
     } ],
     "ORIGINAL_verified" : [ {
       "@value" : "True"
     } ],
     "reaction_author_id" : [ {
-      "@id" : "tw:reactionAuthorId2"
+      "@id" : "tw:1088016983126290432"
     }, {
-      "@id" : "tw:reactionAuthorId3"
+      "@id" : "tw:74618166"
     }, {
-      "@id" : "tw:reactionAuthorId4"
+      "@id" : "tw:755672251832217602"
     } ],
     "reply_retweet_quote" : [ {
-      "@value" : "quote"
+      "@value" : "RETWEET"
     }, {
-      "@value" : "retweet"
+      "@value" : "QUOTE"
     }, {
-      "@value" : "retweet"
+      "@value" : "REPLY"
     } ],
     "original_tweet_id" : [ {
-      "@id" : "tw:OriginalTweetId"
+      "@id" : "tw:1366200664402006016"
     } ],
     "ORIGINAL_location" : [ {
-      "@value" : "Some place"
+      "@value" : "India"
+    } ],
+    "REACTION_retweet_count" : [ {
+      "@value" : "43621"
+    }, {
+      "@value" : "4357"
+    }, {
+      "@value" : "44"
     } ],
     "reaction_tweet_props_id" : [ {
-      "@id" : "tw:ReactionTweetPropsId2"
+      "@id" : "tw:tweet_props_1366200721087991811"
     }, {
-      "@id" : "tw:ReactionTweetPropsId3"
+      "@id" : "tw:tweet_props_1366935973263736835"
     }, {
-      "@id" : "tw:ReactionTweetPropsId4"
+      "@id" : "tw:tweet_props_1366237793727381504"
     } ],
     "ag_r_name" : [ {
-      "@value" : "Some second reaction author name"
+      "@value" : "Saravanan Sivan"
     }, {
-      "@value" : "Some third reaction author name"
+      "@value" : "Mia Amor Mottley"
     }, {
-      "@value" : "Some fourth reaction author name"
+      "@value" : "Prayag"
     } ],
     "original_author_id" : [ {
-      "@id" : "tw:originalAuthorId"
-    } ],
-    "REACTION_reference_type" : [ {
-      "@value" : "quoted"
-    }, {
-      "@value" : "retweeted"
-    }, {
-      "@value" : "retweeted"
+      "@id" : "tw:18839785"
     } ],
     "ORIGINAL_following_count" : [ {
-      "@value" : "20"
+      "@value" : "2448"
     } ]
   },
   "vargen" : { },

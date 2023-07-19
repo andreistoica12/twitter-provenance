@@ -46,9 +46,6 @@ public class DataClass {
         @JsonProperty("credible")
         private String credible;
     
-        @JsonProperty("name")
-        private String name;
-    
         @JsonProperty("username")
         private String username;
     
@@ -130,13 +127,6 @@ public class DataClass {
             this.credible = credible;
         }
     
-        public String getName() {
-            return name;
-        }
-    
-        public void setName(String name) {
-            this.name = name;
-        }
     
         public String getUsername() {
             return username;
@@ -259,9 +249,6 @@ public class DataClass {
         @JsonProperty("credible")
         private String credible;
     
-        @JsonProperty("name")
-        private String name;
-    
         @JsonProperty("username")
         private String username;
     
@@ -292,8 +279,11 @@ public class DataClass {
         @JsonProperty("REACTION_location")
         private String reactionLocation;
     
-        @JsonProperty("REACTION_reference_type")
-        private String reactionReferenceType;
+        @JsonProperty("REACTION_like_count")
+        private String reactionLikeCount;
+
+        @JsonProperty("REACTION_retweet_count")
+        private String reactionRetweetCount;
     
         @JsonProperty("REACTION_reference_id")
         private String reactionReferenceId;
@@ -338,14 +328,6 @@ public class DataClass {
     
         public void setCredible(String credible) {
             this.credible = credible;
-        }
-    
-        public String getName() {
-            return name;
-        }
-    
-        public void setName(String name) {
-            this.name = name;
         }
     
         public String getUsername() {
@@ -428,12 +410,20 @@ public class DataClass {
             this.reactionLocation = reactionLocation;
         }
     
-        public String getReactionReferenceType() {
-            return reactionReferenceType;
+        public String getReactionLikeCount() {
+            return reactionLikeCount;
         }
     
-        public void setReactionReferenceType(String reactionReferenceType) {
-            this.reactionReferenceType = reactionReferenceType;
+        public void setReactionLikeCount(String reactionLikeCount) {
+            this.reactionLikeCount = reactionLikeCount;
+        }
+
+        public String getReactionRetweetCount() {
+            return reactionRetweetCount;
+        }
+    
+        public void setReactionRetweetCount(String reactionRetweetCount) {
+            this.reactionRetweetCount = reactionRetweetCount;
         }
     
         public String getReactionReferenceId() {

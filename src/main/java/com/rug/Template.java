@@ -107,21 +107,22 @@ public class Template {
         Attribute tweetPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "tweet properties", pFactory.getName().XSD_STRING);
         Attribute tweetPropsCreatedAt = pFactory.newAttribute(qn_tw("created_at"), qn_var(type.toString()+"_created_at"), pFactory.getName().XSD_DATETIMESTAMP);
         Attribute tweetPropsLocation = pFactory.newAttribute(qn_tw("location"), qn_var(type.toString()+"_location"), pFactory.getName().PROV_LOCATION);
+        Attribute tweetPropsLikeCount = pFactory.newAttribute(qn_tw("like_count"), qn_var(type.toString()+"_like_count"), pFactory.getName().XSD_INT);
         
         tweetPropsAttributes.addAll(Arrays.asList(tweetPropsType,
                                                   tweetPropsCreatedAt,
-                                                  tweetPropsLocation));
+                                                  tweetPropsLocation,
+                                                  tweetPropsLikeCount));
         
         if(type != TweetType.ORIGINAL) {
-            Attribute tweetPropsReferenceType = pFactory.newAttribute(qn_tw("reference_type"), qn_var(type.toString()+"_reference_type"), pFactory.getName().XSD_STRING);
+            Attribute tweetPropsRetweetCount = pFactory.newAttribute(qn_tw("retweet_count"), qn_var(type.toString()+"_retweet_count"), pFactory.getName().XSD_INT);
             Attribute tweetPropsReferenceId = pFactory.newAttribute(qn_tw("reference_id"), qn_var(type.toString()+"_reference_id"), pFactory.getName().XSD_INT);
-            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsReferenceType, tweetPropsReferenceId));
+            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsRetweetCount, tweetPropsReferenceId));
         } else {
-            Attribute tweetPropsLikeCount = pFactory.newAttribute(qn_tw("like_count"), qn_var(type.toString()+"_like_count"), pFactory.getName().XSD_INT);
             Attribute tweetPropsQuoteCount = pFactory.newAttribute(qn_tw("quote_count"), qn_var(type.toString()+"_quote_count"), pFactory.getName().XSD_INT);
             Attribute tweetPropsReplyCount = pFactory.newAttribute(qn_tw("reply_count"), qn_var(type.toString()+"_reply_count"), pFactory.getName().XSD_INT);
             Attribute tweetPropsRetweetCount = pFactory.newAttribute(qn_tw("retweet_count"), qn_var(type.toString()+"_retweet_count"), pFactory.getName().XSD_INT);
-            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsLikeCount, tweetPropsQuoteCount, tweetPropsReplyCount, tweetPropsRetweetCount));
+            tweetPropsAttributes.addAll(Arrays.asList(tweetPropsQuoteCount, tweetPropsReplyCount, tweetPropsRetweetCount));
 
         }
 
@@ -133,7 +134,6 @@ public class Template {
         Collection<Attribute> authorProps = new ArrayList<>();
         Attribute authorPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "user properties", pFactory.getName().XSD_STRING);
         Attribute authorPropsCredible = pFactory.newAttribute(qn_tw("credible"), qn_var(type+"_credible"), pFactory.getName().XSD_INT);
-        Attribute authorPropsName = pFactory.newAttribute(qn_tw("name"), qn_var(type+"_name"), pFactory.getName().XSD_STRING);
         Attribute authorPropsUsername = pFactory.newAttribute(qn_tw("username"), qn_var(type+"_username"), pFactory.getName().XSD_STRING);
         Attribute authorPropsVerified = pFactory.newAttribute(qn_tw("verified"), qn_var(type+"_verified"), pFactory.getName().XSD_BOOLEAN);
         Attribute authorPropsFollowersCount = pFactory.newAttribute(qn_tw("followers_count"), qn_var(type+"_followers_count"), pFactory.getName().XSD_INT);
@@ -141,7 +141,6 @@ public class Template {
 
         authorProps.addAll(Arrays.asList(authorPropsType,
                                          authorPropsCredible,
-                                         authorPropsName,
                                          authorPropsUsername,
                                          authorPropsVerified,
                                          authorPropsFollowersCount,
