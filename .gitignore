@@ -1,6 +1,7 @@
 .vscode/
-provenance-graphs/*
-src/main/python/input-data/*
-src/main/python/venv/
-src/main/python/output/*
 target/
+src/main/python/venv/
+src/main/python/input-data/covaxxy_merged_25_days.csv
+src/main/python/input-data/covaxxy_merged_test.csv
+src/main/python/output/data.json
+provenance-graphs/doc.svg

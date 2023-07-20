@@ -287,7 +287,6 @@ public class Template {
         // TODO: 
         // - see how to fit everything into the visuals of the SVG 
         //      => increase the dimension of the ViewBox in the svg xml file dynamically, not hardcoded as it is now
-        // - see how to retrieve data from the dataset (Python) - probably some JSON file
 
 
         // Create a collection to store statements
