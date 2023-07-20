@@ -1,4 +1,4 @@
-package com.rug;
+package com.rug.model1;
 
 import org.openprovenance.prov.model.*;
 import org.openprovenance.prov.interop.InteropFramework;

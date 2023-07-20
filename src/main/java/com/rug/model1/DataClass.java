@@ -1,4 +1,4 @@
-package com.rug;
+package com.rug.model1;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

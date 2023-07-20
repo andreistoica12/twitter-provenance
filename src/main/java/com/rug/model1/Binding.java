@@ -1,4 +1,4 @@
-package com.rug;
+package com.rug.model1;
 
 import org.openprovenance.prov.model.*;
 import org.openprovenance.prov.template.expander.Bindings;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rug.DataClass.Reaction;
+import com.rug.model1.DataClass.Reaction;
 import java.net.URISyntaxException;
 
 
@@ -178,7 +178,7 @@ public class Binding {
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String dataPath = currentWorkingDirectory + "/src/main/python/output/data.json";
+        String dataPath = currentWorkingDirectory + "/src/main/python/model1/output/data.json";
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();

@@ -131,7 +131,8 @@ def create_json_data(original_tweet_id, dataset):
 
 def main():
     
-    python_dir_path = os.path.dirname(os.path.abspath(__file__))
+    model1_dir_path = os.path.dirname(os.path.abspath(__file__))
+    python_dir_path = os.path.dirname(model1_dir_path)
     input_filename = 'covaxxy_merged_test.csv'
     input_data_path = os.path.join(python_dir_path, 'input-data', input_filename)
 
@@ -159,7 +160,7 @@ def main():
     print("Creating the output JSON file...")
     data = create_json_data(tweet_id_most_reactions, merged_days)
 
-    output_path = os.path.join(python_dir_path, 'output', 'data.json')
+    output_path = os.path.join(model1_dir_path, 'output', 'data.json')
 
     # Write the dictionary to a JSON file
     with open(output_path, "w") as output_json_file:
