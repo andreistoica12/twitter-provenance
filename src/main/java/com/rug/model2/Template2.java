@@ -154,7 +154,7 @@ public class Template2 {
 
         // 18. AGENT - agent_reactionAuthor
         Collection<Attribute> reactionAuthorsAttributes = new ArrayList<>();
-        Attribute reactionAuthorsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "Group of Users", pFactory.getName().XSD_STRING);
+        Attribute reactionAuthorsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "GROUP OF USERS", pFactory.getName().XSD_STRING);
         Attribute reactionAuthorsNrOfDistinctAuthors = pFactory.newAttribute(qn_tw("number_of_distinct_authors"), qn_var("nr_of_distinct_authors"), pFactory.getName().XSD_INT);
         Attribute reactionAuthorsLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
         reactionAuthorsAttributes.addAll(Arrays.asList(reactionAuthorsType, reactionAuthorsNrOfDistinctAuthors, reactionAuthorsLinked));
@@ -172,10 +172,16 @@ public class Template2 {
         Collection<Attribute> reactionTweetsAttributes = new ArrayList<>();
         Attribute reactionTweetsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "GROUP OF REACTION TWEETS", pFactory.getName().XSD_STRING);
         Attribute reactionTweetsTimeInterval = pFactory.newAttribute(qn_tw("time_interval"), qn_var("time_interval"), pFactory.getName().XSD_STRING);
+        Attribute reactionTweetsTotalNumberOfReactions = pFactory.newAttribute(qn_tw("total_number_of_reactions"), qn_var("total_nr_of_reactions"), pFactory.getName().XSD_INT);
         Attribute reactionTweetsNrOfReplies = pFactory.newAttribute(qn_tw("number_of_replies"), qn_var("nr_of_replies"), pFactory.getName().XSD_INT);
         Attribute reactionTweetsNrOfQuotes = pFactory.newAttribute(qn_tw("number_of_quotes"), qn_var("nr_of_quotes"), pFactory.getName().XSD_INT);
         Attribute reactionTweetsNrOfRetweets = pFactory.newAttribute(qn_tw("number_of_retweets"), qn_var("nr_of_retweets"), pFactory.getName().XSD_INT);
-        reactionTweetsAttributes.addAll(Arrays.asList(reactionTweetsType, reactionTweetsTimeInterval, reactionTweetsNrOfReplies, reactionTweetsNrOfQuotes, reactionTweetsNrOfRetweets));
+        reactionTweetsAttributes.addAll(Arrays.asList(reactionTweetsType, 
+                                                      reactionTweetsTimeInterval, 
+                                                      reactionTweetsTotalNumberOfReactions, 
+                                                      reactionTweetsNrOfReplies, 
+                                                      reactionTweetsNrOfQuotes, 
+                                                      reactionTweetsNrOfRetweets));
         Entity entity_reactionTweets = pFactory.newEntity(qn_var("reaction_group_of_tweets_id"), reactionTweetsAttributes);
 
 

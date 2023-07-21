@@ -64,11 +64,12 @@ public class Binding2 {
         bindings.addAttribute("nr_of_distinct_authors", nr_of_distinct_authors);
     }
 
-    public void addReactionTweets(String reaction_group_of_tweets_id, String time_interval, 
+    public void addReactionTweets(String reaction_group_of_tweets_id, String time_interval, String total_nr_of_reactions,
                                  String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
                                  Bindings bindings) {
         bindings.addVariable(template.qn_var("reaction_group_of_tweets_id"), template.qn_tw(reaction_group_of_tweets_id));
         bindings.addAttribute("time_interval", time_interval);
+        bindings.addAttribute("total_nr_of_reactions", total_nr_of_reactions);
         bindings.addAttribute("nr_of_replies", nr_of_replies);
         bindings.addAttribute("nr_of_quotes", nr_of_quotes);
         bindings.addAttribute("nr_of_retweets", nr_of_retweets);
@@ -95,8 +96,8 @@ public class Binding2 {
                            data.getGroupOfReactions().getNrOfDistinctAuthors(),
                            bindings);
         addReactionTweets(data.getGroupOfReactions().getReactionGroupOfTweetsId(), data.getGroupOfReactions().getTimeInterval(),
-                          data.getGroupOfReactions().getNrOfReplies(), data.getGroupOfReactions().getNrOfQuotes(),
-                          data.getGroupOfReactions().getNrOfRetweets(),
+                          data.getGroupOfReactions().getTotalNrOfReactions(), data.getGroupOfReactions().getNrOfReplies(), 
+                          data.getGroupOfReactions().getNrOfQuotes(), data.getGroupOfReactions().getNrOfRetweets(),
                           bindings);
     }
 

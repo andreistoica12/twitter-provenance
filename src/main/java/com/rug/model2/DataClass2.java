@@ -203,6 +203,9 @@ public class DataClass2 {
         @JsonProperty("time_interval")
         private String timeInterval;
 
+        @JsonProperty("total_nr_of_reactions")
+        private String totalNrOfReactions;
+
         @JsonProperty("nr_of_replies")
         private String nrOfReplies;
 
@@ -265,6 +268,15 @@ public class DataClass2 {
 
         public void setNrOfReplies(String nrOfReplies) {
             this.nrOfReplies = nrOfReplies;
+        }
+
+        // Number of Replies
+        public String getTotalNrOfReactions() {
+            return totalNrOfReactions;
+        }
+
+        public void setTotalNrOfReactions(String totalNrOfReactions) {
+            this.totalNrOfReactions = totalNrOfReactions;
         }
 
         // Number of Quotes
