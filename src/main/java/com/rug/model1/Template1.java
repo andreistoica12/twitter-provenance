@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 
-public class Template {
+public class Template1 {
 
     public static final String VAR_NS = "http://openprovenance.org/var#";
     public static final String VAR_PREFIX = "var";
@@ -50,7 +50,7 @@ public class Template {
         REACTION
     }
 
-    public Template(ProvFactory pFactory) {
+    public Template1(ProvFactory pFactory) {
         this.pFactory = pFactory;
         ns=new Namespace();
         ns.addKnownNamespaces();
@@ -132,7 +132,7 @@ public class Template {
 
     public Collection<Attribute> createAuthorProps(ProvFactory pFactory, TweetType type) {
         Collection<Attribute> authorProps = new ArrayList<>();
-        Attribute authorPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "user properties", pFactory.getName().XSD_STRING);
+        Attribute authorPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "USER properties", pFactory.getName().XSD_STRING);
         Attribute authorPropsCredible = pFactory.newAttribute(qn_tw("credible"), qn_var(type+"_credible"), pFactory.getName().XSD_INT);
         Attribute authorPropsUsername = pFactory.newAttribute(qn_tw("username"), qn_var(type+"_username"), pFactory.getName().XSD_STRING);
         Attribute authorPropsVerified = pFactory.newAttribute(qn_tw("verified"), qn_var(type+"_verified"), pFactory.getName().XSD_BOOLEAN);
@@ -375,7 +375,7 @@ public class Template {
         String file_provn=args[0];
         String file_svg=args[1];
         
-        Template template = new Template(InteropFramework.getDefaultFactory());
+        Template1 template = new Template1(InteropFramework.getDefaultFactory());
 
         Document document = template.createTemplateDocument();
         template.saveDocument(document, file_provn, file_svg);

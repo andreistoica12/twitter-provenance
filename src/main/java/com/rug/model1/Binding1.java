@@ -9,21 +9,21 @@ import java.io.IOException;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rug.model1.DataClass.Reaction;
+import com.rug.model1.DataClass1.Reaction;
 import java.net.URISyntaxException;
 
 
-public class Binding {
+public class Binding1 {
 
-    private final Template template;
-    private final DataClass data;
+    private final Template1 template;
+    private final DataClass1 data;
 
     public enum TweetType {
         ORIGINAL,
         REACTION
     }
     
-    public Binding(Template template, DataClass data) {
+    public Binding1(Template1 template, DataClass1 data) {
         this.template = template;
         this.data = data;
     }
@@ -174,20 +174,20 @@ public class Binding {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file_json=args[0];
         
-        Template template = new Template(InteropFramework.getDefaultFactory());
+        Template1 template = new Template1(InteropFramework.getDefaultFactory());
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String dataPath = currentWorkingDirectory + "/src/main/python/model1/output/data.json";
+        String dataPath = currentWorkingDirectory + "/src/main/python/model1/output/data1.json";
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
             // Read the JSON file and map it to the DataClass
-            DataClass data = objectMapper.readValue(new File(dataPath), DataClass.class);
+            DataClass1 data = objectMapper.readValue(new File(dataPath), DataClass1.class);
 
-            Binding binding = new Binding(template, data);
+            Binding1 binding = new Binding1(template, data);
             binding.bind(file_json);
 
         } catch (IOException e) {

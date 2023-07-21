@@ -1,7 +1,7 @@
 {
     "original": {
         "post_id": "post_1366200664402006016",
-        "original_author_id": "ORIGINAL_TWEET_author_18839785",
+        "original_author_id": "author_ORIGINAL_TWEET_18839785",
         "ag_o_name": "Narendra Modi",
         "author_props_id": "author_props_18839785",
         "credible": "1",
@@ -9,7 +9,7 @@
         "verified": "True",
         "followers_count": "82431058",
         "following_count": "2448",
-        "original_tweet_id": "1366200664402006016",
+        "original_tweet_id": "tweet_1366200664402006016",
         "original_text": "Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick time to strengthen the global fight against COVID-19. I appeal to all those who are eligible to take the vaccine. Together, let us make India COVID-19 free! https://t.co/5z5cvAoMrv",
         "original_tweet_props_id": "tweet_props_1366200664402006016",
         "ORIGINAL_properties": "ORIGINAL TWEET properties",
@@ -23,7 +23,7 @@
     "reactions": [
         {
             "react_id": "react_RETWEET_1366200721087991811",
-            "reaction_author_id": "RETWEET_author_1088016983126290432",
+            "reaction_author_id": "author_RETWEET_1088016983126290432",
             "ag_r_name": "Saravanan Sivan",
             "author_props_id": "author_props_1088016983126290432",
             "credible": "1",
@@ -31,7 +31,7 @@
             "verified": "False",
             "followers_count": "2332",
             "following_count": "358",
-            "reaction_tweet_id": "1366200721087991811",
+            "reaction_tweet_id": "tweet_1366200721087991811",
             "reply_retweet_quote": "RETWEET",
             "reaction_text": "RT @narendramodi: Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick tim\u2026",
             "reaction_tweet_props_id": "RETWEET_props_1366200721087991811",
@@ -44,7 +44,7 @@
         },
         {
             "react_id": "react_QUOTE_1366234582190682118",
-            "reaction_author_id": "QUOTE_author_390677061",
+            "reaction_author_id": "author_QUOTE_390677061",
             "ag_r_name": "Tejasvi Surya",
             "author_props_id": "author_props_390677061",
             "credible": "1",
@@ -52,7 +52,7 @@
             "verified": "True",
             "followers_count": "1226151",
             "following_count": "1317",
-            "reaction_tweet_id": "1366234582190682118",
+            "reaction_tweet_id": "tweet_1366234582190682118",
             "reply_retweet_quote": "QUOTE",
             "reaction_text": "3 messages in one act.1. PM didn\u2019t jump queue. Took his vaccine only when all senior citizens were eligible.2. Boosted confidence of all in our vaccine.3. He could have taken it at his residence; but like all, went to government facility to take his shot.#LeadbyExample https://t.co/GSiA9CaMpL",
             "reaction_tweet_props_id": "QUOTE_props_1366234582190682118",
@@ -65,7 +65,7 @@
         },
         {
             "react_id": "react_REPLY_1366237793727381504",
-            "reaction_author_id": "REPLY_author_755672251832217602",
+            "reaction_author_id": "author_REPLY_755672251832217602",
             "ag_r_name": "Prayag",
             "author_props_id": "author_props_755672251832217602",
             "credible": "1",
@@ -73,7 +73,7 @@
             "verified": "True",
             "followers_count": "38489",
             "following_count": "362",
-            "reaction_tweet_id": "1366237793727381504",
+            "reaction_tweet_id": "tweet_1366237793727381504",
             "reply_retweet_quote": "REPLY",
             "reaction_text": "@narendramodi It is because of you, that a cleaner got the first vaccine dose in our country otherwise the famous family members and their followers will be the priorities for our Nation...You really changed the vision of the Human Mankind in the Nation and perhaps the entire world.",
             "reaction_tweet_props_id": "REPLY_props_1366237793727381504",

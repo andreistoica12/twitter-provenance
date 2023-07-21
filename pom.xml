@@ -139,7 +139,7 @@
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
-                        <argument>source venv/bin/activate; python model1/generate_data.py</argument>
+                        <argument>source venv/bin/activate; python model1/generate_data1.py</argument>
                     </arguments>
                     </configuration>
                 </execution>
@@ -151,10 +151,10 @@
                         <goal>java</goal>
                     </goals>
                     <configuration>
-                        <mainClass>com.rug.model1.Template</mainClass>
+                        <mainClass>com.rug.model1.Template1</mainClass>
                         <arguments>
-                            <argument>${project.build.directory}/template.provn</argument>
-                            <argument>${project.build.directory}/template.svg</argument>
+                            <argument>${project.build.directory}/template1.provn</argument>
+                            <argument>${project.build.directory}/template1.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>
@@ -166,15 +166,15 @@
                         <goal>java</goal>
                     </goals>
                     <configuration>
-                        <mainClass>com.rug.model1.Binding</mainClass>
+                        <mainClass>com.rug.model1.Binding1</mainClass>
                         <arguments>
-                            <argument>${project.build.directory}/binding.json</argument>
+                            <argument>${project.build.directory}/binding1.json</argument>
                         </arguments>
                     </configuration>
                 </execution>
 
                 <execution>
-                <id>execute-command</id>
+                <id>execute-command1</id>
                 <phase>test</phase>
                 <goals>
                     <goal>exec</goal>
@@ -183,13 +183,13 @@
                     <executable>provconvert</executable>
                     <arguments>
                         <argument>-infile</argument>
-                        <argument>${project.build.directory}/template.provn</argument>
+                        <argument>${project.build.directory}/template1.provn</argument>
                         <argument>-bindings</argument>
-                        <argument>${project.build.directory}/binding.json</argument>
+                        <argument>${project.build.directory}/binding1.json</argument>
                         <argument>-bindver</argument>
                         <argument>3</argument>
                         <argument>-outfile</argument>
-                        <argument>${project.basedir}/provenance-graphs/model1/doc.svg</argument>
+                        <argument>${project.basedir}/provenance-graphs/model1/doc1.svg</argument>
                     </arguments>
                 </configuration>
                 </execution>
@@ -203,7 +203,7 @@
                     <configuration>
                         <mainClass>com.rug.AdjustSVGSize</mainClass>
                         <arguments>
-                            <argument>${project.basedir}/provenance-graphs/model1/doc.svg</argument>
+                            <argument>${project.basedir}/provenance-graphs/model1/doc1.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>
@@ -232,6 +232,70 @@
                         <mainClass>com.rug.PythonRunner</mainClass>
                     </configuration>
                 </execution> -->
+
+                <execution>
+                    <id>test4</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model2.Template2</mainClass>
+                        <arguments>
+                            <argument>${project.build.directory}/template2.provn</argument>
+                            <argument>${project.build.directory}/template2.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>test5</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model2.Binding2</mainClass>
+                        <arguments>
+                            <argument>${project.build.directory}/binding2.json</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command2</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.build.directory}/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.build.directory}/binding2.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>test6</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.AdjustSVGSize</mainClass>
+                        <arguments>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
                 
             </executions>
         </plugin>

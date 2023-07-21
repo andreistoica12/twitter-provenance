@@ -28,7 +28,7 @@ def create_json_original(original_tweet_id, dataset):
 
     original = {}
     original["post_id"] = f"post_{original_tweet_id}"
-    original["original_author_id"] = f"ORIGINAL_TWEET_author_{row_value_for('author_id')}"
+    original["original_author_id"] = f"author_ORIGINAL_TWEET_{row_value_for('author_id')}"
     original["ag_o_name"] = row_value_for('name')
     original["author_props_id"] = f"author_props_{row_value_for('author_id')}"
     original["credible"] = row_value_for('credible')
@@ -36,7 +36,7 @@ def create_json_original(original_tweet_id, dataset):
     original["verified"] = row_value_for('verified')
     original["followers_count"] = row_value_for('followers_count')
     original["following_count"] = row_value_for('following_count')
-    original["original_tweet_id"] = original_tweet_id
+    original["original_tweet_id"] = f"tweet_{original_tweet_id}"
     unfiltered_text = row_value_for('text')
     original["original_text"] = unfiltered_text.replace('\n', '')
     original["original_tweet_props_id"] = f"tweet_props_{original_tweet_id}"
@@ -67,7 +67,7 @@ def create_json_reaction(reaction_tweet_id, dataset):
 
     reaction = {}
     reaction["react_id"] = f"react_{reaction_type}_{reaction_tweet_id}"
-    reaction["reaction_author_id"] = f"{reaction_type}_author_{row_value_for('author_id')}"
+    reaction["reaction_author_id"] = f"author_{reaction_type}_{row_value_for('author_id')}"
     reaction["ag_r_name"] = row_value_for('name')
     reaction["author_props_id"] = f"author_props_{row_value_for('author_id')}"
     reaction["credible"] = row_value_for('credible')
@@ -75,7 +75,7 @@ def create_json_reaction(reaction_tweet_id, dataset):
     reaction["verified"] = row_value_for('verified')
     reaction["followers_count"] = row_value_for('followers_count')
     reaction["following_count"] = row_value_for('following_count')
-    reaction["reaction_tweet_id"] = reaction_tweet_id
+    reaction["reaction_tweet_id"] = f"tweet_{reaction_tweet_id}"
     reaction["reply_retweet_quote"] = reaction_type
     unfiltered_text = row_value_for('text')
     reaction["reaction_text"] = unfiltered_text.replace('\n', '')
@@ -160,7 +160,7 @@ def main():
     print("Creating the output JSON file...")
     data = create_json_data(tweet_id_most_reactions, merged_days)
 
-    output_path = os.path.join(model1_dir_path, 'output', 'data.json')
+    output_path = os.path.join(model1_dir_path, 'output', 'data1.json')
 
     # Write the dictionary to a JSON file
     with open(output_path, "w") as output_json_file:

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class DataClass {
+public class DataClass1 {
     @JsonProperty("original")
     private Original original;
 

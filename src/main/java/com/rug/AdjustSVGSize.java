@@ -1,6 +1,8 @@
 package com.rug;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,8 +24,15 @@ public class AdjustSVGSize {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
         String file_svg=args[0];
 
-        int height = 6000;
-        int width = 3000;
+        // Convert the path string to a Path object
+        Path path = Paths.get(file_svg);
+        // Get the file name from the Path object
+        String fileName = path.getFileName().toString();
+ 
+
+        int height = (fileName.equals("doc1.svg")) ? 6000 : 1500;
+        int width = (fileName.equals("doc1.svg")) ? 3000 : 500;
+
 
         try {
 
