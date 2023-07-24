@@ -3,11 +3,11 @@
 <title>PROV</title>
 <polygon fill="white" points="-4,4 -4,-526 1313,-526 1313,4 -4,4" stroke="transparent"/>
 <g class="cluster" id="clust1">
-<title>clusterurn:uuid:2ec6bebd-b82e-4491-ad53-ad17a31e2908</title>
+<title>clusterurn:uuid:56739fb9-3883-4f39-afb8-fa38236883fd</title>
 <g id="a_clust1">
-<a xlink:actuate="onRequest" xlink:href="urn:uuid:2ec6bebd-b82e-4491-ad53-ad17a31e2908" xlink:show="replace" xlink:title="2ec6bebd-b82e-4491-ad53-ad17a31e2908" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
+<a xlink:actuate="onRequest" xlink:href="urn:uuid:56739fb9-3883-4f39-afb8-fa38236883fd" xlink:show="replace" xlink:title="56739fb9-3883-4f39-afb8-fa38236883fd" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink">
 <polygon fill="none" points="8,-8 8,-514 1301,-514 1301,-8 8,-8" stroke="black"/>
-<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="654.5" y="-15.8">2ec6bebd-b82e-4491-ad53-ad17a31e2908</text>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="654.5" y="-15.8">56739fb9-3883-4f39-afb8-fa38236883fd</text>
 </a>
 </g>
 </g>
@@ -206,15 +206,15 @@
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-112.5">time_interval:</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-112.5">72h - LAST_REACTION</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-99.5">number_of_reactions:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-99.5">0</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-99.5">989</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-86.5">percentage_out_of_total_reactions:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-86.5">0.0%</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-86.5">2.3%</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-73.5">number_of_replies:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-73.5">0</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-73.5">18</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-60.5">number_of_quotes:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-60.5">0</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-60.5">29</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="220" y="-47.5">number_of_retweets:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-47.5">0</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="400" y="-47.5">942</text>
 </g>
 <!-- &#45;attrs4&#45;&gt;http://twitter.com/reactions_for_72h_LAST_REACTION -->
 <g class="edge" id="edge5">
@@ -246,7 +246,7 @@
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="311" y="-322">type:</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="459" y="-322">GROUP OF USERS</text>
 <text font-family="Times,serif" font-size="10.00" text-anchor="start" x="311" y="-309">number_of_distinct_authors:</text>
-<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="459" y="-309">0</text>
+<text font-family="Times,serif" font-size="10.00" text-anchor="start" x="459" y="-309">945</text>
 </g>
 <!-- &#45;attrs6&#45;&gt;http://twitter.com/reactions_authors_for_72h_LAST_REACTION -->
 <g class="edge" id="edge7">

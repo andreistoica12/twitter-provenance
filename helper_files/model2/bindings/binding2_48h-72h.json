@@ -4,10 +4,10 @@
       "@value" : "1"
     } ],
     "nr_of_replies" : [ {
-      "@value" : "0"
+      "@value" : "14"
     } ],
     "nr_of_retweets" : [ {
-      "@value" : "0"
+      "@value" : "383"
     } ],
     "ORIGINAL_followers_count" : [ {
       "@value" : "82431058"
@@ -22,13 +22,13 @@
       "@id" : "tw:reactions_authors_for_48h_72h"
     } ],
     "nr_of_distinct_authors" : [ {
-      "@value" : "0"
+      "@value" : "406"
     } ],
     "ORIGINAL_location" : [ {
       "@value" : "India"
     } ],
     "percentage_out_of_total_reactions" : [ {
-      "@value" : "0.0%"
+      "@value" : "0.95%"
     } ],
     "ORIGINAL_username" : [ {
       "@value" : "narendramodi"
@@ -49,7 +49,7 @@
       "@id" : "tw:original_author_props_18839785"
     } ],
     "nr_of_reactions" : [ {
-      "@value" : "0"
+      "@value" : "408"
     } ],
     "reaction_group_of_tweets_id" : [ {
       "@id" : "tw:reactions_for_48h_72h"
@@ -67,7 +67,7 @@
       "@value" : "48h - 72h"
     } ],
     "nr_of_quotes" : [ {
-      "@value" : "0"
+      "@value" : "11"
     } ]
   },
   "vargen" : { },

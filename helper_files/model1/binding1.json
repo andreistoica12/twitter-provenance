@@ -9,7 +9,7 @@
     "REACTION_followers_count" : [ {
       "@value" : "2332"
     }, {
-      "@value" : "1226151"
+      "@value" : "68045"
     }, {
       "@value" : "38489"
     } ],
@@ -43,14 +43,14 @@
     "reaction_tweet_id" : [ {
       "@id" : "tw:tweet_1366200721087991811"
     }, {
-      "@id" : "tw:tweet_1366234582190682118"
+      "@id" : "tw:tweet_1366935973263736835"
     }, {
       "@id" : "tw:tweet_1366237793727381504"
     } ],
     "REACTION_like_count" : [ {
       "@value" : "0"
     }, {
-      "@value" : "17656"
+      "@value" : "22143"
     }, {
       "@value" : "615"
     } ],
@@ -60,7 +60,7 @@
     "REACTION_location" : [ {
       "@value" : "தமிழ்நாடு"
     }, {
-      "@value" : "Bengaluru, India"
+      "@value" : "Barbados"
     }, {
       "@value" : "#"
     } ],
@@ -70,7 +70,7 @@
     "REACTION_created_at" : [ {
       "@value" : "2021-03-01 01:36:49+00:00"
     }, {
-      "@value" : "2021-03-01 03:51:22+00:00"
+      "@value" : "2021-03-03 02:18:27+00:00"
     }, {
       "@value" : "2021-03-01 04:04:08+00:00"
     } ],
@@ -83,7 +83,7 @@
     "REACTION_following_count" : [ {
       "@value" : "358"
     }, {
-      "@value" : "1317"
+      "@value" : "1172"
     }, {
       "@value" : "362"
     } ],
@@ -93,7 +93,7 @@
     "react_id" : [ {
       "@id" : "tw:react_RETWEET_1366200721087991811"
     }, {
-      "@id" : "tw:react_QUOTE_1366234582190682118"
+      "@id" : "tw:react_QUOTE_1366935973263736835"
     }, {
       "@id" : "tw:react_REPLY_1366237793727381504"
     } ],
@@ -103,7 +103,7 @@
     "reaction_text" : [ {
       "@value" : "RT @narendramodi: Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick tim…"
     }, {
-      "@value" : "3 messages in one act.1. PM didn’t jump queue. Took his vaccine only when all senior citizens were eligible.2. Boosted confidence of all in our vaccine.3. He could have taken it at his residence; but like all, went to government facility to take his shot.#LeadbyExample https://t.co/GSiA9CaMpL"
+      "@value" : "PM Modi @narendramodi made it possible for more than 40K persons in Barbados and tens of thousands elsewhere, to receive their 1st dose of COVISHIELD via #VaccineMaitri before receiving his. A genuine demonstration of generosity. Thank you and we wish you continued good health. https://t.co/1z1QGo6xQf"
     }, {
       "@value" : "@narendramodi It is because of you, that a cleaner got the first vaccine dose in our country otherwise the famous family members and their followers will be the priorities for our Nation...You really changed the vision of the Human Mankind in the Nation and perhaps the entire world."
     } ],
@@ -113,7 +113,7 @@
     "reaction_author_props_id" : [ {
       "@id" : "tw:author_props_1088016983126290432"
     }, {
-      "@id" : "tw:author_props_390677061"
+      "@id" : "tw:author_props_74618166"
     }, {
       "@id" : "tw:author_props_755672251832217602"
     } ],
@@ -126,7 +126,7 @@
     "REACTION_username" : [ {
       "@value" : "Saravanansivans"
     }, {
-      "@value" : "Tejasvi_Surya"
+      "@value" : "miaamormottley"
     }, {
       "@value" : "theprayagtiwari"
     } ],
@@ -136,7 +136,7 @@
     "reaction_author_id" : [ {
       "@id" : "tw:author_RETWEET_1088016983126290432"
     }, {
-      "@id" : "tw:author_QUOTE_390677061"
+      "@id" : "tw:author_QUOTE_74618166"
     }, {
       "@id" : "tw:author_REPLY_755672251832217602"
     } ],
@@ -163,21 +163,21 @@
     "REACTION_retweet_count" : [ {
       "@value" : "43621"
     }, {
-      "@value" : "3414"
+      "@value" : "4357"
     }, {
       "@value" : "44"
     } ],
     "reaction_tweet_props_id" : [ {
       "@id" : "tw:RETWEET_props_1366200721087991811"
     }, {
-      "@id" : "tw:QUOTE_props_1366234582190682118"
+      "@id" : "tw:QUOTE_props_1366935973263736835"
     }, {
       "@id" : "tw:REPLY_props_1366237793727381504"
     } ],
     "ag_r_name" : [ {
       "@value" : "Saravanan Sivan"
     }, {
-      "@value" : "Tejasvi Surya"
+      "@value" : "Mia Amor Mottley"
     }, {
       "@value" : "Prayag"
     } ],

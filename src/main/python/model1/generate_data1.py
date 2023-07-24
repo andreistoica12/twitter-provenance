@@ -136,13 +136,30 @@ def create_json_data(original_tweet_id, dataset):
 def main():
     
     model1_dir_path = os.path.dirname(os.path.abspath(__file__))
+    output_dirpath = os.path.join(model1_dir_path, 'data')
+
+    # Get a list of all files and directories in the output folder, if any already
+    data_folder_contents = os.listdir(output_dirpath)
+
+    # Due to the fact that some machines may have limited processing resources,
+    # there is no need to regenerate the data files from the full merged dataset.
+    # It already exists on the remote GitHub repository associated with this project at:
+    # https://github.com/andreistoica12/twitter-provenance/tree/dev/src/main/python/model1/data
+
+    # Check if there are files other than ".gitkeep" in the folder
+    if len(data_folder_contents) > 1 or (len(data_folder_contents) == 1 and ".gitkeep" not in data_folder_contents):
+        print("Model1: Data has already been generated.")
+        return
+
+
     python_dir_path = os.path.dirname(model1_dir_path)
-    input_filename = 'covaxxy_merged_test.csv'
+    # input_filename = 'covaxxy_merged_test.csv'
+    input_filename = 'covaxxy_merged_25_days.csv'
     input_data_path = os.path.join(python_dir_path, 'input-data', input_filename)
 
-    print("Reading input data...")
+    print(f"Reading input data ({input_filename})...")
     merged_days = pd.read_csv(input_data_path)
-    print("Input data read.")
+    print(f"Input data read. Number of tweets: {len(merged_days)}.")
 
     print("Applying transformations to input dataframe...")
     merged_days['reference_id'] = merged_days['reference_id'].apply(string_to_int)
@@ -159,7 +176,7 @@ def main():
     print("Creating the output JSON file...")
     data = create_json_data(tweet_id_most_reactions, merged_days)
 
-    output_path = os.path.join(model1_dir_path, 'data', 'data1.json')
+    output_path = os.path.join(output_dirpath, "data1.json")
 
     # Write the dictionary to a JSON file
     with open(output_path, "w") as output_json_file:
@@ -167,35 +184,6 @@ def main():
 
     print("Output file created successfully.")
 
-    
-
-    # # In order to avoid boilerplate code, I decided to add some command line arguments when running
-    # # this script, instead of creating a separte, almost identical, file for each (combination of) reaction types.
-    # # The arguments are: --input, --output, --reactions_index .
-    # # This way, if the user wishes to run the script in a terminal window, he/she can specify these
-    # # arguments themselves. The steps to parse the command line arguments are the following:
-    # # 1. Create an argument parser
-    # parser = argparse.ArgumentParser()
-
-    # # 2. Add arguments for: input CSV file, output folder and the reactions_index variable
-    # parser.add_argument('--input', type=str, help='Input CSV file path')
-    # parser.add_argument('--output', type=str, help='Output folder path')
-    # parser.add_argument('--reactions_index', type=int, default=2, help='The type of reactions we consider')
-
-    # # 3. Parse the command-line arguments
-    # args = parser.parse_args()
-
-    # data_path = args.input
-    # opinion_changes_path = args.output
-    # # Instead of creating all files at once, I decided to create them one at a time, due to memory restrictions.
-    # # More specifically, the univeristy cluster's resource scheduler needs me to specify the memory is should allocate
-    # # beforehand. Because the script initially created all files at once, I needed to reserve a lot of memory,
-    # # so the SLURM job would be scheduled too late. This was not necessary, because for each file, most operations
-    # # need to be performed again, there is no global state variable which can be reused. 
-    # # This is why I opted for the following option.
-    # reaction_types = reaction_types_full_list[args.reactions_index]
-    # print(f'Reactions considered: {reaction_types}')
-    
 
 
 
