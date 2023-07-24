@@ -104,6 +104,10 @@ def create_json_reaction_list(original_tweet_id, dataset):
 
     top_reactions = []
     for reaction_type in reaction_types:
+        # I will choose the most liked reaction for each type of reaction: 
+        # reply, quote and retweet, as they generate the most interest.
+        # Due to the fact that in my dataset, retweets have no likes, as well as no quotes and replies, 
+        # I chose to select the number of retweets as the factor for choosing the top retweet.
         factor = 'like_count'
         factor = 'retweet_count' if reaction_type == 'retweeted' else factor
 
@@ -152,15 +156,10 @@ def main():
     print("Retrieving the tweet with the most reactions...")
     tweet_id_most_reactions = all_reactions.loc[merged_days['tweet_id'].notnull()]['reference_id'].value_counts().idxmax()
 
-    # I will choose the most liked reaction for each type of reaction: 
-    # reply, quote and retweet, as they generate the most interest.
-    # Due to the fact that in my dataset, retweets have no likes, as well as no quotes and replies, 
-    # I chose to select the number of retweets as the factor for choosing the top retweet.
-
     print("Creating the output JSON file...")
     data = create_json_data(tweet_id_most_reactions, merged_days)
 
-    output_path = os.path.join(model1_dir_path, 'output', 'data1.json')
+    output_path = os.path.join(model1_dir_path, 'data', 'data1.json')
 
     # Write the dictionary to a JSON file
     with open(output_path, "w") as output_json_file:

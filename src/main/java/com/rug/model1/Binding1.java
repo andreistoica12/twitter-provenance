@@ -180,7 +180,7 @@ public class Binding1 {
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        Path inputFilePath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model1", "output", "data1.json");
+        Path inputFilePath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model1", "data", "data1.json");
         String inputFilePathString = inputFilePath.toString();
 
         // Create an ObjectMapper instance

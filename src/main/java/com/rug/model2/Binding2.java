@@ -160,7 +160,7 @@ public class Binding2 {
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        Path inputFolderPath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model2", "output");
+        Path inputFolderPath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model2", "data");
         String inputFolderPathString = inputFolderPath.toString();
 
         // Create an ObjectMapper instance

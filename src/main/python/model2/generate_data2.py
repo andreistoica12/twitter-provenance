@@ -192,7 +192,7 @@ def main():
     }
 
     print("Creating the output JSON files...")
-    output_dirpath = os.path.join(model2_dir_path, 'output')
+    output_dirpath = os.path.join(model2_dir_path, 'data')
 
     create_all_json_data(tweet_id_most_reactions, reaction_intervals, merged_days, output_dirpath)
 
