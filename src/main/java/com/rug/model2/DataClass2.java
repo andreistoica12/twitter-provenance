@@ -203,8 +203,11 @@ public class DataClass2 {
         @JsonProperty("time_interval")
         private String timeInterval;
 
-        @JsonProperty("total_nr_of_reactions")
-        private String totalNrOfReactions;
+        @JsonProperty("nr_of_reactions")
+        private String nrOfReactions;
+
+        @JsonProperty("percentage_out_of_total_reactions")
+        private String percentageOutOfTotalReactions;
 
         @JsonProperty("nr_of_replies")
         private String nrOfReplies;
@@ -261,6 +264,24 @@ public class DataClass2 {
             this.timeInterval = timeInterval;
         }
 
+        // Number of Total Reactions
+        public String getNrOfReactions() {
+            return nrOfReactions;
+        }
+
+        public void setNrOfReactions(String nrOfReactions) {
+            this.nrOfReactions = nrOfReactions;
+        }
+
+        // Percentage of Total Reactions
+        public String getPercentageOutOfTotalReactions() {
+            return percentageOutOfTotalReactions;
+        }
+
+        public void setPercentageOutOfTotalReactions(String percentageOutOfTotalReactions) {
+            this.percentageOutOfTotalReactions = percentageOutOfTotalReactions;
+        }
+
         // Number of Replies
         public String getNrOfReplies() {
             return nrOfReplies;
@@ -268,15 +289,6 @@ public class DataClass2 {
 
         public void setNrOfReplies(String nrOfReplies) {
             this.nrOfReplies = nrOfReplies;
-        }
-
-        // Number of Replies
-        public String getTotalNrOfReactions() {
-            return totalNrOfReactions;
-        }
-
-        public void setTotalNrOfReactions(String totalNrOfReactions) {
-            this.totalNrOfReactions = totalNrOfReactions;
         }
 
         // Number of Quotes

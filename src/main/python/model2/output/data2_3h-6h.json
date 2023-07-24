@@ -7,7 +7,7 @@
         "post_id": "post_1366200664402006016",
         "original_author_id": "ORIGINAL_TWEET_author_18839785",
         "ag_o_name": "Narendra Modi",
-        "original_author_props_id": "author_props_18839785",
+        "original_author_props_id": "original_author_props_18839785",
         "ORIGINAL_credible": "1",
         "ORIGINAL_username": "narendramodi",
         "ORIGINAL_verified": "True",
@@ -15,14 +15,15 @@
         "ORIGINAL_following_count": "2448"
     },
     "group_of_reactions": {
-        "react_id": "react_REPLY_1366237793727381504",
-        "reaction_group_of_authors_id": "REPLY_author_755672251832217602",
-        "nr_of_distinct_authors": "5266",
-        "reaction_group_of_tweets_id": "1366237793727381504",
-        "time_interval": "15' - 1h",
-        "total_nr_of_reactions": "543463465346",
-        "nr_of_replies": "4342",
-        "nr_of_quotes": "2435",
-        "nr_of_retweets": "54363"
+        "react_id": "reacts_for_3h_6h",
+        "reaction_group_of_authors_id": "reactions_authors_for_3h_6h",
+        "nr_of_distinct_authors": "8947",
+        "reaction_group_of_tweets_id": "reactions_for_3h_6h",
+        "time_interval": "3h - 6h",
+        "nr_of_reactions": "9011",
+        "percentage_out_of_total_reactions": "22.61%",
+        "nr_of_replies": "160",
+        "nr_of_quotes": "407",
+        "nr_of_retweets": "8444"
     }
 }

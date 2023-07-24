@@ -1,0 +1,199 @@
+{
+  "var" : {
+    "ORIGINAL_username" : [ {
+      "@value" : "narendramodi"
+    } ],
+    "original_author_props_id" : [ {
+      "@id" : "tw:author_props_18839785"
+    } ],
+    "REACTION_followers_count" : [ {
+      "@value" : "2332"
+    }, {
+      "@value" : "1226151"
+    }, {
+      "@value" : "38489"
+    } ],
+    "REACTION_credible" : [ {
+      "@value" : "1"
+    }, {
+      "@value" : "1"
+    }, {
+      "@value" : "1"
+    } ],
+    "ag_o_name" : [ {
+      "@value" : "Narendra Modi"
+    } ],
+    "REACTION_reference_id" : [ {
+      "@value" : "1366200664402006016"
+    }, {
+      "@value" : "1366200664402006016"
+    }, {
+      "@value" : "1366200664402006016"
+    } ],
+    "REACTION_verified" : [ {
+      "@value" : "False"
+    }, {
+      "@value" : "True"
+    }, {
+      "@value" : "True"
+    } ],
+    "ORIGINAL_reply_count" : [ {
+      "@value" : "11595"
+    } ],
+    "reaction_tweet_id" : [ {
+      "@id" : "tw:tweet_1366200721087991811"
+    }, {
+      "@id" : "tw:tweet_1366234582190682118"
+    }, {
+      "@id" : "tw:tweet_1366237793727381504"
+    } ],
+    "REACTION_like_count" : [ {
+      "@value" : "0"
+    }, {
+      "@value" : "17656"
+    }, {
+      "@value" : "615"
+    } ],
+    "ORIGINAL_quote_count" : [ {
+      "@value" : "4339"
+    } ],
+    "REACTION_location" : [ {
+      "@value" : "தமிழ்நாடு"
+    }, {
+      "@value" : "Bengaluru, India"
+    }, {
+      "@value" : "#"
+    } ],
+    "original_text" : [ {
+      "@value" : "Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick time to strengthen the global fight against COVID-19. I appeal to all those who are eligible to take the vaccine. Together, let us make India COVID-19 free! https://t.co/5z5cvAoMrv"
+    } ],
+    "REACTION_created_at" : [ {
+      "@value" : "2021-03-01 01:36:49+00:00"
+    }, {
+      "@value" : "2021-03-01 03:51:22+00:00"
+    }, {
+      "@value" : "2021-03-01 04:04:08+00:00"
+    } ],
+    "post_id" : [ {
+      "@id" : "tw:post_1366200664402006016"
+    } ],
+    "original_tweet_props_id" : [ {
+      "@id" : "tw:tweet_props_1366200664402006016"
+    } ],
+    "REACTION_following_count" : [ {
+      "@value" : "358"
+    }, {
+      "@value" : "1317"
+    }, {
+      "@value" : "362"
+    } ],
+    "ORIGINAL_like_count" : [ {
+      "@value" : "220543"
+    } ],
+    "react_id" : [ {
+      "@id" : "tw:react_RETWEET_1366200721087991811"
+    }, {
+      "@id" : "tw:react_QUOTE_1366234582190682118"
+    }, {
+      "@id" : "tw:react_REPLY_1366237793727381504"
+    } ],
+    "ORIGINAL_created_at" : [ {
+      "@value" : "2021-03-01 01:36:35+00:00"
+    } ],
+    "reaction_text" : [ {
+      "@value" : "RT @narendramodi: Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick tim…"
+    }, {
+      "@value" : "3 messages in one act.1. PM didn’t jump queue. Took his vaccine only when all senior citizens were eligible.2. Boosted confidence of all in our vaccine.3. He could have taken it at his residence; but like all, went to government facility to take his shot.#LeadbyExample https://t.co/GSiA9CaMpL"
+    }, {
+      "@value" : "@narendramodi It is because of you, that a cleaner got the first vaccine dose in our country otherwise the famous family members and their followers will be the priorities for our Nation...You really changed the vision of the Human Mankind in the Nation and perhaps the entire world."
+    } ],
+    "ORIGINAL_retweet_count" : [ {
+      "@value" : "43621"
+    } ],
+    "reaction_author_props_id" : [ {
+      "@id" : "tw:author_props_1088016983126290432"
+    }, {
+      "@id" : "tw:author_props_390677061"
+    }, {
+      "@id" : "tw:author_props_755672251832217602"
+    } ],
+    "ORIGINAL_followers_count" : [ {
+      "@value" : "82431058"
+    } ],
+    "ORIGINAL_credible" : [ {
+      "@value" : "1"
+    } ],
+    "REACTION_username" : [ {
+      "@value" : "Saravanansivans"
+    }, {
+      "@value" : "Tejasvi_Surya"
+    }, {
+      "@value" : "theprayagtiwari"
+    } ],
+    "ORIGINAL_verified" : [ {
+      "@value" : "True"
+    } ],
+    "reaction_author_id" : [ {
+      "@id" : "tw:author_RETWEET_1088016983126290432"
+    }, {
+      "@id" : "tw:author_QUOTE_390677061"
+    }, {
+      "@id" : "tw:author_REPLY_755672251832217602"
+    } ],
+    "reply_retweet_quote" : [ {
+      "@value" : "RETWEET"
+    }, {
+      "@value" : "QUOTE"
+    }, {
+      "@value" : "REPLY"
+    } ],
+    "REACTION_properties" : [ {
+      "@value" : "RETWEET properties"
+    }, {
+      "@value" : "QUOTE properties"
+    }, {
+      "@value" : "REPLY properties"
+    } ],
+    "original_tweet_id" : [ {
+      "@id" : "tw:tweet_1366200664402006016"
+    } ],
+    "ORIGINAL_location" : [ {
+      "@value" : "India"
+    } ],
+    "REACTION_retweet_count" : [ {
+      "@value" : "43621"
+    }, {
+      "@value" : "3414"
+    }, {
+      "@value" : "44"
+    } ],
+    "reaction_tweet_props_id" : [ {
+      "@id" : "tw:RETWEET_props_1366200721087991811"
+    }, {
+      "@id" : "tw:QUOTE_props_1366234582190682118"
+    }, {
+      "@id" : "tw:REPLY_props_1366237793727381504"
+    } ],
+    "ag_r_name" : [ {
+      "@value" : "Saravanan Sivan"
+    }, {
+      "@value" : "Tejasvi Surya"
+    }, {
+      "@value" : "Prayag"
+    } ],
+    "original_author_id" : [ {
+      "@id" : "tw:author_ORIGINAL_TWEET_18839785"
+    } ],
+    "ORIGINAL_properties" : [ {
+      "@value" : "ORIGINAL TWEET properties"
+    } ],
+    "ORIGINAL_following_count" : [ {
+      "@value" : "2448"
+    } ]
+  },
+  "vargen" : { },
+  "context" : {
+    "tw" : "http://twitter.com/"
+  },
+  "template" : null
+}

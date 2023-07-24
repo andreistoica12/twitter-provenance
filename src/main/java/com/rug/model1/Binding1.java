@@ -11,6 +11,8 @@ import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rug.model1.DataClass1.Reaction;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class Binding1 {
@@ -151,7 +153,7 @@ public class Binding1 {
 
 
 
-    public void bind(String file_json) {
+    public void bind(String outputFilePathString) {
         ProvFactory pFactory = template.getpFactory();
 
         Bindings bindings = new Bindings(pFactory);
@@ -166,29 +168,30 @@ public class Binding1 {
 
 
         bindings.addVariableBindingsAsAttributeBindings();
-        bindings.exportToJson(file_json);
+        bindings.exportToJson(outputFilePathString);
     }
 
     
     public static void main(String[] args) throws URISyntaxException {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
-        String file_json=args[0];
+        String outputFilePathString=args[0];
         
         Template1 template = new Template1(InteropFramework.getDefaultFactory());
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String dataPath = currentWorkingDirectory + "/src/main/python/model1/output/data1.json";
+        Path inputFilePath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model1", "output", "data1.json");
+        String inputFilePathString = inputFilePath.toString();
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
             // Read the JSON file and map it to the DataClass
-            DataClass1 data = objectMapper.readValue(new File(dataPath), DataClass1.class);
+            DataClass1 data = objectMapper.readValue(new File(inputFilePathString), DataClass1.class);
 
             Binding1 binding = new Binding1(template, data);
-            binding.bind(file_json);
+            binding.bind(outputFilePathString);
 
         } catch (IOException e) {
             e.printStackTrace();

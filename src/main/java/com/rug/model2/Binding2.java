@@ -9,6 +9,15 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+
 
 
 public class Binding2 {
@@ -64,12 +73,13 @@ public class Binding2 {
         bindings.addAttribute("nr_of_distinct_authors", nr_of_distinct_authors);
     }
 
-    public void addReactionTweets(String reaction_group_of_tweets_id, String time_interval, String total_nr_of_reactions,
-                                 String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
-                                 Bindings bindings) {
+    public void addReactionTweets(String reaction_group_of_tweets_id, String time_interval, String nr_of_reactions, 
+                                  String percentage_out_of_total_reactions, String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
+                                  Bindings bindings) {
         bindings.addVariable(template.qn_var("reaction_group_of_tweets_id"), template.qn_tw(reaction_group_of_tweets_id));
         bindings.addAttribute("time_interval", time_interval);
-        bindings.addAttribute("total_nr_of_reactions", total_nr_of_reactions);
+        bindings.addAttribute("nr_of_reactions", nr_of_reactions);
+        bindings.addAttribute("percentage_out_of_total_reactions", percentage_out_of_total_reactions);
         bindings.addAttribute("nr_of_replies", nr_of_replies);
         bindings.addAttribute("nr_of_quotes", nr_of_quotes);
         bindings.addAttribute("nr_of_retweets", nr_of_retweets);
@@ -96,7 +106,8 @@ public class Binding2 {
                            data.getGroupOfReactions().getNrOfDistinctAuthors(),
                            bindings);
         addReactionTweets(data.getGroupOfReactions().getReactionGroupOfTweetsId(), data.getGroupOfReactions().getTimeInterval(),
-                          data.getGroupOfReactions().getTotalNrOfReactions(), data.getGroupOfReactions().getNrOfReplies(), 
+                          data.getGroupOfReactions().getNrOfReactions(), data.getGroupOfReactions().getPercentageOutOfTotalReactions(), 
+                          data.getGroupOfReactions().getNrOfReplies(), 
                           data.getGroupOfReactions().getNrOfQuotes(), data.getGroupOfReactions().getNrOfRetweets(),
                           bindings);
     }
@@ -104,7 +115,7 @@ public class Binding2 {
 
 
 
-    public void bind(String file_json) {
+    public void bind(String filePathString) {
         ProvFactory pFactory = template.getpFactory();
 
         Bindings bindings = new Bindings(pFactory);
@@ -115,30 +126,82 @@ public class Binding2 {
 
 
         bindings.addVariableBindingsAsAttributeBindings();
-        bindings.exportToJson(file_json);
+        bindings.exportToJson(filePathString);
     }
+
+
+    private static void createListOfInputFilePathsRecursively(File inputFolder, List<String> inputFilePathsString) {
+        File[] inputFiles = inputFolder.listFiles();
+
+        if (inputFiles != null) {
+            for (File inputFile : inputFiles) {
+                if (inputFile.isDirectory()) {
+                    // If the file is a directory, recursively list its content
+                    createListOfInputFilePathsRecursively(inputFile, inputFilePathsString);
+                } else {
+                    // Get the path to each file as a String
+                    String inputFilePathString = inputFile.getAbsolutePath();
+                    inputFilePathsString.add(inputFilePathString);
+                }
+            }
+        } else {
+            System.out.println("No files found in the folder.");
+        }
+    }
+
+
 
     
     public static void main(String[] args) throws URISyntaxException {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
-        String file_json=args[0];
+        String outputFolderPathString = args[0];
         
         Template2 template = new Template2(InteropFramework.getDefaultFactory());
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        String dataPath = currentWorkingDirectory + "/src/main/python/model2/output/data2.json";
+        Path inputFolderPath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model2", "output");
+        String inputFolderPathString = inputFolderPath.toString();
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            // Read the JSON file and map it to the DataClass
-            DataClass2 data = objectMapper.readValue(new File(dataPath), DataClass2.class);
 
-            Binding2 binding = new Binding2(template, data);
-            binding.bind(file_json);
+            File inputFolder = new File(inputFolderPathString);
+            List<String> inputFilePathsString = new ArrayList<>();
+    
+            // Check if the provided path is a directory
+            if (inputFolder.isDirectory()) {
+                createListOfInputFilePathsRecursively(inputFolder, inputFilePathsString);
+            } else {
+                System.out.println("The provided path for input files folder is not a valid directory.");
+            }
+    
+            // Iterate through all filepaths and create a binding file for each
+            for (String inputFilePathString : inputFilePathsString) {
+                // Read the JSON file and map it to the DataClass
+                DataClass2 data = objectMapper.readValue(new File(inputFilePathString), DataClass2.class);
+    
+                Binding2 binding = new Binding2(template, data);
 
+                // Using File class to get the filename of the input file
+                File inputFile = new File(inputFilePathString);
+                String inputFilename = inputFile.getName();
+
+                // I want to remove the sequence of characters "data2_" from the origial filenames 
+                // when creating the binding files
+                String regexPattern = "data2_";
+                Pattern pattern = Pattern.compile(regexPattern);
+                Matcher matcher = pattern.matcher(inputFilename);
+                String modifiedInputFilename = matcher.replaceFirst("");
+                
+                String outputFilename = String.format("binding2_%s", modifiedInputFilename);
+                Path outputPath = Paths.get(outputFolderPathString, outputFilename);
+                String outputPathString = outputPath.toString();
+
+                binding.bind(outputPathString);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
