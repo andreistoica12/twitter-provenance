@@ -8,13 +8,10 @@ import java.io.File;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 
@@ -30,87 +27,50 @@ public class Binding3 {
         this.data = data;
     }
 
-    public void addOriginalAuthorProps(String original_author_props_id, String ORIGINAL_credible,
-                                String ORIGINAL_username, String ORIGINAL_verified,
-                                String ORIGINAL_followers_count, String ORIGINAL_following_count,
-                                Bindings bindings) {
-        bindings.addVariable(template.qn_var("original_author_props_id"), template.qn_tw(original_author_props_id));
-        bindings.addAttribute("ORIGINAL_credible", ORIGINAL_credible);
-        bindings.addAttribute("ORIGINAL_username", ORIGINAL_username);
-        bindings.addAttribute("ORIGINAL_verified", ORIGINAL_verified);
-        bindings.addAttribute("ORIGINAL_followers_count", ORIGINAL_followers_count);
-        bindings.addAttribute("ORIGINAL_following_count", ORIGINAL_following_count);
-    }
 
-
-    public void addPostActivity(String post_id, Bindings bindings) {
-        bindings.addVariable(template.qn_var("post_id"), template.qn_tw(post_id));        
-    }
-    
-    public void addOriginalAuthor(String original_author_id, String ag_o_name, Bindings bindings) {
-        bindings.addVariable(template.qn_var("original_author_id"),template.qn_tw(original_author_id));
-        bindings.addAttribute("ag_o_name", ag_o_name);
-    }
-
-    public void addOriginalTweet(String original_tweet_id, String original_text, 
-                                 String ORIGINAL_created_at, String ORIGINAL_location,
+    public void addAllTweetsAtTimepoint(String all_tweets_at_timepoint_id, String date, 
+                                 String time_interval, String percentage_out_of_day_tweets, String nr_of_original_tweets,
+                                 String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
                                  Bindings bindings) {
-        bindings.addVariable(template.qn_var("original_tweet_id"), template.qn_tw(original_tweet_id));
-        bindings.addAttribute("original_text", original_text);
-        bindings.addAttribute("ORIGINAL_created_at", ORIGINAL_created_at);
-        bindings.addAttribute("ORIGINAL_location", ORIGINAL_location);
-
-
-    }
-
-
-    public void addReactActivity(String react_id, Bindings bindings) {
-        bindings.addVariable(template.qn_var("react_id"), template.qn_tw(react_id));
-    }
-
-    public void addReactionAuthors(String reaction_group_of_authors_id, String nr_of_distinct_authors, Bindings bindings) {
-        bindings.addVariable(template.qn_var("reaction_group_of_authors_id"), template.qn_tw(reaction_group_of_authors_id));
-        bindings.addAttribute("nr_of_distinct_authors", nr_of_distinct_authors);
-    }
-
-    public void addReactionTweets(String reaction_group_of_tweets_id, String time_interval, String nr_of_reactions, 
-                                  String percentage_out_of_total_reactions, String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
-                                  Bindings bindings) {
-        bindings.addVariable(template.qn_var("reaction_group_of_tweets_id"), template.qn_tw(reaction_group_of_tweets_id));
+        bindings.addVariable(template.qn_var("all_tweets_at_timepoint_id"), template.qn_tw(all_tweets_at_timepoint_id));
+        bindings.addAttribute("date", date);
         bindings.addAttribute("time_interval", time_interval);
-        bindings.addAttribute("nr_of_reactions", nr_of_reactions);
-        bindings.addAttribute("percentage_out_of_total_reactions", percentage_out_of_total_reactions);
+        bindings.addAttribute("percentage_out_of_day_tweets", percentage_out_of_day_tweets);
+        bindings.addAttribute("nr_of_original_tweets", nr_of_original_tweets);
         bindings.addAttribute("nr_of_replies", nr_of_replies);
         bindings.addAttribute("nr_of_quotes", nr_of_quotes);
         bindings.addAttribute("nr_of_retweets", nr_of_retweets);
     }
 
 
-
-    public void addOriginal(Bindings bindings) {
-        addPostActivity(data.getOriginal().getPostId(), bindings);      
-        addOriginalAuthor(data.getOriginal().getOriginalAuthorId(), data.getOriginal().getAgOName(), bindings);
-        addOriginalAuthorProps(data.getOriginal().getOriginalAuthorPropsId(), data.getOriginal().getOriginalCredible(),
-                               data.getOriginal().getOriginalUsername(), data.getOriginal().getOriginalVerified(),
-                               data.getOriginal().getOriginalFollowersCount(), data.getOriginal().getOriginalFollowingCount(),
-                               bindings);
-        addOriginalTweet(data.getOriginal().getOriginalTweetId(), data.getOriginal().getOriginalText(),
-                        data.getOriginal().getOriginalCreatedAt(), data.getOriginal().getOriginalLocation(),
-                        bindings);
+    public void addPostOrReactActivity(String post_or_react_id, Bindings bindings) {
+        bindings.addVariable(template.qn_var("post_or_react_id"), template.qn_tw(post_or_react_id));        
     }
 
 
-    public void addGroupOfReactions(Bindings bindings) {
-        addReactActivity(data.getGroupOfReactions().getReactId(), bindings);
-        addReactionAuthors(data.getGroupOfReactions().getReactionGroupOfAuthorsId(), 
-                           data.getGroupOfReactions().getNrOfDistinctAuthors(),
-                           bindings);
-        addReactionTweets(data.getGroupOfReactions().getReactionGroupOfTweetsId(), data.getGroupOfReactions().getTimeInterval(),
-                          data.getGroupOfReactions().getNrOfReactions(), data.getGroupOfReactions().getPercentageOutOfTotalReactions(), 
-                          data.getGroupOfReactions().getNrOfReplies(), 
-                          data.getGroupOfReactions().getNrOfQuotes(), data.getGroupOfReactions().getNrOfRetweets(),
+    public void addGroupOfAuthors(String group_of_authors_id, String nr_of_distinct_authors, 
+                                  String avg_nr_of_followers_top_10_influencers,
+                                  String avg_nr_of_followers_all_users,
+                                  Bindings bindings) {
+        bindings.addVariable(template.qn_var("group_of_authors_id"), template.qn_tw(group_of_authors_id));
+        bindings.addAttribute("nr_of_distinct_authors", nr_of_distinct_authors);
+        bindings.addAttribute("avg_nr_of_followers_top_10_influencers", avg_nr_of_followers_top_10_influencers);
+        bindings.addAttribute("avg_nr_of_followers_all_users", avg_nr_of_followers_all_users);
+    }
+
+    
+
+    public void addJsonObject(Bindings bindings) {
+        addAllTweetsAtTimepoint(data.getAllTweetsAtTimepointId(), data.getDate(),
+                                data.getTimeInterval(), data.getPercentageOutOfDayTweets(), data.getNrOfOriginalTweets(),
+                                data.getNrOfReplies(), data.getNrOfQuotes(), data.getNrOfRetweets(),
+                                bindings);
+        addPostOrReactActivity(data.getPostOrReactId(), bindings);
+        addGroupOfAuthors(data.getGroupOfAuthorsId(), data.getNrOfDistinctAuthors(),
+                          data.getAvgNrOfFollowersTop10Influencers(), data.getAvgNrOfFollowersAllUsers(),
                           bindings);
     }
+
 
 
 
@@ -120,9 +80,7 @@ public class Binding3 {
 
         Bindings bindings = new Bindings(pFactory);
 
-        addOriginal(bindings);
-
-        addGroupOfReactions(bindings);
+        addJsonObject(bindings);
 
 
         bindings.addVariableBindingsAsAttributeBindings();
@@ -130,81 +88,94 @@ public class Binding3 {
     }
 
 
-    private static void createListOfInputFilePathsRecursively(File inputFolder, List<String> inputFilePathsString) {
-        File[] inputFiles = inputFolder.listFiles();
+    // private static void createListOfInputFilePathsRecursively(File inputFolder, List<String> inputFilePathsString) {
+    //     File[] inputFiles = inputFolder.listFiles();
 
-        if (inputFiles != null) {
-            for (File inputFile : inputFiles) {
-                if (inputFile.isDirectory()) {
-                    // If the file is a directory, recursively list its content
-                    createListOfInputFilePathsRecursively(inputFile, inputFilePathsString);
-                } else {
-                    // Get the path to each file as a String
-                    String inputFilePathString = inputFile.getAbsolutePath();
-                    inputFilePathsString.add(inputFilePathString);
-                }
-            }
-        } else {
-            System.out.println("No files found in the folder.");
-        }
-    }
+    //     if (inputFiles != null) {
+    //         for (File inputFile : inputFiles) {
+    //             if (inputFile.isDirectory()) {
+    //                 // If the file is a directory, recursively list its content
+    //                 createListOfInputFilePathsRecursively(inputFile, inputFilePathsString);
+    //             } else {
+    //                 // Get the path to each file as a String
+    //                 String inputFilePathString = inputFile.getAbsolutePath();
+    //                 inputFilePathsString.add(inputFilePathString);
+    //             }
+    //         }
+    //     } else {
+    //         System.out.println("No files found in the folder.");
+    //     }
+    // }
 
 
 
     
     public static void main(String[] args) throws URISyntaxException {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
-        String outputFolderPathString = args[0];
+        String outputFilePathString = args[0];
         
         Template3 template = new Template3(InteropFramework.getDefaultFactory());
 
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        Path inputFolderPath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model2", "data");
-        String inputFolderPathString = inputFolderPath.toString();
+        Path inputFilePath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model3", "data", "data3.json");
+        String inputFilePathString = inputFilePath.toString();
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
+            // Read the JSON file and map it to the DataClass
+            DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
 
-            File inputFolder = new File(inputFolderPathString);
-            List<String> inputFilePathsString = new ArrayList<>();
-    
-            // Check if the provided path is a directory
-            if (inputFolder.isDirectory()) {
-                createListOfInputFilePathsRecursively(inputFolder, inputFilePathsString);
-            } else {
-                System.out.println("The provided path for input files folder is not a valid directory.");
-            }
-    
-            // Iterate through all filepaths and create a binding file for each
-            for (String inputFilePathString : inputFilePathsString) {
-                // Read the JSON file and map it to the DataClass
-                DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
-    
-                Binding3 binding = new Binding3(template, data);
+            Binding3 binding = new Binding3(template, data);
+            binding.bind(outputFilePathString);
 
-                // Using File class to get the filename of the input file
-                File inputFile = new File(inputFilePathString);
-                String inputFilename = inputFile.getName();
-
-                // I want to remove the sequence of characters "data2_" from the origial filenames 
-                // when creating the binding files
-                String regexPattern = "data2_";
-                Pattern pattern = Pattern.compile(regexPattern);
-                Matcher matcher = pattern.matcher(inputFilename);
-                String modifiedInputFilename = matcher.replaceFirst("");
-                
-                String outputFilename = String.format("binding2_%s", modifiedInputFilename);
-                Path outputPath = Paths.get(outputFolderPathString, outputFilename);
-                String outputPathString = outputPath.toString();
-
-                binding.bind(outputPathString);
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
+        // try {
+
+        //     File inputFolder = new File(inputFolderPathString);
+        //     List<String> inputFilePathsString = new ArrayList<>();
+    
+        //     // Check if the provided path is a directory
+        //     if (inputFolder.isDirectory()) {
+        //         createListOfInputFilePathsRecursively(inputFolder, inputFilePathsString);
+        //     } else {
+        //         System.out.println("The provided path for input files folder is not a valid directory.");
+        //     }
+    
+        //     // Iterate through all filepaths and create a binding file for each
+        //     for (String inputFilePathString : inputFilePathsString) {
+        //         // Read the JSON file and map it to the DataClass
+        //         DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
+    
+        //         Binding3 binding = new Binding3(template, data);
+
+        //         // Using File class to get the filename of the input file
+        //         File inputFile = new File(inputFilePathString);
+        //         String inputFilename = inputFile.getName();
+
+        //         // I want to remove the sequence of characters "data2_" from the origial filenames 
+        //         // when creating the binding files
+        //         String regexPattern = "data2_";
+        //         Pattern pattern = Pattern.compile(regexPattern);
+        //         Matcher matcher = pattern.matcher(inputFilename);
+        //         String modifiedInputFilename = matcher.replaceFirst("");
+                
+        //         String outputFilename = String.format("binding2_%s", modifiedInputFilename);
+        //         Path outputPath = Paths.get(outputFolderPathString, outputFilename);
+        //         String outputPathString = outputPath.toString();
+
+        //         binding.bind(outputPathString);
+        //     }
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
     }
 
 }

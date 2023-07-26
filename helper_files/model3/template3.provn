@@ -1,0 +1,14 @@
+document
+bundle vargen:bundle_id
+prefix vargen <http://openprovenance.org/vargen#>
+prefix tw <http://twitter.com/>
+prefix tmpl <http://openprovenance.org/tmpl#>
+prefix var <http://openprovenance.org/var#>
+
+entity(var:all_tweets_at_timepoint_id,[prov:type = "ALL TWEETS AT TIMEPOINT" %% xsd:string, tw:date = 'var:date', tw:time_interval = 'var:time_interval', tw:percentage_out_of_day_tweets = 'var:percentage_out_of_day_tweets', tw:number_of_original_tweets = 'var:nr_of_original_tweets', tw:number_of_replies = 'var:nr_of_replies', tw:number_of_quotes = 'var:nr_of_quotes', tw:number_of_retweets = 'var:nr_of_retweets'])
+activity(var:post_or_react_id,-,-,[prov:type = "publish" %% xsd:string])
+wasGeneratedBy(var:all_tweets_at_timepoint_id,var:post_or_react_id,-)
+agent(var:group_of_authors_id,[prov:type = "GROUP OF USERS" %% xsd:string, tw:number_of_distinct_authors = 'var:nr_of_distinct_authors', tw:average_number_of_followers_top_10_influencers = 'var:avg_nr_of_followers_top_10_influencers', tw:average_number_of_followers_all_users = 'var:avg_nr_of_followers_all_users'])
+wasAssociatedWith(var:post_or_react_id,var:group_of_authors_id,-,[prov:role = "authors" %% xsd:string])
+endBundle
+endDocument

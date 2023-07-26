@@ -96,14 +96,14 @@
             <version>1.2.1</version>
             <executions>
 
-                <execution>
+                <!-- <execution>
                     <id>create-virtualenv</id>
                     <phase>test</phase>
                     <goals>
                     <goal>exec</goal>
                     </goals>
                     <configuration>
-                    <executable>bash</executable>   <!-- Use 'cmd' for Windows -->
+                    <executable>bash</executable>
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
@@ -119,7 +119,7 @@
                     <goal>exec</goal>
                     </goals>
                     <configuration>
-                    <executable>bash</executable>   <!-- Use 'cmd' for Windows -->
+                    <executable>bash</executable>
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
@@ -135,7 +135,7 @@
                     <goal>exec</goal>
                     </goals>
                     <configuration>
-                    <executable>bash</executable>   <!-- Use 'cmd' for Windows -->
+                    <executable>bash</executable>
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
@@ -174,24 +174,24 @@
                 </execution>
 
                 <execution>
-                <id>execute-command1</id>
-                <phase>test</phase>
-                <goals>
-                    <goal>exec</goal>
-                </goals>
-                <configuration>
-                    <executable>provconvert</executable>
-                    <arguments>
-                        <argument>-infile</argument>
-                        <argument>${project.basedir}/helper_files/model1/template1.provn</argument>
-                        <argument>-bindings</argument>
-                        <argument>${project.basedir}/helper_files/model1/binding1.json</argument>
-                        <argument>-bindver</argument>
-                        <argument>3</argument>
-                        <argument>-outfile</argument>
-                        <argument>${project.basedir}/provenance-graphs/model1/doc1.svg</argument>
-                    </arguments>
-                </configuration>
+                    <id>execute-command1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model1/template1.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model1/binding1.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model1/doc1.svg</argument>
+                        </arguments>
+                    </configuration>
                 </execution>
 
                 <execution>
@@ -457,6 +457,56 @@
                         <mainClass>com.rug.AdjustSVGSize</mainClass>
                         <arguments>
                             <argument>${project.basedir}/provenance-graphs/model2</argument>
+                        </arguments>
+                    </configuration>
+                </execution> -->
+
+                <execution>
+                    <id>test1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model3.Template3</mainClass>
+                        <arguments>
+                            <argument>${project.basedir}/helper_files/model3/template3.provn</argument>
+                            <argument>${project.basedir}/helper_files/model3/template3.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>test2</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model3.Binding3</mainClass>
+                        <arguments>
+                            <argument>${project.basedir}/helper_files/model3/binding3.json</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/binding3.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/doc3.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>

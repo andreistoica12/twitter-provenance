@@ -76,147 +76,86 @@ public class Template3 {
     }
 
 
-    public Collection<Attribute> createOriginalAuthorProps(ProvFactory pFactory) {
-        Collection<Attribute> authorProps = new ArrayList<>();
-        Attribute authorPropsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ORIGINAL USER PROPERTIES", pFactory.getName().XSD_STRING);
-        Attribute authorPropsCredible = pFactory.newAttribute(qn_tw("credible"), qn_var("ORIGINAL_credible"), pFactory.getName().XSD_INT);
-        Attribute authorPropsUsername = pFactory.newAttribute(qn_tw("username"), qn_var("ORIGINAL_username"), pFactory.getName().XSD_STRING);
-        Attribute authorPropsVerified = pFactory.newAttribute(qn_tw("verified"), qn_var("ORIGINAL_verified"), pFactory.getName().XSD_BOOLEAN);
-        Attribute authorPropsFollowersCount = pFactory.newAttribute(qn_tw("followers_count"), qn_var("ORIGINAL_followers_count"), pFactory.getName().XSD_INT);
-        Attribute authorPropsFollowingCount = pFactory.newAttribute(qn_tw("following_count"), qn_var("ORIGINAL_following_count"), pFactory.getName().XSD_INT);
+//     TODO:
+// - iau ca timepoint o zi din cele 20
+// - o impart in 3 intervale: 9-17 (8h), 17-24(7h), 0-9 (9h)
+// - pe o zi, fac top 3000 cele mai liked tweets
+// - convertesc la timezone local toate cele 3000 tweets
 
-        authorProps.addAll(Arrays.asList(authorPropsType,
-                                         authorPropsCredible,
-                                         authorPropsUsername,
-                                         authorPropsVerified,
-                                         authorPropsFollowersCount,
-                                         authorPropsFollowingCount));
+// OTHER TASKS:
+// - cele 3000 de tweet-uri cu timezone local le scriu in fisier, ca dureaza foarte mult rularea
+// => trbuie sa vad cum fac sa pastrez informatiile de tiemzone
+// => pipeline de scriere + citire in fisier corecta, in proiectul Maven o sa pun doar citirea dintr-un fisier cu 
+// top 3000 most liked tweets in fiecare zi
 
-        return authorProps;
-    }
-
+// TODO Java:
+// - template si binding pentru model 3
         
     public Document createTemplateDocument() {
 
-        // // 1. ENTITY - entity_originalTweet
-        // Collection<Attribute> originalTweetAttributes = new ArrayList<>();
-        // Attribute originalTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("original_text"), pFactory.getName().XSD_ANY_URI);
-        // Attribute originalTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ORIGINAL TWEET", pFactory.getName().XSD_STRING);
-        // Attribute originalTweetCreatedAt = pFactory.newAttribute(qn_tw("created at"), qn_var("ORIGINAL_created_at"), pFactory.getName().XSD_STRING);
-        // Attribute originalTweetLocation = pFactory.newAttribute(qn_tw("location"), qn_var("ORIGINAL_location"), pFactory.getName().XSD_STRING);
-        // originalTweetAttributes.addAll(Arrays.asList(originalTweetValue, originalTweetType, originalTweetCreatedAt, originalTweetLocation));
-        // Entity entity_originalTweet = pFactory.newEntity(qn_var("original_tweet_id"), originalTweetAttributes);
-
         // 1. ENTITY - entity_originalTweet
-        Collection<Attribute> groupOfTweetsAttributes = new ArrayList<>();
-        Attribute groupOfTweetsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ALL TWEETS AT TIMESTAMP", pFactory.getName().XSD_STRING);
-        Attribute groupOfTweetsTimestamp = pFactory.newAttribute(, "ORIGINAL TWEET", pFactory.getName().XSD_STRING);
-        Attribute originalTweetCreatedAt = pFactory.newAttribute(qn_tw("created at"), qn_var("ORIGINAL_created_at"), pFactory.getName().XSD_STRING);
-        Attribute originalTweetLocation = pFactory.newAttribute(qn_tw("location"), qn_var("ORIGINAL_location"), pFactory.getName().XSD_STRING);
-        originalTweetAttributes.addAll(Arrays.asList(originalTweetValue, originalTweetType, originalTweetCreatedAt, originalTweetLocation));
-        Entity entity_originalTweet = pFactory.newEntity(qn_var("original_tweet_id"), originalTweetAttributes);
+        Collection<Attribute> allTweetsAtTimepointAttributes = new ArrayList<>();
+        Attribute allTweetsAtTimepointType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ALL TWEETS AT TIMEPOINT", pFactory.getName().XSD_STRING);
+        Attribute allTweetsAtTimepointDate = pFactory.newAttribute(qn_tw("date"), qn_var("date"), pFactory.getName().XSD_DATE);
+        Attribute allTweetsAtTimepointTimeInterval = pFactory.newAttribute(qn_tw("time_interval"), qn_var("time_interval"), pFactory.getName().XSD_STRING);
+        Attribute allTweetsAtTimepointPercentageOutOfDayTweets = pFactory.newAttribute(qn_tw("percentage_out_of_day_tweets"), qn_var("percentage_out_of_day_tweets"), pFactory.getName().XSD_STRING);
+        Attribute allTweetsAtTimepointNumberOfOriginalTweets = pFactory.newAttribute(qn_tw("number_of_original_tweets"), qn_var("nr_of_original_tweets"), pFactory.getName().XSD_INT);
+        Attribute allTweetsAtTimepointNumberOfReplies = pFactory.newAttribute(qn_tw("number_of_replies"), qn_var("nr_of_replies"), pFactory.getName().XSD_INT);
+        Attribute allTweetsAtTimepointNumberOfQuotes = pFactory.newAttribute(qn_tw("number_of_quotes"), qn_var("nr_of_quotes"), pFactory.getName().XSD_INT);
+        Attribute allTweetsAtTimepointNumberOfRetweets = pFactory.newAttribute(qn_tw("number_of_retweets"), qn_var("nr_of_retweets"), pFactory.getName().XSD_INT);
         
-        // atribute: timestamp, 
+        allTweetsAtTimepointAttributes.addAll(Arrays.asList(allTweetsAtTimepointType, 
+                                                            allTweetsAtTimepointDate,
+                                                            allTweetsAtTimepointTimeInterval,
+                                                            allTweetsAtTimepointPercentageOutOfDayTweets,
+                                                            allTweetsAtTimepointNumberOfOriginalTweets,
+                                                            allTweetsAtTimepointNumberOfReplies,
+                                                            allTweetsAtTimepointNumberOfQuotes,
+                                                            allTweetsAtTimepointNumberOfRetweets));
+
+        Entity entity_allTweetsAtTimepoint = pFactory.newEntity(qn_var("all_tweets_at_timepoint_id"), allTweetsAtTimepointAttributes);
+
 
         // 2. ACTIVITY - activity_post
-        Collection<Attribute> postActivityAttributes = new ArrayList<>();
-        Attribute postType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
-        postActivityAttributes.add(postType);
-        Activity activity_post = pFactory.newActivity(qn_var("post_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, postActivityAttributes);
+        Collection<Attribute> postOrReactActivityAttributes = new ArrayList<>();
+        Attribute postOrReactType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
+        postOrReactActivityAttributes.add(postOrReactType);
+        Activity activity_postOrReact = pFactory.newActivity(qn_var("post_or_react_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, postOrReactActivityAttributes);
         
 
         // 3. GENERATION - gen1
-        WasGeneratedBy gen1 = pFactory.newWasGeneratedBy(null, entity_originalTweet.getId(), activity_post.getId());
+        WasGeneratedBy gen1 = pFactory.newWasGeneratedBy(null, entity_allTweetsAtTimepoint.getId(), activity_postOrReact.getId());
 
 
         // 4. AGENT - agent_originalAuthor
-        Collection<Attribute> originalAuthorAttributes = new ArrayList<>();
-        Attribute originalAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
-        Attribute originalAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("ag_o_name"), pFactory.getName().XSD_STRING);
-        originalAuthorAttributes.addAll(Arrays.asList(originalAuthorType, originalAuthorName));
-        Agent agent_originalAuthor = pFactory.newAgent(qn_var("original_author_id"), originalAuthorAttributes);
+        Collection<Attribute> groupOfAuthorsAttributes = new ArrayList<>();
+        Attribute groupOfAuthorsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "GROUP OF USERS", pFactory.getName().XSD_STRING);
+        Attribute groupOfAuthorsNrOfDistinctAuthors = pFactory.newAttribute(qn_tw("number_of_distinct_authors"), qn_var("nr_of_distinct_authors"), pFactory.getName().XSD_INT);
+        Attribute groupOfAuthorsAvgNrOfFollowersTop10Influencers = pFactory.newAttribute(qn_tw("average_number_of_followers_top_10_influencers"), qn_var("avg_nr_of_followers_top_10_influencers"), pFactory.getName().XSD_INT);
+        Attribute groupOfAuthorsAvgNrOfFollowersAllUsers = pFactory.newAttribute(qn_tw("average_number_of_followers_all_users"), qn_var("avg_nr_of_followers_all_users"), pFactory.getName().XSD_INT);
+
+        
+        groupOfAuthorsAttributes.addAll(Arrays.asList(groupOfAuthorsType, 
+                                                      groupOfAuthorsNrOfDistinctAuthors,
+                                                      groupOfAuthorsAvgNrOfFollowersTop10Influencers,
+                                                      groupOfAuthorsAvgNrOfFollowersAllUsers));
+        Agent agent_groupOfAuthors = pFactory.newAgent(qn_var("group_of_authors_id"), groupOfAuthorsAttributes);
 
 
         // 5. ASSOCIATION - assoc1
         Collection<Attribute> assoc1Attributes = new ArrayList<>();
-        Attribute assoc1Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "author", pFactory.getName().XSD_STRING);
+        Attribute assoc1Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "authors", pFactory.getName().XSD_STRING);
         assoc1Attributes.add(assoc1Role);
-        WasAssociatedWith assoc1 = pFactory.newWasAssociatedWith(null, activity_post.getId(), agent_originalAuthor.getId(), (QualifiedName)null, assoc1Attributes);
+        WasAssociatedWith assoc1 = pFactory.newWasAssociatedWith(null, activity_postOrReact.getId(), agent_groupOfAuthors.getId(), (QualifiedName)null, assoc1Attributes);
 
-
-        // 14. ENTITY - entity_originalAuthorProps
-        Entity entity_originalAuthorProps = pFactory.newEntity(qn_var("original_author_props_id"), createOriginalAuthorProps(pFactory));
-
-        
-        // 15. ATTRIBUTION - attr1
-        WasAttributedTo attrib1 = pFactory.newWasAttributedTo(null, entity_originalAuthorProps.getId(), agent_originalAuthor.getId());
-
-        // 16. ACTIVITY - activity_react
-        Collection<Attribute> reactActivityAttributes = new ArrayList<>();
-        Attribute reactType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
-        Attribute reactLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("reaction_group_of_tweets_id"), pFactory.getName().XSD_STRING);
-        reactActivityAttributes.addAll(Arrays.asList(reactType, reactLinked));
-        Activity activity_react = pFactory.newActivity(qn_var("react_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, reactActivityAttributes);
-
-        // 17. COMMUNICATION - wasInformedBy1
-        WasInformedBy wasInformedBy1 = pFactory.newWasInformedBy(null, qn_var("react_id"), qn_var("post_id"));
-
-
-        // 18. AGENT - agent_reactionAuthor
-        Collection<Attribute> reactionAuthorsAttributes = new ArrayList<>();
-        Attribute reactionAuthorsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "GROUP OF USERS", pFactory.getName().XSD_STRING);
-        Attribute reactionAuthorsNrOfDistinctAuthors = pFactory.newAttribute(qn_tw("number_of_distinct_authors"), qn_var("nr_of_distinct_authors"), pFactory.getName().XSD_INT);
-        Attribute reactionAuthorsLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
-        reactionAuthorsAttributes.addAll(Arrays.asList(reactionAuthorsType, reactionAuthorsNrOfDistinctAuthors, reactionAuthorsLinked));
-        Agent agent_reactionAuthors = pFactory.newAgent(qn_var("reaction_group_of_authors_id"), reactionAuthorsAttributes);
-
-
-        // 19. ASSOCIATION - assoc3
-        Collection<Attribute> assoc3Attributes = new ArrayList<>();
-        Attribute assoc3Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "authors", pFactory.getName().XSD_STRING);
-        assoc3Attributes.add(assoc3Role);
-        WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthors.getId(), (QualifiedName)null, assoc3Attributes);
-
-
-        // 22. ENTITY - entity_reactionTweet
-        Collection<Attribute> reactionTweetsAttributes = new ArrayList<>();
-        Attribute reactionTweetsType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "GROUP OF REACTION TWEETS", pFactory.getName().XSD_STRING);
-        Attribute reactionTweetsTimeInterval = pFactory.newAttribute(qn_tw("time_interval"), qn_var("time_interval"), pFactory.getName().XSD_STRING);
-        Attribute reactionTweetsNumberOfReactions = pFactory.newAttribute(qn_tw("number_of_reactions"), qn_var("nr_of_reactions"), pFactory.getName().XSD_INT);
-        Attribute reactionTweetsPercentageOfTotalReactions = pFactory.newAttribute(qn_tw("percentage_out_of_total_reactions"), qn_var("percentage_out_of_total_reactions"), pFactory.getName().XSD_INT);
-        Attribute reactionTweetsNrOfReplies = pFactory.newAttribute(qn_tw("number_of_replies"), qn_var("nr_of_replies"), pFactory.getName().XSD_INT);
-        Attribute reactionTweetsNrOfQuotes = pFactory.newAttribute(qn_tw("number_of_quotes"), qn_var("nr_of_quotes"), pFactory.getName().XSD_INT);
-        Attribute reactionTweetsNrOfRetweets = pFactory.newAttribute(qn_tw("number_of_retweets"), qn_var("nr_of_retweets"), pFactory.getName().XSD_INT);
-        reactionTweetsAttributes.addAll(Arrays.asList(reactionTweetsType, 
-                                                      reactionTweetsTimeInterval, 
-                                                      reactionTweetsNumberOfReactions,
-                                                      reactionTweetsPercentageOfTotalReactions, 
-                                                      reactionTweetsNrOfReplies, 
-                                                      reactionTweetsNrOfQuotes, 
-                                                      reactionTweetsNrOfRetweets));
-        Entity entity_reactionTweets = pFactory.newEntity(qn_var("reaction_group_of_tweets_id"), reactionTweetsAttributes);
-
-
-        // 23. GENERATION - gen3
-        WasGeneratedBy gen3 = pFactory.newWasGeneratedBy(null, entity_reactionTweets.getId(), activity_react.getId());
-        
 
         // Create a collection to store statements
         Collection<Statement> statementCollection = new ArrayList<>();
-        statementCollection.addAll(Arrays.asList(entity_originalTweet, 
-                                                 activity_post, 
-                                                 agent_originalAuthor, 
+        statementCollection.addAll(Arrays.asList(entity_allTweetsAtTimepoint, 
+                                                 activity_postOrReact, 
                                                  gen1, 
-                                                 assoc1,
-                                                 entity_originalAuthorProps,
-                                                 attrib1,
-                                                 activity_react,
-                                                 wasInformedBy1,
-                                                 agent_reactionAuthors,
-                                                 assoc3,
-                                                 entity_reactionTweets,
-                                                 gen3));
-
+                                                 agent_groupOfAuthors, 
+                                                 assoc1));
 
 
         Bundle bundle = pFactory.newNamedBundle(qn_vargen("bundle_id"), ns, statementCollection);
