@@ -96,7 +96,7 @@
             <version>1.2.1</version>
             <executions>
 
-                <!-- <execution>
+                <execution>
                     <id>create-virtualenv</id>
                     <phase>test</phase>
                     <goals>
@@ -139,7 +139,7 @@
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
-                        <argument>source venv/bin/activate; python model1/generate_data1.py; python model2/generate_data2.py</argument>
+                        <argument>source venv/bin/activate; python model1/generate_data1.py; python model2/generate_data2.py; python model3/generate_data3.py</argument>
                     </arguments>
                     </configuration>
                 </execution>
@@ -459,10 +459,10 @@
                             <argument>${project.basedir}/provenance-graphs/model2</argument>
                         </arguments>
                     </configuration>
-                </execution> -->
+                </execution>
 
                 <execution>
-                    <id>test1</id>
+                    <id>test7</id>
                     <phase>test</phase>
                     <goals>
                         <goal>java</goal>
@@ -470,14 +470,14 @@
                     <configuration>
                         <mainClass>com.rug.model3.Template3</mainClass>
                         <arguments>
-                            <argument>${project.basedir}/helper_files/model3/template3.provn</argument>
-                            <argument>${project.basedir}/helper_files/model3/template3.svg</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>
 
                 <execution>
-                    <id>test2</id>
+                    <id>test8</id>
                     <phase>test</phase>
                     <goals>
                         <goal>java</goal>
@@ -485,13 +485,13 @@
                     <configuration>
                         <mainClass>com.rug.model3.Binding3</mainClass>
                         <arguments>
-                            <argument>${project.basedir}/helper_files/model3/binding3.json</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1</argument>
                         </arguments>
                     </configuration>
                 </execution>
 
                 <execution>
-                    <id>execute-command1</id>
+                    <id>execute-command-model3-march1-evening</id>
                     <phase>test</phase>
                     <goals>
                         <goal>exec</goal>
@@ -500,13 +500,55 @@
                         <executable>provconvert</executable>
                         <arguments>
                             <argument>-infile</argument>
-                            <argument>${project.basedir}/helper_files/model3/template3.provn</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
                             <argument>-bindings</argument>
-                            <argument>${project.basedir}/helper_files/model3/binding3.json</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_evening.json</argument>
                             <argument>-bindver</argument>
                             <argument>3</argument>
                             <argument>-outfile</argument>
-                            <argument>${project.basedir}/provenance-graphs/model3/doc3.svg</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_evening.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model3-march1-night</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_night.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_night.svg</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model3-march1-working-hours</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_working_hours.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_working_hours.svg</argument>
                         </arguments>
                     </configuration>
                 </execution>

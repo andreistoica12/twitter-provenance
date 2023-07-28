@@ -75,45 +75,29 @@ public class Template3 {
         intF.writeDocument(file_svg, Formats.ProvFormat.SVG, document);
     }
 
-
-//     TODO:
-// - iau ca timepoint o zi din cele 20
-// - o impart in 3 intervale: 9-17 (8h), 17-24(7h), 0-9 (9h)
-// - pe o zi, fac top 3000 cele mai liked tweets
-// - convertesc la timezone local toate cele 3000 tweets
-
-// OTHER TASKS:
-// - cele 3000 de tweet-uri cu timezone local le scriu in fisier, ca dureaza foarte mult rularea
-// => trbuie sa vad cum fac sa pastrez informatiile de tiemzone
-// => pipeline de scriere + citire in fisier corecta, in proiectul Maven o sa pun doar citirea dintr-un fisier cu 
-// top 3000 most liked tweets in fiecare zi
-
-// TODO Java:
-// - template si binding pentru model 3
         
     public Document createTemplateDocument() {
 
         // 1. ENTITY - entity_originalTweet
-        Collection<Attribute> allTweetsAtTimepointAttributes = new ArrayList<>();
-        Attribute allTweetsAtTimepointType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ALL TWEETS AT TIMEPOINT", pFactory.getName().XSD_STRING);
-        Attribute allTweetsAtTimepointDate = pFactory.newAttribute(qn_tw("date"), qn_var("date"), pFactory.getName().XSD_DATE);
-        Attribute allTweetsAtTimepointTimeInterval = pFactory.newAttribute(qn_tw("time_interval"), qn_var("time_interval"), pFactory.getName().XSD_STRING);
-        Attribute allTweetsAtTimepointPercentageOutOfDayTweets = pFactory.newAttribute(qn_tw("percentage_out_of_day_tweets"), qn_var("percentage_out_of_day_tweets"), pFactory.getName().XSD_STRING);
-        Attribute allTweetsAtTimepointNumberOfOriginalTweets = pFactory.newAttribute(qn_tw("number_of_original_tweets"), qn_var("nr_of_original_tweets"), pFactory.getName().XSD_INT);
-        Attribute allTweetsAtTimepointNumberOfReplies = pFactory.newAttribute(qn_tw("number_of_replies"), qn_var("nr_of_replies"), pFactory.getName().XSD_INT);
-        Attribute allTweetsAtTimepointNumberOfQuotes = pFactory.newAttribute(qn_tw("number_of_quotes"), qn_var("nr_of_quotes"), pFactory.getName().XSD_INT);
-        Attribute allTweetsAtTimepointNumberOfRetweets = pFactory.newAttribute(qn_tw("number_of_retweets"), qn_var("nr_of_retweets"), pFactory.getName().XSD_INT);
+        Collection<Attribute> allTextualTweetsAtTimepointAttributes = new ArrayList<>();
+        Attribute allTextualTweetsAtTimepointType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "ALL TEXTUAL TWEETS AT TIMEPOINT", pFactory.getName().XSD_STRING);
+        Attribute allTextualTweetsAtTimepointDate = pFactory.newAttribute(qn_tw("date"), qn_var("date"), pFactory.getName().XSD_DATE);
+        Attribute allTextualTweetsAtTimepointTimeInterval = pFactory.newAttribute(qn_tw("time_interval"), qn_var("time_interval"), pFactory.getName().XSD_STRING);
+        Attribute allTextualTweetsAtTimepointPercentageOutOfDayTweets = pFactory.newAttribute(qn_tw("percentage_out_of_day_tweets"), qn_var("percentage_out_of_day_tweets"), pFactory.getName().XSD_STRING);
+        Attribute allTextualTweetsAtTimepointNumberOfOriginalTweets = pFactory.newAttribute(qn_tw("number_of_original_tweets"), qn_var("nr_of_original_tweets"), pFactory.getName().XSD_INT);
+        Attribute allTextualTweetsAtTimepointNumberOfReplies = pFactory.newAttribute(qn_tw("number_of_replies"), qn_var("nr_of_replies"), pFactory.getName().XSD_INT);
+        Attribute allTextualTweetsAtTimepointNumberOfQuotes = pFactory.newAttribute(qn_tw("number_of_quotes"), qn_var("nr_of_quotes"), pFactory.getName().XSD_INT);
+        // Attribute allTextualTweetsAtTimepointNumberOfRetweets = pFactory.newAttribute(qn_tw("number_of_retweets"), qn_var("nr_of_retweets"), pFactory.getName().XSD_INT);
         
-        allTweetsAtTimepointAttributes.addAll(Arrays.asList(allTweetsAtTimepointType, 
-                                                            allTweetsAtTimepointDate,
-                                                            allTweetsAtTimepointTimeInterval,
-                                                            allTweetsAtTimepointPercentageOutOfDayTweets,
-                                                            allTweetsAtTimepointNumberOfOriginalTweets,
-                                                            allTweetsAtTimepointNumberOfReplies,
-                                                            allTweetsAtTimepointNumberOfQuotes,
-                                                            allTweetsAtTimepointNumberOfRetweets));
+        allTextualTweetsAtTimepointAttributes.addAll(Arrays.asList(allTextualTweetsAtTimepointType, 
+                                                                   allTextualTweetsAtTimepointDate,
+                                                                   allTextualTweetsAtTimepointTimeInterval,
+                                                                   allTextualTweetsAtTimepointPercentageOutOfDayTweets,
+                                                                   allTextualTweetsAtTimepointNumberOfOriginalTweets,
+                                                                   allTextualTweetsAtTimepointNumberOfReplies,
+                                                                   allTextualTweetsAtTimepointNumberOfQuotes));
 
-        Entity entity_allTweetsAtTimepoint = pFactory.newEntity(qn_var("all_tweets_at_timepoint_id"), allTweetsAtTimepointAttributes);
+        Entity entity_allTextualTweetsAtTimepoint = pFactory.newEntity(qn_var("all_textual_tweets_at_timepoint_id"), allTextualTweetsAtTimepointAttributes);
 
 
         // 2. ACTIVITY - activity_post
@@ -124,7 +108,7 @@ public class Template3 {
         
 
         // 3. GENERATION - gen1
-        WasGeneratedBy gen1 = pFactory.newWasGeneratedBy(null, entity_allTweetsAtTimepoint.getId(), activity_postOrReact.getId());
+        WasGeneratedBy gen1 = pFactory.newWasGeneratedBy(null, entity_allTextualTweetsAtTimepoint.getId(), activity_postOrReact.getId());
 
 
         // 4. AGENT - agent_originalAuthor
@@ -151,7 +135,7 @@ public class Template3 {
 
         // Create a collection to store statements
         Collection<Statement> statementCollection = new ArrayList<>();
-        statementCollection.addAll(Arrays.asList(entity_allTweetsAtTimepoint, 
+        statementCollection.addAll(Arrays.asList(entity_allTextualTweetsAtTimepoint, 
                                                  activity_postOrReact, 
                                                  gen1, 
                                                  agent_groupOfAuthors, 

@@ -12,6 +12,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.nio.file.Path;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 
 
 
@@ -28,18 +34,18 @@ public class Binding3 {
     }
 
 
-    public void addAllTweetsAtTimepoint(String all_tweets_at_timepoint_id, String date, 
+    public void addAllTextualTweetsAtTimepoint(String all_textual_tweets_at_timepoint_id, String date, 
                                  String time_interval, String percentage_out_of_day_tweets, String nr_of_original_tweets,
-                                 String nr_of_replies, String nr_of_quotes, String nr_of_retweets,
+                                 String nr_of_replies, String nr_of_quotes,
                                  Bindings bindings) {
-        bindings.addVariable(template.qn_var("all_tweets_at_timepoint_id"), template.qn_tw(all_tweets_at_timepoint_id));
+        bindings.addVariable(template.qn_var("all_textual_tweets_at_timepoint_id"), template.qn_tw(all_textual_tweets_at_timepoint_id));
         bindings.addAttribute("date", date);
         bindings.addAttribute("time_interval", time_interval);
         bindings.addAttribute("percentage_out_of_day_tweets", percentage_out_of_day_tweets);
         bindings.addAttribute("nr_of_original_tweets", nr_of_original_tweets);
         bindings.addAttribute("nr_of_replies", nr_of_replies);
         bindings.addAttribute("nr_of_quotes", nr_of_quotes);
-        bindings.addAttribute("nr_of_retweets", nr_of_retweets);
+        // bindings.addAttribute("nr_of_retweets", nr_of_retweets);
     }
 
 
@@ -61,10 +67,10 @@ public class Binding3 {
     
 
     public void addJsonObject(Bindings bindings) {
-        addAllTweetsAtTimepoint(data.getAllTweetsAtTimepointId(), data.getDate(),
-                                data.getTimeInterval(), data.getPercentageOutOfDayTweets(), data.getNrOfOriginalTweets(),
-                                data.getNrOfReplies(), data.getNrOfQuotes(), data.getNrOfRetweets(),
-                                bindings);
+        addAllTextualTweetsAtTimepoint(data.getAllTextualTweetsAtTimepointId(), data.getDate(),
+                                       data.getTimeInterval(), data.getPercentageOutOfDayTweets(), data.getNrOfOriginalTweets(),
+                                       data.getNrOfReplies(), data.getNrOfQuotes(),
+                                       bindings);
         addPostOrReactActivity(data.getPostOrReactId(), bindings);
         addGroupOfAuthors(data.getGroupOfAuthorsId(), data.getNrOfDistinctAuthors(),
                           data.getAvgNrOfFollowersTop10Influencers(), data.getAvgNrOfFollowersAllUsers(),
@@ -88,94 +94,100 @@ public class Binding3 {
     }
 
 
-    // private static void createListOfInputFilePathsRecursively(File inputFolder, List<String> inputFilePathsString) {
-    //     File[] inputFiles = inputFolder.listFiles();
+    private static void createListOfInputFilePathsRecursively(File inputFolder, List<String> inputFilePathsString) {
+        File[] inputFiles = inputFolder.listFiles();
 
-    //     if (inputFiles != null) {
-    //         for (File inputFile : inputFiles) {
-    //             if (inputFile.isDirectory()) {
-    //                 // If the file is a directory, recursively list its content
-    //                 createListOfInputFilePathsRecursively(inputFile, inputFilePathsString);
-    //             } else {
-    //                 // Get the path to each file as a String
-    //                 String inputFilePathString = inputFile.getAbsolutePath();
-    //                 inputFilePathsString.add(inputFilePathString);
-    //             }
-    //         }
-    //     } else {
-    //         System.out.println("No files found in the folder.");
-    //     }
-    // }
+        if (inputFiles != null) {
+            for (File inputFile : inputFiles) {
+                if (inputFile.isDirectory()) {
+                    // If the file is a directory, recursively list its content
+                    createListOfInputFilePathsRecursively(inputFile, inputFilePathsString);
+                } else {
+                    // Get the path to each file as a String
+                    String inputFilePathString = inputFile.getAbsolutePath();
+                    inputFilePathsString.add(inputFilePathString);
+                }
+            }
+        } else {
+            System.out.println("No files found in the folder.");
+        }
+    }
 
 
 
     
     public static void main(String[] args) throws URISyntaxException {
         if (args.length!=1) throw new UnsupportedOperationException("main to be called with filename");
-        String outputFilePathString = args[0];
+        String outputFolderPathString = args[0];
+
+        Path outputFolderPath = Paths.get(outputFolderPathString);
+
+        // Get the directory name
+        String outputFolderName = outputFolderPath.getFileName().toString();
         
         Template3 template = new Template3(InteropFramework.getDefaultFactory());
 
+        String date = outputFolderName;
 
         String currentWorkingDirectory = System.getProperty("user.dir");
-        Path inputFilePath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model3", "data", "data3.json");
-        String inputFilePathString = inputFilePath.toString();
+        Path inputFolderPath = Paths.get(currentWorkingDirectory, "src", "main", "python", "model3", "data", date);
+        String inputFolderPathString = inputFolderPath.toString();
 
         // Create an ObjectMapper instance
         ObjectMapper objectMapper = new ObjectMapper();
 
-        try {
-            // Read the JSON file and map it to the DataClass
-            DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
-
-            Binding3 binding = new Binding3(template, data);
-            binding.bind(outputFilePathString);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
         // try {
+        //     // Read the JSON file and map it to the DataClass
+        //     DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
 
-        //     File inputFolder = new File(inputFolderPathString);
-        //     List<String> inputFilePathsString = new ArrayList<>();
-    
-        //     // Check if the provided path is a directory
-        //     if (inputFolder.isDirectory()) {
-        //         createListOfInputFilePathsRecursively(inputFolder, inputFilePathsString);
-        //     } else {
-        //         System.out.println("The provided path for input files folder is not a valid directory.");
-        //     }
-    
-        //     // Iterate through all filepaths and create a binding file for each
-        //     for (String inputFilePathString : inputFilePathsString) {
-        //         // Read the JSON file and map it to the DataClass
-        //         DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
-    
-        //         Binding3 binding = new Binding3(template, data);
+        //     Binding3 binding = new Binding3(template, data);
+        //     binding.bind(outputFilePathString);
 
-        //         // Using File class to get the filename of the input file
-        //         File inputFile = new File(inputFilePathString);
-        //         String inputFilename = inputFile.getName();
-
-        //         // I want to remove the sequence of characters "data2_" from the origial filenames 
-        //         // when creating the binding files
-        //         String regexPattern = "data2_";
-        //         Pattern pattern = Pattern.compile(regexPattern);
-        //         Matcher matcher = pattern.matcher(inputFilename);
-        //         String modifiedInputFilename = matcher.replaceFirst("");
-                
-        //         String outputFilename = String.format("binding2_%s", modifiedInputFilename);
-        //         Path outputPath = Paths.get(outputFolderPathString, outputFilename);
-        //         String outputPathString = outputPath.toString();
-
-        //         binding.bind(outputPathString);
-        //     }
         // } catch (IOException e) {
         //     e.printStackTrace();
         // }
+
+
+
+        try {
+
+            File inputFolder = new File(inputFolderPathString);
+            List<String> inputFilePathsString = new ArrayList<>();
+    
+            // Check if the provided path is a directory
+            if (inputFolder.isDirectory()) {
+                createListOfInputFilePathsRecursively(inputFolder, inputFilePathsString);
+            } else {
+                System.out.println("The provided path for input files folder is not a valid directory.");
+            }
+    
+            // Iterate through all filepaths and create a binding file for each
+            for (String inputFilePathString : inputFilePathsString) {
+                // Read the JSON file and map it to the DataClass
+                DataClass3 data = objectMapper.readValue(new File(inputFilePathString), DataClass3.class);
+    
+                Binding3 binding = new Binding3(template, data);
+
+                // Using File class to get the filename of the input file
+                File inputFile = new File(inputFilePathString);
+                String inputFilename = inputFile.getName();
+
+                // I want to remove the sequence of characters "data2_" from the origial filenames 
+                // when creating the binding files
+                String regexPattern = "data3_";
+                Pattern pattern = Pattern.compile(regexPattern);
+                Matcher matcher = pattern.matcher(inputFilename);
+                String modifiedInputFilename = matcher.replaceFirst("");
+                
+                String outputFilename = String.format("binding2_%s", modifiedInputFilename);
+                Path outputPath = Paths.get(outputFolderPathString, outputFilename);
+                String outputPathString = outputPath.toString();
+
+                binding.bind(outputPathString);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -1,43 +1,40 @@
 {
   "var" : {
     "percentage_out_of_day_tweets" : [ {
-      "@value" : "60%"
+      "@value" : "60.03%"
     } ],
     "date" : [ {
-      "@value" : "March 1, 2021"
+      "@value" : "March 01, 2021"
     } ],
     "avg_nr_of_followers_all_users" : [ {
-      "@value" : "5432"
+      "@value" : "1,041,138"
     } ],
     "nr_of_original_tweets" : [ {
-      "@value" : "423"
+      "@value" : "3363"
     } ],
     "nr_of_quotes" : [ {
-      "@value" : "35"
+      "@value" : "757"
     } ],
     "nr_of_distinct_authors" : [ {
-      "@value" : "3252"
+      "@value" : "3547"
+    } ],
+    "all_textual_tweets_at_timepoint_id" : [ {
+      "@id" : "tw:all_textual_tweets_on_March_01_9AM_5PM"
     } ],
     "avg_nr_of_followers_top_10_influencers" : [ {
-      "@value" : "532524"
+      "@value" : "38,412,712"
     } ],
     "group_of_authors_id" : [ {
-      "@id" : "tw:group_of_authors_on_March_1_9AM_5PM"
+      "@id" : "tw:group_of_authors_on_March_01_9AM_5PM"
     } ],
     "time_interval" : [ {
       "@value" : "9AM - 5PM"
     } ],
-    "nr_of_retweets" : [ {
-      "@value" : "32542"
-    } ],
     "post_or_react_id" : [ {
-      "@id" : "tw:post_or_react_on_March_1_9AM_5PM"
-    } ],
-    "all_tweets_at_timepoint_id" : [ {
-      "@id" : "tw:all_tweets_on_March_1_9AM_5PM"
+      "@id" : "tw:post_or_react_on_March_01_9AM_5PM"
     } ],
     "nr_of_replies" : [ {
-      "@value" : "4234"
+      "@value" : "666"
     } ]
   },
   "vargen" : { },

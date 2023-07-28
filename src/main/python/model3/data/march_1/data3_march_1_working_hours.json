@@ -1,0 +1,14 @@
+{
+    "all_textual_tweets_at_timepoint_id": "all_textual_tweets_on_March_01_9AM_5PM",
+    "date": "March 01, 2021",
+    "time_interval": "9AM - 5PM",
+    "percentage_out_of_day_tweets": "60.03%",
+    "nr_of_original_tweets": "3363",
+    "nr_of_replies": "666",
+    "nr_of_quotes": "757",
+    "post_or_react_id": "post_or_react_on_March_01_9AM_5PM",
+    "group_of_authors_id": "group_of_authors_on_March_01_9AM_5PM",
+    "nr_of_distinct_authors": "3547",
+    "avg_nr_of_followers_top_10_influencers": "38,412,712",
+    "avg_nr_of_followers_all_users": "1,041,138"
+}

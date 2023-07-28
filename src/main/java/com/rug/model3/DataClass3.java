@@ -3,8 +3,8 @@ package com.rug.model3;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataClass3 {
-    @JsonProperty("all_tweets_at_timepoint_id")
-    private String allTweetsAtTimepointId;
+    @JsonProperty("all_textual_tweets_at_timepoint_id")
+    private String allTextualTweetsAtTimepointId;
 
     @JsonProperty("date")
     private String date;
@@ -24,8 +24,8 @@ public class DataClass3 {
     @JsonProperty("nr_of_quotes")
     private String nrOfQuotes;
 
-    @JsonProperty("nr_of_retweets")
-    private String nrOfRetweets;
+    // @JsonProperty("nr_of_retweets")
+    // private String nrOfRetweets;
 
     @JsonProperty("post_or_react_id")
     private String postOrReactId;
@@ -44,12 +44,12 @@ public class DataClass3 {
 
     // Getters and Setters
 
-    public String getAllTweetsAtTimepointId() {
-        return allTweetsAtTimepointId;
+    public String getAllTextualTweetsAtTimepointId() {
+        return allTextualTweetsAtTimepointId;
     }
 
-    public void setAllTweetsAtTimepointId(String allTweetsAtTimepointId) {
-        this.allTweetsAtTimepointId = allTweetsAtTimepointId;
+    public void setAllTextualTweetsAtTimepointId(String allTextualTweetsAtTimepointId) {
+        this.allTextualTweetsAtTimepointId = allTextualTweetsAtTimepointId;
     }
 
     public String getDate() {
@@ -100,13 +100,13 @@ public class DataClass3 {
         this.nrOfQuotes = nrOfQuotes;
     }
 
-    public String getNrOfRetweets() {
-        return nrOfRetweets;
-    }
+    // public String getNrOfRetweets() {
+    //     return nrOfRetweets;
+    // }
 
-    public void setNrOfRetweets(String nrOfRetweets) {
-        this.nrOfRetweets = nrOfRetweets;
-    }
+    // public void setNrOfRetweets(String nrOfRetweets) {
+    //     this.nrOfRetweets = nrOfRetweets;
+    // }
 
     public String getPostOrReactId() {
         return postOrReactId;
