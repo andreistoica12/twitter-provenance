@@ -139,7 +139,11 @@
                     <workingDirectory>${project.basedir}/src/main/python</workingDirectory>
                     <arguments>
                         <argument>-c</argument>
-                        <argument>source venv/bin/activate; python model1/generate_data1.py; python model2/generate_data2.py; python model3/generate_data3.py</argument>
+                        <argument>source venv/bin/activate; 
+                                  python model1/generate_data1.py; 
+                                  python model2/generate_data2.py; 
+                                  python model3/generate_data3.py --date march_1
+                        </argument>
                     </arguments>
                     </configuration>
                 </execution>

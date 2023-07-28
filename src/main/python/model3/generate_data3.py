@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 from datetime import datetime
+import argparse
 
 
 
@@ -146,8 +147,24 @@ def create_json_files_one_day(day_dataset, dates, date, time_intervals, dirpath)
 
 def main():
 
+    # In order to avoid boilerplate code, I decided to add some command line arguments when running
+    # this script, instead of creating a separte, almost identical, script file for each date or modifying in the code.
+    # The argument is: --date .
+    # This way, if the user wishes to run the script in a terminal window, he/she can specify this
+    # argument themselves. The steps to parse the command line argument are the following:
+    # 1. Create an argument parser
+    parser = argparse.ArgumentParser()
+
+    # 2. Add argument for: date
+    parser.add_argument('--date', type=str, default='march_1', help='Date to analyze tweets from')
+
+    # 3. Parse the command-line arguments
+    args = parser.parse_args()
+
+    date_key = args.date
+
     dates = {
-        "march_1": '2021-03-01'
+        'march_1': '2021-03-01'
     }
 
     time_intervals = {
@@ -156,8 +173,10 @@ def main():
         "evening": "5PM - MIDNIGHT"
     }
 
-    date = dates['march_1']
-    date_key = get_key_from_value_in_dict(date, dates)
+    if date_key not in dates:
+        raise Exception("Invalid --date argument value provided or date inexistent. Format should be month_day (e.g. march_1).")
+        
+    date = dates[date_key]
     
     model3_dir_path = os.path.dirname(os.path.abspath(__file__))
     outputdir_path = os.path.join(model3_dir_path, 'data', date_key)
