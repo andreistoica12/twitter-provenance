@@ -3,3 +3,4 @@ target/
 src/main/python/venv/
 src/main/python/input-data/covaxxy_merged_25_days.csv
 src/main/python/input-data/covaxxy_merged_test.csv
+src/main/python/input-data/model3/dataset_march_1.csv
