@@ -91,7 +91,7 @@ def get_reactions_to_original_tweet_in_interval(original_tweet_id, start_of_inte
 
 
 
-def create_json_group_of_reaction(original_tweet_id, start_of_interval, end_of_interval, dataset, total_nr_of_reactions):
+def create_json_group_of_reactions(original_tweet_id, start_of_interval, end_of_interval, dataset, total_nr_of_reactions):
     has_duplicates = dataset[dataset['tweet_id'] == original_tweet_id]['tweet_id'].duplicated().any()
     if has_duplicates:
         raise Exception("Duplicate tweet id. Make sure the tweet id is unique.")
@@ -128,7 +128,7 @@ def create_json_data(original_tweet_id, reaction_interval, dataset, total_nr_of_
 
     data = {}
     data["original"] = create_json_original(original_tweet_id, dataset)
-    data["group_of_reactions"] = create_json_group_of_reaction(original_tweet_id, start_of_interval, end_of_interval, dataset, total_nr_of_reactions)
+    data["group_of_reactions"] = create_json_group_of_reactions(original_tweet_id, start_of_interval, end_of_interval, dataset, total_nr_of_reactions)
 
     return data
 
