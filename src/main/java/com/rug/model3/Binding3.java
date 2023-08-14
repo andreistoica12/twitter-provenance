@@ -179,7 +179,7 @@ public class Binding3 {
                 Matcher matcher = pattern.matcher(inputFilename);
                 String modifiedInputFilename = matcher.replaceFirst("");
                 
-                String outputFilename = String.format("binding2_%s", modifiedInputFilename);
+                String outputFilename = String.format("binding3_%s", modifiedInputFilename);
                 Path outputPath = Paths.get(outputFolderPathString, outputFilename);
                 String outputPathString = outputPath.toString();
 

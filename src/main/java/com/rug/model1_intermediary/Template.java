@@ -1,4 +1,4 @@
-package com.rug.model1;
+package com.rug.model1_intermediary;
 
 import org.openprovenance.prov.model.*;
 import org.openprovenance.prov.interop.InteropFramework;
@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 
-public class Template1 {
+public class Template {
 
     public static final String VAR_NS = "http://openprovenance.org/var#";
     public static final String VAR_PREFIX = "var";
@@ -50,7 +50,7 @@ public class Template1 {
         REACTION
     }
 
-    public Template1(ProvFactory pFactory) {
+    public Template(ProvFactory pFactory) {
         this.pFactory = pFactory;
         ns=new Namespace();
         ns.addKnownNamespaces();
@@ -94,11 +94,10 @@ public class Template1 {
     }
 
 
-    public void saveDocument(Document document, String file_provn, String file_svg, String file_png) {
+    public void saveDocument(Document document, String file_provn, String file_svg) {
         InteropFramework intF=new InteropFramework();
         intF.writeDocument(file_provn, Formats.ProvFormat.PROVN, document);
-        intF.writeDocument(file_svg, Formats.ProvFormat.SVG, document);
-        // intF.writeDocument(file_png, Formats.ProvFormat.PNG, document);
+        intF.writeDocument(file_svg, Formats.ProvFormat.PNG, document);
     }
 
 
@@ -229,67 +228,6 @@ public class Template1 {
         // 15. ATTRIBUTION - attr1
         WasAttributedTo attrib1 = pFactory.newWasAttributedTo(null, entity_originalAuthorProps.getId(), agent_originalAuthor.getId());
 
-        // 16. ACTIVITY - activity_react
-        Collection<Attribute> reactActivityAttributes = new ArrayList<>();
-        Attribute reactType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, "publish", pFactory.getName().XSD_STRING);
-        Attribute reactLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("reaction_tweet_id"), pFactory.getName().XSD_STRING);
-        reactActivityAttributes.addAll(Arrays.asList(reactType, reactLinked));
-        Activity activity_react = pFactory.newActivity(qn_var("react_id"), (XMLGregorianCalendar)null, (XMLGregorianCalendar)null, reactActivityAttributes);
-
-        // 17. COMMUNICATION - wasInformedBy1
-        WasInformedBy wasInformedBy1 = pFactory.newWasInformedBy(null, qn_var("react_id"), qn_var("post_id"));
-
-
-        // 18. AGENT - agent_reactionAuthor
-        Collection<Attribute> reactionAuthorAttributes = new ArrayList<>();
-        Attribute reactionAuthorType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_prov("Person"), pFactory.getName().XSD_STRING);
-        Attribute reactionAuthorName = pFactory.newAttribute(qn_tw("name"), qn_var("ag_r_name"), pFactory.getName().XSD_STRING);
-        Attribute reactionLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
-        Attribute reactionLinked2 = pFactory.newAttribute(qn_tmpl("linked"), qn_var("reaction_author_props_id"), pFactory.getName().XSD_STRING);
-        reactionAuthorAttributes.addAll(Arrays.asList(reactionAuthorType, reactionAuthorName, reactionLinked, reactionLinked2));
-        Agent agent_reactionAuthor = pFactory.newAgent(qn_var("reaction_author_id"), reactionAuthorAttributes);
-
-
-        // 19. ASSOCIATION - assoc3
-        Collection<Attribute> assoc3Attributes = new ArrayList<>();
-        Attribute assoc3Role = pFactory.newAttribute(Attribute.AttributeKind.PROV_ROLE, "author", pFactory.getName().XSD_STRING);
-        assoc3Attributes.add(assoc3Role);
-        WasAssociatedWith assoc3 = pFactory.newWasAssociatedWith(null, activity_react.getId(), agent_reactionAuthor.getId(), (QualifiedName)null, assoc3Attributes);
-
-        // 20. ENTITY - entity_reactionAuthorProps
-        Entity entity_reactionAuthorProps = pFactory.newEntity(qn_var("reaction_author_props_id"), createAuthorProps(pFactory, TweetType.REACTION));
-
-        // 21. ATTRIBUTION - attr2
-        WasAttributedTo attrib2 = pFactory.newWasAttributedTo(null, entity_reactionAuthorProps.getId(), agent_reactionAuthor.getId());
-
-        // 22. ENTITY - entity_reactionTweet
-        Collection<Attribute> reactionTweetAttributes = new ArrayList<>();
-        Attribute reactionTweetValue = pFactory.newAttribute(Attribute.AttributeKind.PROV_VALUE, qn_var("reaction_text"), pFactory.getName().XSD_ANY_URI);
-        Attribute reactionTweetType = pFactory.newAttribute(Attribute.AttributeKind.PROV_TYPE, qn_var("reply_retweet_quote"), pFactory.getName().XSD_STRING);
-        reactionTweetAttributes.addAll(Arrays.asList(reactionTweetValue, reactionTweetType));
-        Entity entity_reactionTweet = pFactory.newEntity(qn_var("reaction_tweet_id"), reactionTweetAttributes);
-
-        // 23. GENERATION - gen3
-        WasGeneratedBy gen3 = pFactory.newWasGeneratedBy(null, entity_reactionTweet.getId(), activity_react.getId());
-        
-        // 24. ENTITY - entity_reactionTweetProps
-        Collection<Attribute> reactionTweetPropsAttributes = new ArrayList<>();
-        Attribute reactionTweetPropsLinked = pFactory.newAttribute(qn_tmpl("linked"), qn_var("react_id"), pFactory.getName().XSD_STRING);
-        reactionTweetPropsAttributes.add(reactionTweetPropsLinked);
-        reactionTweetPropsAttributes.addAll(createTweetProps(pFactory, TweetType.REACTION));
-        Entity entity_reactionTweetProps = pFactory.newEntity(qn_var("reaction_tweet_props_id"), reactionTweetPropsAttributes);
-
-        // 25. USAGE - used3
-        Used used3 = pFactory.newUsed(null, activity_react.getId(), entity_reactionTweetProps.getId());
-
-
-
-
-        // TODO: 
-        // - see how to fit everything into the visuals of the SVG 
-        //      => increase the dimension of the ViewBox in the svg xml file dynamically, not hardcoded as it is now
-
-
         // Create a collection to store statements
         Collection<Statement> statementCollection = new ArrayList<>();
         statementCollection.addAll(Arrays.asList(entity_originalTweet, 
@@ -300,17 +238,7 @@ public class Template1 {
                                                  entity_originalTweetProps,
                                                  used1,
                                                  entity_originalAuthorProps,
-                                                 attrib1,
-                                                 activity_react,
-                                                 wasInformedBy1,
-                                                 agent_reactionAuthor,
-                                                 assoc3,
-                                                 entity_reactionAuthorProps,
-                                                 attrib2,
-                                                 entity_reactionTweet,
-                                                 gen3,
-                                                 entity_reactionTweetProps,
-                                                 used3));
+                                                 attrib1));
 
 
 
@@ -352,11 +280,7 @@ public class Template1 {
         }
 
 
-        if(reactionsAreEdited) {
-            // 9. DERIVATION - deriv2
-            WasDerivedFrom deriv2 = pFactory.newWasDerivedFrom(entity_reactionTweet.getId(), entity_reactionTweet.getId());
-            statementCollection.add(deriv2);
-        }
+
 
 
 
@@ -372,15 +296,14 @@ public class Template1 {
 
     public static void main( String[] args )
     {
-        if (args.length!=3) throw new UnsupportedOperationException("main to be called with 3 filenames");
+        if (args.length!=2) throw new UnsupportedOperationException("main to be called with 2 filenames");
         String file_provn=args[0];
         String file_svg=args[1];
-        String file_png=args[2];
         
-        Template1 template = new Template1(InteropFramework.getDefaultFactory());
+        Template template = new Template(InteropFramework.getDefaultFactory());
 
         Document document = template.createTemplateDocument();
-        template.saveDocument(document, file_provn, file_svg, file_png);
+        template.saveDocument(document, file_provn, file_svg);
     }
 
 }

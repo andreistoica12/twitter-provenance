@@ -1,0 +1,66 @@
+{
+  "var" : {
+    "ORIGINAL_credible" : [ {
+      "@value" : "1"
+    } ],
+    "ORIGINAL_reply_count" : [ {
+      "@value" : "11595"
+    } ],
+    "original_tweet_props_id" : [ {
+      "@id" : "tw:tweet_props_1366200664402006016"
+    } ],
+    "ORIGINAL_retweet_count" : [ {
+      "@value" : "43621"
+    } ],
+    "ORIGINAL_followers_count" : [ {
+      "@value" : "82431058"
+    } ],
+    "original_text" : [ {
+      "@value" : "Took my first dose of the COVID-19 vaccine at AIIMS. Remarkable how our doctors and scientists have worked in quick time to strengthen the global fight against COVID-19. I appeal to all those who are eligible to take the vaccine. Together, let us make India COVID-19 free! https://t.co/5z5cvAoMrv"
+    } ],
+    "ORIGINAL_created_at" : [ {
+      "@value" : "2021-03-01 01:36:35+00:00"
+    } ],
+    "ORIGINAL_quote_count" : [ {
+      "@value" : "4339"
+    } ],
+    "ORIGINAL_properties" : [ {
+      "@value" : "ORIGINAL TWEET properties"
+    } ],
+    "ORIGINAL_location" : [ {
+      "@value" : "India"
+    } ],
+    "ORIGINAL_like_count" : [ {
+      "@value" : "220543"
+    } ],
+    "ORIGINAL_username" : [ {
+      "@value" : "narendramodi"
+    } ],
+    "original_tweet_id" : [ {
+      "@id" : "tw:tweet_1366200664402006016"
+    } ],
+    "ORIGINAL_verified" : [ {
+      "@value" : "True"
+    } ],
+    "ag_o_name" : [ {
+      "@value" : "Narendra Modi"
+    } ],
+    "original_author_id" : [ {
+      "@id" : "tw:author_ORIGINAL_TWEET_18839785"
+    } ],
+    "original_author_props_id" : [ {
+      "@id" : "tw:author_props_18839785"
+    } ],
+    "post_id" : [ {
+      "@id" : "tw:post_1366200664402006016"
+    } ],
+    "ORIGINAL_following_count" : [ {
+      "@value" : "2448"
+    } ]
+  },
+  "vargen" : { },
+  "context" : {
+    "tw" : "http://twitter.com/"
+  },
+  "template" : null
+}

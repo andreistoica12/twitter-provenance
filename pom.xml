@@ -96,6 +96,7 @@
             <version>1.2.1</version>
             <executions>
 
+            
                 <execution>
                     <id>create-virtualenv</id>
                     <phase>test</phase>
@@ -162,6 +163,7 @@
                         <arguments>
                             <argument>${project.basedir}/helper_files/model1/template1.provn</argument>
                             <argument>${project.basedir}/helper_files/model1/template1.svg</argument>
+                            <argument>${project.basedir}/helper_files/model1/template1.png</argument>
                         </arguments>
                     </configuration>
                 </execution>
@@ -226,6 +228,7 @@
                         <arguments>
                             <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
                             <argument>${project.basedir}/helper_files/model2/templates/template2.svg</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.png</argument>
                         </arguments>
                     </configuration>
                 </execution>
@@ -479,6 +482,7 @@
                         <arguments>
                             <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
                             <argument>${project.basedir}/helper_files/model3/templates/template3.svg</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.png</argument>
                         </arguments>
                     </configuration>
                 </execution>
@@ -509,7 +513,7 @@
                             <argument>-infile</argument>
                             <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
                             <argument>-bindings</argument>
-                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_evening.json</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding3_march_1_evening.json</argument>
                             <argument>-bindver</argument>
                             <argument>3</argument>
                             <argument>-outfile</argument>
@@ -530,7 +534,7 @@
                             <argument>-infile</argument>
                             <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
                             <argument>-bindings</argument>
-                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_night.json</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding3_march_1_night.json</argument>
                             <argument>-bindver</argument>
                             <argument>3</argument>
                             <argument>-outfile</argument>
@@ -551,7 +555,7 @@
                             <argument>-infile</argument>
                             <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
                             <argument>-bindings</argument>
-                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_working_hours.json</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding3_march_1_working_hours.json</argument>
                             <argument>-bindver</argument>
                             <argument>3</argument>
                             <argument>-outfile</argument>
@@ -559,8 +563,355 @@
                         </arguments>
                     </configuration>
                 </execution>
-                
+
+
+
+
+
+                <!-- EXECUTIONS OF INTERMEDIARY MODEL1 - FOR THE FINAL REPORT -->
+
+                <!-- <execution>
+                    <id>test1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model1_intermediary.Template</mainClass>
+                        <arguments>
+                            <argument>${project.basedir}/helper_files/model1_intermediary/template.provn</argument>
+                            <argument>${project.basedir}/helper_files/model1_intermediary/template.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>test2</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.rug.model1_intermediary.Binding</mainClass>
+                        <arguments>
+                            <argument>${project.basedir}/helper_files/model1_intermediary/binding.json</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model1_intermediary/template.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model1_intermediary/binding.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model1_intermediary/doc.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution> -->
+
+
+
+                <!-- ADDING PNG RESULTS TO MODEL 2 AND MODEL 3- FOR THE FINAL REPORT -->
+
+
+
+                <!-- <execution>
+                    <id>execute-command-model2-1</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_0h-15min.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_0h-15min.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-2</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_15min-1h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_15min-1h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-3</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_1h-2h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_1h-2h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-4</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_2h-3h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_2h-3h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-5</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_3h-6h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_3h-6h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-6</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_6h-12h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_6h-12h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-7</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_12h-24h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_12h-24h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-8</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_24h-48h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_24h-48h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-9</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_48h-72h.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_48h-72h.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model2-10</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model2/templates/template2.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model2/bindings/binding2_72h-LAST_REACTION.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model2/doc2_72h-LAST_REACTION.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+
+
+
+                <execution>
+                    <id>execute-command-model3-march1-evening</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_evening.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_evening.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model3-march1-night</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_night.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_night.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>execute-command-model3-march1-working-hours</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>provconvert</executable>
+                        <arguments>
+                            <argument>-infile</argument>
+                            <argument>${project.basedir}/helper_files/model3/templates/template3.provn</argument>
+                            <argument>-bindings</argument>
+                            <argument>${project.basedir}/helper_files/model3/bindings/march_1/binding2_march_1_working_hours.json</argument>
+                            <argument>-bindver</argument>
+                            <argument>3</argument>
+                            <argument>-outfile</argument>
+                            <argument>${project.basedir}/provenance-graphs/model3/march_1/doc3_march_1_working_hours.png</argument>
+                        </arguments>
+                    </configuration>
+                </execution> -->
+
+
+
+
+
+
+
+
+
             </executions>
+
         </plugin>
 
         <plugin>

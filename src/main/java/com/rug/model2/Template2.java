@@ -69,10 +69,11 @@ public class Template2 {
     }
 
 
-    public void saveDocument(Document document, String file_provn, String file_svg) {
+    public void saveDocument(Document document, String file_provn, String file_svg, String file_png) {
         InteropFramework intF=new InteropFramework();
         intF.writeDocument(file_provn, Formats.ProvFormat.PROVN, document);
         intF.writeDocument(file_svg, Formats.ProvFormat.SVG, document);
+        // intF.writeDocument(file_png, Formats.ProvFormat.PNG, document);
     }
 
 
@@ -221,14 +222,15 @@ public class Template2 {
 
     public static void main( String[] args )
     {
-        if (args.length!=2) throw new UnsupportedOperationException("main to be called with 2 filenames");
+        if (args.length!=3) throw new UnsupportedOperationException("main to be called with 3 filenames");
         String file_provn=args[0];
         String file_svg=args[1];
+        String file_png=args[2];
         
         Template2 template = new Template2(InteropFramework.getDefaultFactory());
 
         Document document = template.createTemplateDocument();
-        template.saveDocument(document, file_provn, file_svg);
+        template.saveDocument(document, file_provn, file_svg, file_png);
     }
 
 }
